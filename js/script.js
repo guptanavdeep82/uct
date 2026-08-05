@@ -388,85 +388,45 @@
   if (finePointer && !reducedMotion) {
     const MAX_TILT = 7; // degrees — subtle, never disorienting
 
-    document
-      .querySelectorAll(".why-card, .hero-stat, .facility-card, .stepper__step, .hero__visual-frame")
-      .forEach((card) => {
-        let frame = null;
-        // The hero visual composition can tilt further — it reads as a single
-        // floating "object", not a flat card, so a deeper tilt feels intentional.
-        const maxTilt = card.classList.contains("hero__visual-frame") ? 10 : MAX_TILT;
+    document.querySelectorAll(".why-card, .facility-card, .stepper__step").forEach((card) => {
+      let frame = null;
 
-        card.addEventListener("pointerenter", () => {
-          // Short transition so the tilt follows the cursor fluidly
-          card.style.transition = "transform 0.12s ease-out";
-        });
+      card.addEventListener("pointerenter", () => {
+        // Short transition so the tilt follows the cursor fluidly
+        card.style.transition = "transform 0.12s ease-out";
+      });
 
-        card.addEventListener("pointermove", (e) => {
-          // Don't fight the entrance animation of unrevealed cards
-          if (card.hasAttribute("data-animate") && !card.classList.contains("is-visible")) return;
-          if (frame) return;
+      card.addEventListener("pointermove", (e) => {
+        // Don't fight the entrance animation of unrevealed cards
+        if (card.hasAttribute("data-animate") && !card.classList.contains("is-visible")) return;
+        if (frame) return;
 
-          frame = requestAnimationFrame(() => {
-            frame = null;
-            const rect = card.getBoundingClientRect();
-            const px = (e.clientX - rect.left) / rect.width;   // 0 → 1
-            const py = (e.clientY - rect.top) / rect.height;   // 0 → 1
-            const ry = ((px - 0.5) * 2 * maxTilt).toFixed(2);
-            const rx = ((0.5 - py) * 2 * maxTilt).toFixed(2);
+        frame = requestAnimationFrame(() => {
+          frame = null;
+          const rect = card.getBoundingClientRect();
+          const px = (e.clientX - rect.left) / rect.width;   // 0 → 1
+          const py = (e.clientY - rect.top) / rect.height;   // 0 → 1
+          const ry = ((px - 0.5) * 2 * MAX_TILT).toFixed(2);
+          const rx = ((0.5 - py) * 2 * MAX_TILT).toFixed(2);
 
-            card.style.transform =
-              "perspective(1000px) rotateX(" + rx + "deg) rotateY(" + ry + "deg) scale(1.03)";
-            card.style.setProperty("--mx", (px * 100).toFixed(1) + "%");
-            card.style.setProperty("--my", (py * 100).toFixed(1) + "%");
-          });
-        });
-
-        card.addEventListener("pointerleave", () => {
-          if (frame) {
-            cancelAnimationFrame(frame);
-            frame = null;
-          }
-          // Ease back to rest, then hand control back to the stylesheet
-          card.style.transition = "transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1)";
-          card.style.transform = "";
-          setTimeout(() => {
-            card.style.transition = "";
-          }, 560);
+          card.style.transform =
+            "perspective(900px) rotateX(" + rx + "deg) rotateY(" + ry + "deg) scale(1.03)";
+          card.style.setProperty("--mx", (px * 100).toFixed(1) + "%");
+          card.style.setProperty("--my", (py * 100).toFixed(1) + "%");
         });
       });
 
-    /* ----------------------------------------------------------------
-       14. HERO MOUSE PARALLAX
-       Layers drift at different depths as the cursor moves. Uses the
-       separate `translate` property so it composes with (and never
-       conflicts with) keyframe `transform` animations on the orbs.
-    ---------------------------------------------------------------- */
-    const hero = document.querySelector(".hero");
-    const parallaxLayers = [
-      { el: document.querySelector(".hero__orb--1"), depth: -30 },
-      { el: document.querySelector(".hero__orb--2"), depth: 38 },
-      { el: document.querySelector(".hero__visual-badge"), depth: 16 },
-      { el: document.querySelector(".hero__visual-tag"), depth: -18 },
-    ].filter((layer) => layer.el);
-
-    let heroFrame = null;
-
-    hero.addEventListener("pointermove", (e) => {
-      if (heroFrame) return;
-      heroFrame = requestAnimationFrame(() => {
-        heroFrame = null;
-        const dx = e.clientX / window.innerWidth - 0.5;
-        const dy = e.clientY / window.innerHeight - 0.5;
-        parallaxLayers.forEach(({ el, depth }) => {
-          el.style.translate =
-            (dx * depth).toFixed(1) + "px " + (dy * depth * 0.7).toFixed(1) + "px";
-        });
-      });
-    });
-
-    hero.addEventListener("pointerleave", () => {
-      parallaxLayers.forEach(({ el }) => {
-        el.style.translate = "0px 0px";
+      card.addEventListener("pointerleave", () => {
+        if (frame) {
+          cancelAnimationFrame(frame);
+          frame = null;
+        }
+        // Ease back to rest, then hand control back to the stylesheet
+        card.style.transition = "transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1)";
+        card.style.transform = "";
+        setTimeout(() => {
+          card.style.transition = "";
+        }, 560);
       });
     });
   }
