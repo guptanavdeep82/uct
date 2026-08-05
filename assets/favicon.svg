@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- UCT monogram favicon — Deep Wine & Terracotta brand identity -->
+  <circle cx="32" cy="32" r="30" fill="#7A1E3C"/>
+  <circle cx="32" cy="32" r="26" fill="none" stroke="#D9822E" stroke-width="2"/>
+  <text x="32" y="41" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="22" font-weight="700" fill="#D9822E">UCT</text>
+</svg>
