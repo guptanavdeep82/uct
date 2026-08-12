@@ -1,0 +1,317 @@
+/* ==========================================================================
+   About Us family — richer layouts + soft 3D tilt treatments.
+   Uses the same wine / terracotta / teal brand tokens as the homepage.
+   ========================================================================== */
+
+.tilt-card {
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  border-radius: var(--radius);
+}
+
+.tilt-card .feature-card {
+  height: 100%;
+}
+
+.tilt-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    320px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 255, 255, 0.28),
+    transparent 48%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.tilt-card:hover::after {
+  opacity: 1;
+}
+
+.about-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.about-fact {
+  background: linear-gradient(160deg, var(--blue-deep) 0%, var(--blue) 100%);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.2rem;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(240, 182, 115, 0.22);
+}
+
+.about-fact strong {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 1.35rem;
+  color: var(--gold-light);
+  margin-bottom: 0.35rem;
+}
+
+.about-fact span {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.about-explore {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.about-explore__card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  box-shadow: var(--shadow-soft);
+  color: inherit;
+  min-height: 100%;
+  transition: box-shadow 0.35s var(--ease);
+}
+
+.about-explore__card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.about-explore__media {
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+}
+
+.about-explore__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.55s var(--ease);
+}
+
+.about-explore__card:hover .about-explore__media img {
+  transform: scale(1.07);
+}
+
+.about-explore__body {
+  padding: 1.35rem 1.3rem 1.5rem;
+  display: grid;
+  gap: 0.45rem;
+  flex: 1;
+}
+
+.about-explore__body h3 {
+  font-size: 1.08rem;
+}
+
+.about-explore__body p {
+  font-size: 0.9rem;
+  color: var(--gray-500);
+}
+
+.about-explore__body span {
+  margin-top: auto;
+  font-family: var(--font-head);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--gold-dark);
+}
+
+.quote-band {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(700px 280px at 10% 20%, rgba(217, 130, 46, 0.18), transparent 60%),
+    radial-gradient(600px 260px at 90% 80%, rgba(26, 163, 152, 0.14), transparent 60%),
+    linear-gradient(135deg, var(--blue-deep) 0%, var(--blue) 100%);
+  color: var(--white);
+  padding-block: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.quote-band__inner {
+  max-width: 900px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.quote-band blockquote {
+  font-family: var(--font-head);
+  font-size: clamp(1.35rem, 2.6vw, 2rem);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--white);
+}
+
+.quote-band cite {
+  display: block;
+  margin-top: 1.2rem;
+  font-style: normal;
+  font-size: 0.92rem;
+  color: var(--gold-light);
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.vision-panel {
+  border-radius: var(--radius);
+  padding: 2rem 1.7rem;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  box-shadow: var(--shadow-soft);
+  min-height: 100%;
+}
+
+.vision-panel--mission {
+  background: linear-gradient(160deg, rgba(251, 238, 242, 0.95) 0%, #fff 60%);
+}
+
+.vision-panel h3 {
+  margin-bottom: 1rem;
+}
+
+.vision-panel .tick-list li {
+  margin-top: 0.35rem;
+}
+
+.about-media-frame {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-hover);
+  border: 1px solid rgba(122, 30, 60, 0.08);
+}
+
+.about-media-frame img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.about-media-frame.rector__photo img {
+  aspect-ratio: 3 / 4;
+  max-height: 380px;
+  object-position: top center;
+}
+
+.rector-related {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  margin-top: 2rem;
+}
+
+.rector-related__card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  box-shadow: var(--shadow-soft);
+}
+
+.rector-related__media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.rector-related__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rector-related__body {
+  padding: 1.25rem 1.3rem 1.4rem;
+}
+
+.rector-related__body h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.45rem;
+}
+
+.rector-related__body p {
+  font-size: 0.9rem;
+  color: var(--gray-500);
+}
+
+@media (max-width: 768px) {
+  .rector-related {
+    grid-template-columns: 1fr;
+  }
+}
+
+.leadership-highlights {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+}
+
+.leadership-highlights li {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+  font-weight: 500;
+  font-size: 0.92rem;
+}
+
+.leadership-highlights svg {
+  color: var(--gold-dark);
+  margin-top: 0.1rem;
+}
+
+.rector-quote-card {
+  margin-top: 1.8rem;
+  padding: 1.4rem 1.5rem;
+  border-left: 4px solid var(--gold);
+  background: linear-gradient(90deg, var(--gold-soft), transparent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.milestones-intro {
+  max-width: 820px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  color: var(--gray-500);
+}
+
+@media (max-width: 992px) {
+  .about-facts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-explore {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vision-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-facts,
+  .about-explore {
+    grid-template-columns: 1fr;
+  }
+}
