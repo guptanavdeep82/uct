@@ -32,7 +32,14 @@ export const navigation = [
   {
     label: "Academics",
     path: "/academics",
-    children: [{ label: "MBBS Program", path: "/academics/mbbs-program" }],
+    children: [
+      { label: "MBBS Program", path: "/academics/mbbs-program" },
+      { label: "Curriculum", path: "/academics/curriculum" },
+      { label: "Family & Community Medicine", path: "/academics/family-community-medicine" },
+      { label: "National Lab Report", path: "/academics/national-lab-report" },
+      { label: "Faculty List", path: "/academics/faculty" },
+      { label: "Hospitals", path: "/academics/hospitals" },
+    ],
   },
   { label: "Services", path: "/services" },
   {
@@ -40,6 +47,7 @@ export const navigation = [
     path: "/admissions",
     children: [
       { label: "Admission Process", path: "/admissions/admission-process" },
+      { label: "Prospectus 2026", path: "/admissions/prospectus" },
       { label: "Admission Enquiry", path: "/admissions/admission-enquiry" },
       { label: "Fees Structure", path: "/admissions/fees-structure" },
       { label: "Scholarship", path: "/admissions/scholarship" },
@@ -49,6 +57,7 @@ export const navigation = [
   { label: "Gallery", path: "/gallery" },
   { label: "News & Events", path: "/news-events" },
   { label: "Blog", path: "/blog" },
+  { label: "FAQ", path: "/faq" },
   { label: "Contact Us", path: "/contact-us" },
 ];
 
@@ -62,7 +71,14 @@ export const footerAboutLinks = [
 
 export const footerQuickLinks = [
   { label: "MBBS Program", path: "/academics/mbbs-program" },
+  { label: "Curriculum", path: "/academics/curriculum" },
+  { label: "Family & Community Medicine", path: "/academics/family-community-medicine" },
+  { label: "National Lab Report", path: "/academics/national-lab-report" },
+  { label: "Prospectus 2026", path: "/admissions/prospectus" },
+  { label: "Faculty List", path: "/academics/faculty" },
+  { label: "Hospitals", path: "/academics/hospitals" },
   { label: "Admission Process", path: "/admissions/admission-process" },
+  { label: "FAQ", path: "/faq" },
   { label: "Fees Structure", path: "/admissions/fees-structure" },
   { label: "Campus Life", path: "/campus-life" },
   { label: "Gallery", path: "/gallery" },

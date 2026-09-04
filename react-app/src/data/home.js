@@ -86,15 +86,6 @@ export const homeTestimonials = [
   },
 ];
 
-export const videoStories = [
-  { id: "b8-HbG-vpEw", thumb: images.campus[0] },
-  { id: "v21Lf4ajWFk", thumb: images.campus[1] },
-  { id: "g2WruHPrif4", thumb: images.campus[2] },
-  { id: "BWHHC2y5A5k", thumb: images.campus[3] },
-  { id: "teNr_uAdMko", thumb: images.campus[4] },
-  { id: "mywDAyh9wrc", thumb: images.campus[5] },
-];
-
 export const homeAccredBadges = [
   { code: "NMC", name: "NMC India", logo: images.accreditationLogos[0] },
   { code: "ANAAA", name: "ANAAA", logo: images.accreditationLogos[1] },

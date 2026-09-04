@@ -83,11 +83,63 @@ export const academicsPillars = [
 ];
 
 export const faculty = [
-  { name: "Dr. Brittany Guidos", role: "Head & Professor, Dept. of Community Medicine" },
-  { name: "Dr. Kanchana Amarnath", role: "Head & Professor, Director (Academics), Dept. of Biochemistry" },
-  { name: "Dr. Benith B Shalin", role: "Head & Professor, Deputy Director (Academics), Dept. of Anatomy" },
-  { name: "Dr. Leena Sweetlin K", role: "Head & Professor, Dept. of Physiology" },
+  {
+    name: "Dr. Brittany Guidos",
+    role: "Head & Professor, Dept. of Community Medicine",
+    department: "Community Medicine",
+    focus: "Population health, family adoption and community postings from the first professional year.",
+  },
+  {
+    name: "Dr. Kanchana Amarnath",
+    role: "Head & Professor, Director (Academics), Dept. of Biochemistry",
+    department: "Biochemistry",
+    focus: "Academic leadership across the pre-clinical years, with biochemistry at the core of early lab training.",
+  },
+  {
+    name: "Dr. Benith B Shalin",
+    role: "Head & Professor, Deputy Director (Academics), Dept. of Anatomy",
+    department: "Anatomy",
+    focus: "Hands-on anatomy teaching supported by dissection, models and early clinical correlation.",
+  },
+  {
+    name: "Dr. Leena Sweetlin K",
+    role: "Head & Professor, Dept. of Physiology",
+    department: "Physiology",
+    focus: "Physiology instruction that connects classroom theory with laboratory and clinical observation.",
+  },
 ];
+
+export const facultyOrigins = [
+  { country: "India", desc: "Experienced medical educators who teach the Indian-curriculum MBBS structure in English." },
+  { country: "USA", desc: "International faculty bringing global clinical perspectives into classroom and mentoring." },
+  { country: "Cuba", desc: "Medical educators contributing to UCT's international teaching community." },
+  { country: "Timor-Leste", desc: "Local faculty who connect students with the health system they will serve in Díli." },
+];
+
+export const academicDepartments = [
+  { title: "Anatomy", desc: "Dissection support, models and early clinical correlation from Phase 1." },
+  { title: "Physiology", desc: "Systems-based teaching with laboratory work throughout the first professional year." },
+  { title: "Biochemistry", desc: "Foundational laboratory science under dedicated academic leadership." },
+  { title: "Community Medicine", desc: "Family Adoption Program, field visits and public-health postings from Year 1." },
+  { title: "Pathology & Microbiology", desc: "Specimen and slide analysis in the second professional year." },
+  { title: "Pharmacology", desc: "Therapeutics teaching aligned with the Indian MBBS structure." },
+  { title: "Medicine & Allied", desc: "Clinical postings in general medicine, dermatology, psychiatry and respiratory medicine." },
+  { title: "Surgery & Allied", desc: "Hospital-based training in surgery, orthopedics, ENT and ophthalmology." },
+  { title: "Pediatrics", desc: "Child-health postings through the third professional years." },
+  { title: "Obstetrics & Gynecology", desc: "Clinical rotations in women's health during the later professional phases." },
+  { title: "Forensic Medicine", desc: "Forensic medicine and toxicology in Third Professional — Part I." },
+  { title: "AETCOM", desc: "Attitude, ethics and communication taught as a thread across every phase." },
+];
+
+export const internshipPhase = {
+  phase: "Compulsory Rotatory Medical Internship (CRMI)",
+  duration: "12 months after 54 months of academic training",
+  subjects: [
+    "Compulsory Rotatory Medical Internship as per NMC / FMGL 2021 regulations",
+    "Rotational clinical internship across core hospital departments",
+    "Eligible for the same medical licence awarded to local Timorese graduates",
+  ],
+};
 
 export const academicsIntro =
   "At Universidade Católica Timorense (UCT), academic excellence is the foundation of our mission. Our flagship MBBS program is designed to meet global standards while being especially suitable for Indian and international students. The curriculum is modeled on the Indian medical education system, ensuring familiarity, structure, and strong eligibility for international licensing exams such as FMGE (India), USMLE (USA), and PLAB (UK). The MBBS program at UCT spans 5.5 years, comprising 4.5 years of classroom-based academic training followed by a 1-year compulsory clinical internship. The language of instruction is English, making the program accessible to a global student community.";

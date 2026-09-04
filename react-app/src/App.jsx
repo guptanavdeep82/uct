@@ -22,11 +22,17 @@ const LifeOfIndianStudents = lazy(() => import("./pages/campus/LifeOfIndianStude
 
 const Academics = lazy(() => import("./pages/academics/Academics"));
 const MbbsProgram = lazy(() => import("./pages/academics/MbbsProgram"));
+const Curriculum = lazy(() => import("./pages/academics/Curriculum"));
+const FamilyCommunityMedicine = lazy(() => import("./pages/academics/FamilyCommunityMedicine"));
+const NationalLabReport = lazy(() => import("./pages/academics/NationalLabReport"));
+const Faculty = lazy(() => import("./pages/academics/Faculty"));
+const Hospitals = lazy(() => import("./pages/academics/Hospitals"));
 
 const Services = lazy(() => import("./pages/Services"));
 
 const Admissions = lazy(() => import("./pages/admissions/Admissions"));
 const AdmissionProcess = lazy(() => import("./pages/admissions/AdmissionProcess"));
+const Prospectus = lazy(() => import("./pages/admissions/Prospectus"));
 const AdmissionEnquiry = lazy(() => import("./pages/admissions/AdmissionEnquiry"));
 const FeesStructure = lazy(() => import("./pages/admissions/FeesStructure"));
 const Scholarship = lazy(() => import("./pages/admissions/Scholarship"));
@@ -41,6 +47,7 @@ const Blog = lazy(() => import("./pages/blog/Blog"));
 const BlogDetail = lazy(() => import("./pages/blog/BlogDetail"));
 
 const Contact = lazy(() => import("./pages/Contact"));
+const FAQ = lazy(() => import("./pages/FAQ"));
 const AntiRaggingPolicy = lazy(() => import("./pages/AntiRaggingPolicy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -87,11 +94,17 @@ export default function App() {
 
           <Route path="/academics" element={<Academics />} />
           <Route path="/academics/mbbs-program" element={<MbbsProgram />} />
+          <Route path="/academics/curriculum" element={<Curriculum />} />
+          <Route path="/academics/family-community-medicine" element={<FamilyCommunityMedicine />} />
+          <Route path="/academics/national-lab-report" element={<NationalLabReport />} />
+          <Route path="/academics/faculty" element={<Faculty />} />
+          <Route path="/academics/hospitals" element={<Hospitals />} />
 
           <Route path="/services" element={<Services />} />
 
           <Route path="/admissions" element={<Admissions />} />
           <Route path="/admissions/admission-process" element={<AdmissionProcess />} />
+          <Route path="/admissions/prospectus" element={<Prospectus />} />
           <Route path="/admissions/admission-enquiry" element={<AdmissionEnquiry />} />
           <Route path="/admissions/fees-structure" element={<FeesStructure />} />
           <Route path="/admissions/scholarship" element={<Scholarship />} />
@@ -106,6 +119,7 @@ export default function App() {
           <Route path="/blog/:slug" element={<BlogDetail />} />
 
           <Route path="/contact-us" element={<Contact />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/anti-ragging-policy" element={<AntiRaggingPolicy />} />
 
           <Route path="*" element={<NotFound />} />

@@ -7,6 +7,7 @@ import FAQAccordion from "../../components/ui/FAQAccordion";
 import CTASection from "../../components/ui/CTASection";
 import { images } from "../../data/images";
 import { programOverview, whyMbbs, curriculumPhases, faculty } from "../../data/curriculum";
+import { fmglProgram } from "../../data/officialCollateral";
 import { generalFaq } from "../../data/faq";
 
 const careerPaths = [
@@ -64,6 +65,22 @@ export default function MbbsProgram() {
             {whyMbbs.map((item, i) => (
               <FeatureCard key={item} title={item} desc="" delay={(i % 3) * 90} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <SectionHeading tag="FMGL 2021" title={fmglProgram.title} desc={fmglProgram.statement} />
+          <div className="card-grid card-grid--3">
+            {fmglProgram.pillars.map((item, i) => (
+              <FeatureCard key={item.title} title={item.title} desc={item.desc} delay={(i % 3) * 80} />
+            ))}
+          </div>
+          <div style={{ textAlign: "center", marginTop: "2rem" }}>
+            <Link to="/academics/curriculum" className="btn btn--outline">
+              Open Full Curriculum
+            </Link>
           </div>
         </div>
       </section>

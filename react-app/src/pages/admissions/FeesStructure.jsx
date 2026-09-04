@@ -18,7 +18,7 @@ export default function FeesStructure() {
       />
       <InnerPageHero
         title="Fees Structure"
-        description="A transparent overview of how tuition and related charges are structured at UCT. Exact amounts are confirmed by the Admissions Office."
+        description="First-year fees from UCT’s Official Guidelines for Admission Process 2025–2026. Confirm the current intake with admissions."
         image={images.campus[1]}
         trail={[{ label: "Admissions", path: "/admissions" }]}
         actions={<HeroApplyButton label="Request Fee Details" />}
@@ -26,19 +26,19 @@ export default function FeesStructure() {
 
       <section className="section">
         <div className="container">
-          <SectionHeading tag="Fee Overview" title="Transparent & Intake-Based" desc={feeStructure.note} />
+          <SectionHeading tag="Fee Overview" title="Official First-Year Figures (2025–2026)" desc={feeStructure.note} />
           <div className="notice-banner" data-animate="fade-up">
-            <strong>Important:</strong> Exact tuition and hostel figures are not published as fixed amounts on
-            this page. Contact admissions for the current, verified fee structure for the{" "}
-            <Link to="/admissions/admission-enquiry">active intake</Link>.
+            <strong>Source:</strong> OFFICIAL GUIDELINES — ADMISSION PROCESS 2025–2026. Hostel rates and later-year
+            tuition are still confirmed with the{" "}
+            <Link to="/admissions/admission-enquiry">Admissions Office</Link> for the active intake.
           </div>
         </div>
       </section>
 
       <section className="section" style={{ background: "var(--gray-50)" }}>
         <div className="container" style={{ display: "grid", gap: "2.5rem" }}>
-          <FeeTable title="Tuition Fee" rows={feeStructure.tuition} />
-          <FeeTable title="Other Charges" rows={feeStructure.other} />
+          <FeeTable title="University USD Account" rows={feeStructure.tuition} />
+          <FeeTable title="Indian Account & Other Charges" rows={feeStructure.other} />
         </div>
       </section>
 

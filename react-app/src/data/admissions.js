@@ -2,51 +2,81 @@
 // and https://www.uct.tl/admission-enquiry. Do not alter the verified steps.
 export const admissionSteps = [
   {
-    title: "Submit Application",
+    title: "Application & Enrolment",
     items: [
-      "Submit your high school certificates (10th & 12th)",
-      "Provide a scanned copy of your passport",
-      "Attach a recent passport-size photograph",
+      "Submit the admission form with a soft copy of initial documents",
+      "Pay the application and enrolment fees",
     ],
   },
   {
-    title: "Acceptance Letter",
+    title: "NOA — Notice of Provisional Admission",
     items: [
-      "Within 2 weeks of applying, the Admission Review Committee will issue an acceptance letter",
-      "You are required to pay 40% of the tuition fee as an advance to confirm your seat",
+      "The university verifies documents and payments",
+      "A Notice of Admission (Provisional Confirmation) is issued to the student",
     ],
   },
   {
-    title: "Submit Your Documents",
+    title: "Document Submission",
     items: [
-      "Original Passport",
-      "10th & 12th Marksheet",
-      "Transfer Certificate / Leaving Certificate",
-      "NEET Hall Ticket & Score-Card",
-      "Birth Certificate",
-      "Police Clearance Certificate (PCC)",
-      "Medical Reports & Fitness Certificate",
-      "Financial Affidavit and Self Declaration Affidavit",
-      "20 recent passport photos (red background)",
-      "10 recent passport photos (white background)",
+      "Submit originals plus 2 colour Xerox copies to the Documentation Department",
+      "For the 2025–2026 cycle the published deadline was 15 October 2025 — confirm the current intake date with admissions",
     ],
   },
   {
-    title: "Pay the Balance Fee",
+    title: "Fee Payment",
     items: [
-      "After document review (approx. 1 month), pay the remaining tuition fee",
-      "Accommodation fee (if opting for university hostel)",
-      "Flight ticket charges",
+      "Pay tuition and registration fees to the University USD account",
+      "Pay Documentation, Visa, Ticket & Other Services to the Indian account (plus 5% GST)",
+      "After the transfer, submit a copy of the transaction receipt to the University Management Office",
     ],
   },
   {
-    title: "Fly To Timor-Leste",
+    title: "Verification, White Coat & Travel",
     items: [
-      "The Indian Admission Office confirms your travel schedule",
-      "Flight bookings are made for the entire student batch",
-      "Airport pickup and drop-off arranged by the university",
+      "Only students who complete documentation and fee clearance are scheduled for travel",
+      "White Coat Ceremony: Enrollment & Registration, Application, and Uniform with Medical Kit fees must be cleared",
+      "Travel: all dues including First Year Tuition and Documentation, Visa, Ticket & Services must be cleared",
     ],
   },
+];
+
+export const mandatoryDocuments = [
+  "Passport (student & parent — self attested)",
+  "10th Mark Sheet",
+  "12th Mark Sheet",
+  "NEET Score Card",
+  "NEET Admit Card",
+  "Transfer Certificate",
+  "Migration Certificate (for CBSE students)",
+  "Passing Certificate (for CBSE students)",
+  "Financial Affidavit (Rs.100 bond paper with notary)",
+  "Bank Statement (6 months, signed by branch manager; minimum ₹2,00,000 closing balance)",
+  "Police Clearance Certificate (from Passport Office only)",
+  "Medical Fitness Certificate",
+  "Medical Report & Tests",
+  "Vaccination Certificate",
+  "Aadhar Card (student & parent — self attested)",
+  "Passport-size photos — white background: 5; red background: 10",
+];
+
+export const notaryDocuments = [
+  "Passport copy",
+  "10th marksheet printed on bond sheet",
+  "12th marksheet printed on bond sheet",
+  "PCC original (Passport Office, not a local police station)",
+  "Medical Fitness Certificate original",
+];
+
+export const medicalTests = [
+  "General Medical Report",
+  "Medical Fitness Certificate",
+  "Chest X-Ray (report + film — A4 size only)",
+  "Hepatitis B (HBsAg)",
+  "Total Blood Examination",
+  "Routine Urinalysis Test",
+  "Stool Examination / Fecalysis",
+  "HIV Test",
+  "VDRL Test",
 ];
 
 export const admissionEnquiryFaq = [
@@ -95,24 +125,25 @@ export const scholarshipSteps = [
 export const scholarshipIntro =
   "UCT is the only university in Timor-Leste offering a 100% tuition fee scholarship for selected students. With an Indian curriculum, English-medium instruction, clinical exposure from Year 1, and a student-friendly campus, UCT is designed to deliver world-class medical education while appreciating talent and commitment. UCT proudly offers 100% tuition fee scholarships to 29 deserving students — one from each state of India.";
 
-// Fees are not published on the public UCT website at the time of writing.
-// This structure is intentionally editable — replace `amount` values with
-// verified figures from the Admissions Office before publishing.
+// First-year figures from OFFICIAL GUIDELINES: ADMISSION PROCESS 2025–2026.
 export const feeStructure = {
   note:
-    "Exact tuition and hostel fees are confirmed directly by the UCT Admissions Office and may vary by intake year and scholarship eligibility. Contact our counsellors for the current, verified fee structure.",
+    "First-year amounts below are taken from UCT’s Official Guidelines for the 2025–2026 admission cycle. Later-year tuition, hostel and the current intake should be confirmed with the Admissions Office. Final credited amounts must match the exact payable figure; any shortfall from bank charges is treated as pending.",
   tuition: [
-    { item: "MBBS Tuition Fee — Confirmation Advance", amount: "40% of total tuition (on acceptance letter)" },
-    { item: "MBBS Tuition Fee — Balance", amount: "Payable after document verification (~1 month later)" },
+    { item: "First Year Tuition Fee", amount: "USD 6,200" },
+    { item: "Enrollment & Registration Fee", amount: "USD 1,350" },
+    { item: "Application Fee", amount: "USD 300" },
+    { item: "Uniform with Medical Kit Fee", amount: "USD 180" },
   ],
   other: [
+    { item: "Documentation, Visa, Ticket and Other Services", amount: "₹ 1,50,000 + 5% GST (Indian account)" },
     { item: "University Hostel (optional)", amount: "Contact Admissions Office for current rates" },
-    { item: "Flight Ticket Charges", amount: "Coordinated with the Indian Admission Office per batch" },
-    { item: "Documentation / Visa Support", amount: "Included in admission support services" },
   ],
   schedule: [
-    "40% advance on receiving the acceptance letter to confirm your seat",
-    "Balance tuition fee after document verification (approx. 1 month)",
-    "Hostel and flight charges settled before the confirmed travel date",
+    "Tuition-related fees are paid only to the University USD account.",
+    "Documentation, Visa, Ticket & Services is paid to the Indian account with 5% GST.",
+    "White Coat Ceremony requires Enrollment & Registration, Application, and Uniform with Medical Kit fees to be cleared.",
+    "Travel requires all dues above, including First Year Tuition and Documentation, Visa, Ticket & Services.",
+    "After payment, submit the transaction receipt to the University Management Office.",
   ],
 };

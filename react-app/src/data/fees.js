@@ -5,16 +5,16 @@ export { feeStructure } from "./admissions";
 
 export const feesFaq = [
   {
-    q: "Are exact tuition fees published online?",
-    a: "Exact tuition and hostel fees are confirmed directly by the UCT Admissions Office and may vary by intake year and scholarship eligibility. Contact our counsellors for the current, verified fee structure.",
+    q: "What is the first-year tuition fee?",
+    a: "The Official Guidelines for 2025–2026 list First Year Tuition as USD 6,200, plus Enrollment & Registration USD 1,350, Application USD 300, and Uniform with Medical Kit USD 180. Confirm the current intake with admissions.",
   },
   {
-    q: "When do I pay the confirmation advance?",
-    a: "After your application is reviewed, you receive an acceptance letter. You then pay 40% of the tuition fee as an advance to confirm your seat.",
+    q: "Where do I pay fees?",
+    a: "Tuition-related fees go to the University USD account only. Documentation, Visa, Ticket & Other Services (₹1,50,000 plus 5% GST) is paid to the Indian account. Submit the transaction receipt to the University Management Office.",
   },
   {
-    q: "When is the balance tuition fee due?",
-    a: "After document verification (approximately one month after the advance), the remaining tuition fee is payable. Hostel and flight charges, if applicable, are settled before the confirmed travel date.",
+    q: "What must be paid before the White Coat Ceremony?",
+    a: "Enrollment & Registration, Application, and Uniform with Medical Kit fees. Travel additionally requires First Year Tuition and Documentation, Visa, Ticket & Services to be cleared.",
   },
   {
     q: "Is hostel accommodation included in tuition?",

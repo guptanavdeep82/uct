@@ -4,8 +4,20 @@ import InnerPageHero from "../../components/ui/InnerPageHero";
 import SectionHeading from "../../components/ui/SectionHeading";
 import FeatureCard from "../../components/ui/FeatureCard";
 import CTASection from "../../components/ui/CTASection";
+import ImageCard from "../../components/ui/ImageCard";
 import { images } from "../../data/images";
 import { academicsIntro, academicsPillars, faculty } from "../../data/curriculum";
+
+import { collateralImages } from "../../data/officialCollateral";
+
+const academicLinks = [
+  { title: "MBBS Program", desc: "54 months of academic training plus a 12-month CRMI internship, taught in English.", image: images.campus[2], to: "/academics/mbbs-program" },
+  { title: "Curriculum", desc: "CBME syllabus, FMGL 2021 alignment and first-year textbooks.", image: collateralImages.cbme, to: "/academics/curriculum" },
+  { title: "Family & Community Medicine", desc: "Family Adoption Programme across 5 villages under the NMC CBME curriculum.", image: collateralImages.familyAdoption, to: "/academics/family-community-medicine" },
+  { title: "National Lab Report", desc: "INSPTL posting in Bidau, Díli — microbiology, TB, molecular biology and more.", image: images.gallery[7].src, to: "/academics/national-lab-report" },
+  { title: "Faculty List", desc: "Named academic heads and an international teaching community.", image: images.hero.students, to: "/academics/faculty" },
+  { title: "Hospitals", desc: "Clinical tie-ups, early exposure and a one-year CRMI internship.", image: images.campus[4], to: "/academics/hospitals" },
+];
 
 export default function Academics() {
   return (
@@ -40,6 +52,17 @@ export default function Academics() {
         </div>
       </section>
 
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <SectionHeading tag="Explore Academics" title="Curriculum, Faculty, Hospitals & More" />
+          <div className="card-grid card-grid--3">
+            {academicLinks.map((item, i) => (
+              <ImageCard key={item.to} {...item} delay={i * 80} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section" style={{ background: "var(--gray-50)" }}>
         <div className="container">
           <SectionHeading tag="Academic Philosophy" title="Shaping the Future of Global Healthcare" />
@@ -68,6 +91,11 @@ export default function Academics() {
                 <p>{f.role}</p>
               </div>
             ))}
+          </div>
+          <div style={{ textAlign: "center", marginTop: "2rem" }}>
+            <Link to="/academics/faculty" className="btn btn--outline">
+              View Full Faculty List
+            </Link>
           </div>
         </div>
       </section>

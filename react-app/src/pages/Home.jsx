@@ -10,6 +10,7 @@ import FAQAccordion from "../components/ui/FAQAccordion";
 import CTASection from "../components/ui/CTASection";
 import GalleryGrid from "../components/ui/GalleryGrid";
 import EnquiryForm from "../components/ui/EnquiryForm";
+import CampusFilmPlayer from "../components/ui/CampusFilmPlayer";
 import { images } from "../data/images";
 import { siteInfo, quickStats } from "../data/siteInfo";
 import { generalFaq } from "../data/faq";
@@ -20,7 +21,6 @@ import {
   homeAdmissionSteps,
   facilityCards,
   homeTestimonials,
-  videoStories,
   homeAccredBadges,
 } from "../data/home";
 
@@ -269,30 +269,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* VIDEO */}
-      <section className="section" aria-labelledby="video-title">
+      {/* CAMPUS FILMS */}
+      <section className="campus-films" aria-label="Campus films, student voices">
         <div className="container">
-          <SectionHeading tag="Watch & Believe" title={<>Experience the <span className="text-gold-dark">UCT Campus</span></>} />
-          <div className="video-grid" data-animate="fade-up">
-            {videoStories.map((video) => (
-              <a
-                key={video.id}
-                className="video-thumb"
-                href={`https://www.youtube.com/watch?v=${video.id}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Watch student video story"
-              >
-                <img src={video.thumb} alt="UCT student video story" loading="lazy" />
-                <span className="video-thumb__play" aria-hidden="true">
-                  <span>
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </span>
-                </span>
-              </a>
-            ))}
+          <SectionHeading
+            tag="Watch UCT"
+            title={<span style={{ color: "var(--white)" }}>Campus films, <span className="text-gold">student voices</span></span>}
+            desc="Six portrait films from Díli — tap a reel to play. Only the film you choose is streamed."
+          />
+          <CampusFilmPlayer />
+          <div style={{ textAlign: "center", marginTop: "2.4rem" }}>
+            <Link to="/gallery" className="btn btn--glass">
+              More campus moments
+            </Link>
           </div>
         </div>
       </section>

@@ -5,8 +5,16 @@ import AccreditationCard from "../components/ui/AccreditationCard";
 import FeatureCard from "../components/ui/FeatureCard";
 import FAQAccordion from "../components/ui/FAQAccordion";
 import CTASection from "../components/ui/CTASection";
+import Stats from "../components/ui/Stats";
 import { images } from "../data/images";
 import { accreditations, globalExams, accreditationFaq } from "../data/accreditation";
+
+const accredStats = [
+  { value: "WDOMS", label: "World Directory Listing" },
+  { value: "NMC", label: "India Pathway" },
+  { value: "ECFMG", label: "US Training Pathway" },
+  { value: "ANAAA", label: "National Accreditation" },
+];
 
 const whyMatters = [
   {
@@ -36,6 +44,8 @@ export default function Accreditation() {
         description="Institutional and program recognitions that support global pathways for UCT graduates — verified from official university sources."
         image={images.campus[5]}
       />
+
+      <Stats items={accredStats} />
 
       <section className="section">
         <div className="container">

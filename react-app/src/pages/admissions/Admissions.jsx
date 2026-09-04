@@ -57,15 +57,22 @@ export default function Admissions() {
       <section className="section">
         <div className="container">
           <SectionHeading tag="Fees & Scholarships" title="Affordable, Transparent, Merit-Rewarding" />
-          <div className="split" style={{ alignItems: "stretch" }}>
+          <div className="card-grid card-grid--3" style={{ alignItems: "stretch" }}>
             <div className="feature-card" style={{ textAlign: "left" }} data-animate="fade-up">
+              <h3>Prospectus 2026</h3>
+              <p>Read the official Timor Leste Prospectus 2026 brochure and FMGL 2021 programme highlights.</p>
+              <Link to="/admissions/prospectus" className="btn btn--outline" style={{ marginTop: "1.2rem" }}>
+                View Prospectus
+              </Link>
+            </div>
+            <div className="feature-card" style={{ textAlign: "left" }} data-animate="fade-up" data-delay="90">
               <h3>Fees Structure</h3>
-              <p>Understand tuition, hostel and other charges, and the payment schedule.</p>
+              <p>First-year figures from the Official Guidelines 2025–2026, plus how payments are split.</p>
               <Link to="/admissions/fees-structure" className="btn btn--outline" style={{ marginTop: "1.2rem" }}>
                 View Fees Structure
               </Link>
             </div>
-            <div className="feature-card" style={{ textAlign: "left" }} data-animate="fade-up" data-delay="90">
+            <div className="feature-card" style={{ textAlign: "left" }} data-animate="fade-up" data-delay="160">
               <h3>100% Scholarship</h3>
               <p>29 fully-funded seats — one for each Indian state, awarded purely on merit.</p>
               <Link to="/admissions/scholarship" className="btn btn--outline" style={{ marginTop: "1.2rem" }}>

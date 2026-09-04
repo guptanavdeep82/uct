@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { videoMoments } from "../../data/media";
-import { siteInfo } from "../../data/siteInfo";
+import { campusFilms } from "../../data/campusFilms";
 
 function PlayGlyph() {
   return (
@@ -26,14 +25,14 @@ export default function VideoShowcase() {
     };
   }, [active]);
 
-  const current = active !== null ? videoMoments[active] : null;
+  const current = active !== null ? campusFilms[active] : null;
 
   return (
     <>
       <div className="video-showcase__grid" data-animate="fade-up">
-        {videoMoments.map((video, i) => (
+        {campusFilms.map((video, i) => (
           <button
-            key={video.title}
+            key={video.id}
             type="button"
             className="video-card"
             onClick={() => setActive(i)}
@@ -54,33 +53,20 @@ export default function VideoShowcase() {
 
       {current && (
         <div className="video-modal" role="dialog" aria-modal="true" aria-label={current.title} onClick={() => setActive(null)}>
-          <div className="video-modal__panel" onClick={(e) => e.stopPropagation()}>
+          <div className="video-modal__panel video-modal__panel--reel" onClick={(e) => e.stopPropagation()}>
             <button className="video-modal__close" aria-label="Close" onClick={() => setActive(null)}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
                 <path d="M18 6 6 18M6 6l12 12" />
               </svg>
             </button>
-            <div className="video-modal__media">
-              <img src={current.thumb} alt={current.title} />
-              <a
-                className="video-modal__playbtn"
-                href={siteInfo.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Watch on YouTube"
-              >
-                <PlayGlyph />
-              </a>
+            <div className="video-modal__reel">
+              <video src={current.src} poster={current.thumb} controls autoPlay playsInline preload="metadata">
+                Your browser cannot play this campus film.
+              </video>
             </div>
             <div className="video-modal__info">
               <h3>{current.title}</h3>
               <p>{current.desc}</p>
-              <a className="btn btn--gold" href={siteInfo.youtube} target="_blank" rel="noopener noreferrer">
-                Watch Full Video on YouTube
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <path d="M7 17 17 7M8 7h9v9" />
-                </svg>
-              </a>
             </div>
           </div>
         </div>

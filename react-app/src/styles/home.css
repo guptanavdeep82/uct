@@ -179,60 +179,269 @@
 }
 
 /* ---------------------------------------------------------------------------
-   VIDEO GRID (lightweight, no autoplaying embeds until clicked)
+   CAMPUS FILMS — portrait reels on a dark wine stage
 --------------------------------------------------------------------------- */
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-}
-
-.video-thumb {
+.campus-films {
   position: relative;
-  border-radius: var(--radius-sm);
+  padding-block: clamp(4.2rem, 8vw, 7rem);
+  background:
+    radial-gradient(620px 280px at 88% 8%, rgba(240, 182, 115, 0.2), transparent 58%),
+    radial-gradient(520px 280px at 6% 92%, rgba(26, 163, 152, 0.16), transparent 58%),
+    linear-gradient(155deg, var(--blue-deep) 0%, var(--blue-dark) 52%, var(--blue) 100%);
   overflow: hidden;
-  aspect-ratio: 16/10;
 }
 
-.video-thumb img {
+.campus-films .section-head__tag {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--gold-light);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.campus-films .section-head__title {
+  color: var(--white);
+}
+
+.campus-films .section-head__desc {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.campus-films__layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 380px) 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.campus-films__stage {
+  display: grid;
+  place-items: center;
+}
+
+.campus-films__phone {
+  position: relative;
+  width: min(100%, 380px);
+  aspect-ratio: 9 / 16;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #12080c;
+  box-shadow:
+    0 0 0 3px rgba(240, 182, 115, 0.35),
+    0 28px 70px rgba(15, 6, 10, 0.55);
+}
+
+.campus-films__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #12080c;
+}
+
+.campus-films__start {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  text-align: left;
+  color: inherit;
+}
+
+.campus-films__start img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.campus-films__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(56, 16, 31, 0.1) 0%, rgba(15, 6, 10, 0.72) 100%);
+}
+
+.campus-films__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  color: var(--blue-deep);
+  box-shadow: 0 14px 36px rgba(217, 130, 46, 0.55);
+  transition: transform 0.35s var(--ease);
+}
+
+.campus-films__play svg {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 4px;
+}
+
+.campus-films__start:hover .campus-films__play {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.campus-films__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  display: grid;
+  gap: 0.2rem;
+  padding: 1.3rem 1.25rem 1.4rem;
+  color: var(--white);
+  background: linear-gradient(180deg, transparent, rgba(15, 6, 10, 0.82));
+  pointer-events: none;
+}
+
+.campus-films__caption span {
+  font-family: var(--font-head);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.campus-films__caption strong {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+}
+
+.campus-films__caption small {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.82rem;
+}
+
+.campus-films__rail {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.campus-films__clip {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: left;
+  isolation: isolate;
+  border: 2px solid transparent;
+  box-shadow: 0 12px 28px rgba(15, 6, 10, 0.35);
+  transition: transform 0.35s var(--ease), border-color 0.3s ease, box-shadow 0.35s ease;
+}
+
+.campus-films__clip img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s var(--ease);
 }
 
-.video-thumb:hover img {
+.campus-films__clip:hover img {
   transform: scale(1.06);
 }
 
-.video-thumb::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(15, 6, 10, 0.35);
+.campus-films__clip.is-active {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(217, 130, 46, 0.28), 0 16px 36px rgba(15, 6, 10, 0.4);
 }
 
-.video-thumb__play {
+.campus-films__clip-index {
   position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  z-index: 1;
+  top: 0.55rem;
+  left: 0.55rem;
+  z-index: 2;
+  font-family: var(--font-head);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  background: rgba(15, 6, 10, 0.55);
+  border-radius: var(--radius-pill);
+  padding: 0.18rem 0.5rem;
 }
 
-.video-thumb__play span {
+.campus-films__clip-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: grid;
   place-items: center;
-  width: 54px;
-  height: 54px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   color: var(--blue);
-  transition: transform 0.3s var(--ease);
 }
 
-.video-thumb:hover .video-thumb__play span {
-  transform: scale(1.12);
+.campus-films__clip-play svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-left: 2px;
+}
+
+.campus-films__live {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-deep);
+  background: var(--gold);
+  border-radius: var(--radius-pill);
+  padding: 0.28rem 0.6rem;
+  white-space: nowrap;
+}
+
+.campus-films__clip-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 1.6rem 0.6rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--white);
+  background: linear-gradient(180deg, transparent, rgba(15, 6, 10, 0.88));
+}
+
+@media (max-width: 980px) {
+  .campus-films__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .campus-films__phone {
+    width: min(100%, 340px);
+  }
+
+  .campus-films__rail {
+    grid-template-columns: repeat(6, minmax(92px, 1fr));
+    overflow-x: auto;
+    padding-bottom: 0.4rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .campus-films__rail li {
+    min-width: 92px;
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .campus-films__rail {
+    grid-template-columns: repeat(6, 108px);
+  }
 }
 
 .video-embed {

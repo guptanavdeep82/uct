@@ -64,7 +64,7 @@ export default function Gallery() {
           <SectionHeading
             tag="UCT Moments"
             title="Real Life. Real Stories."
-            desc="Watch campus tours, ceremonies and student moments straight from our official YouTube channel."
+            desc="Watch campus films from Díli — student voices, labs, library and life on campus."
           />
           <VideoShowcase />
         </div>

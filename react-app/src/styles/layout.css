@@ -779,6 +779,184 @@
   transform: scale(1.08);
 }
 
+/* ---------------------------------------------------------------------------
+   DOWNLOAD DOCK — site-wide right-edge tab
+--------------------------------------------------------------------------- */
+.download-dock {
+  position: fixed;
+  right: 0;
+  top: 42%;
+  z-index: 980;
+}
+
+.download-dock__tab {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-width: 3.15rem;
+  padding: 1.15rem 0.72rem;
+  font-family: var(--font-head);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: linear-gradient(180deg, var(--blue) 0%, var(--blue-deep) 100%);
+  border-radius: 0 14px 14px 0;
+  box-shadow: -8px 10px 28px rgba(56, 16, 31, 0.28);
+}
+
+.download-dock__tab svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  transform: rotate(90deg);
+}
+
+.download-dock__panel {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  width: min(280px, 78vw);
+  padding: 1.35rem 1.2rem 1.4rem;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-right: 0;
+  border-radius: 16px 0 0 16px;
+  box-shadow: var(--shadow-hover);
+  transform: translate(12px, -50%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.35s var(--ease), visibility 0.35s ease;
+}
+
+.download-dock.is-open .download-dock__panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(0, -50%);
+}
+
+.download-dock__kicker {
+  font-family: var(--font-head);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.25rem;
+}
+
+.download-dock__panel strong {
+  display: block;
+  font-family: var(--font-head);
+  color: var(--blue);
+  margin-bottom: 1rem;
+}
+
+.download-dock__options {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.download-dock__option {
+  text-align: left;
+  padding: 0.85rem 0.95rem;
+  border-radius: var(--radius-sm);
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  transition: border-color 0.25s ease, transform 0.25s var(--ease), background 0.25s ease;
+}
+
+.download-dock__option:hover {
+  border-color: rgba(217, 130, 46, 0.55);
+  background: var(--gold-soft);
+  transform: translateY(-2px);
+}
+
+.download-dock__option span {
+  display: block;
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--blue);
+}
+
+.download-dock__option small {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--gray-500);
+  font-size: 0.75rem;
+}
+
+.download-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  display: grid;
+  place-items: center;
+  background: rgba(15, 6, 10, 0.72);
+  padding: 1.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.download-modal__panel {
+  position: relative;
+  width: min(460px, 100%);
+  max-height: 88vh;
+  overflow-y: auto;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem 1.7rem 1.8rem;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.download-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gray-50);
+  color: var(--blue);
+}
+
+.download-modal__close:hover {
+  background: var(--gold);
+  color: var(--blue-deep);
+}
+
+.download-modal__head {
+  margin-bottom: 1.4rem;
+}
+
+.download-modal__head h2 {
+  margin: 0.7rem 0 0.45rem;
+  font-size: 1.45rem;
+}
+
+.download-modal__head p {
+  color: var(--gray-500);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 640px) {
+  .download-dock {
+    top: auto;
+    bottom: 6.4rem;
+  }
+
+  .download-dock__tab {
+    padding: 0.95rem 0.62rem;
+    font-size: 0.74rem;
+  }
+}
+
 @media (max-width: 640px) {
   .footer__grid {
     grid-template-columns: 1fr;
