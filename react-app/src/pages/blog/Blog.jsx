@@ -1,13 +1,12 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import Seo from "../../components/ui/Seo";
 import InnerPageHero from "../../components/ui/InnerPageHero";
-import SectionHeading from "../../components/ui/SectionHeading";
-import PostCard from "../../components/ui/PostCard";
 import CTASection from "../../components/ui/CTASection";
 import { images } from "../../data/images";
 import { blogPosts, blogCategories } from "../../data/blog";
 
-const PAGE_SIZE = 6;
+const PAGE_SIZE = 5;
 
 export default function Blog() {
   const [category, setCategory] = useState("All");
@@ -28,7 +27,8 @@ export default function Blog() {
   }, [category, query]);
 
   const featured = filtered[0];
-  const list = filtered.slice(0, visible);
+  const rest = filtered.slice(featured ? 1 : 0);
+  const list = rest.slice(0, visible);
 
   return (
     <>
@@ -38,19 +38,23 @@ export default function Blog() {
         path="/blog"
       />
       <InnerPageHero
-        title="UCT Blog"
+        title="UCT Reading Room"
         description="Practical insights for students and parents exploring medical education at UCT and beyond."
         image={images.campus[0]}
       />
 
-      <section className="section">
+      <section className="section reading-room">
         <div className="container">
-          <div className="blog-toolbar">
-            <label className="blog-search">
-              <span className="sr-only">Search blog</span>
+          <div className="reading-masthead">
+            <div>
+              <p className="section-head__tag">Guides & essays</p>
+              <h2 className="section-head__title">Start with a question, leave with a plan</h2>
+            </div>
+            <label className="reading-search">
+              <span className="sr-only">Search articles</span>
               <input
                 type="search"
-                placeholder="Search articles…"
+                placeholder="Search hostels, FMGE, Timor-Leste…"
                 value={query}
                 onChange={(e) => {
                   setQuery(e.target.value);
@@ -58,65 +62,72 @@ export default function Blog() {
                 }}
               />
             </label>
-            <div className="post-filters" role="tablist" aria-label="Blog categories">
-              {blogCategories.map((cat) => (
-                <button
-                  key={cat}
-                  type="button"
-                  role="tab"
-                  aria-selected={category === cat}
-                  className={`filter-chip${category === cat ? " is-active" : ""}`}
-                  onClick={() => {
-                    setCategory(cat);
-                    setVisible(PAGE_SIZE);
-                  }}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
+          </div>
+
+          <div className="reading-cats" role="tablist" aria-label="Blog categories">
+            {blogCategories.map((cat) => (
+              <button
+                key={cat}
+                type="button"
+                role="tab"
+                aria-selected={category === cat}
+                className={`reading-cat${category === cat ? " is-active" : ""}`}
+                onClick={() => {
+                  setCategory(cat);
+                  setVisible(PAGE_SIZE);
+                }}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
 
           {featured && (
-            <>
-              <SectionHeading tag="Featured" title="Editor's Pick" />
-              <div style={{ marginBottom: "3rem" }}>
-                <PostCard
-                  image={featured.image}
-                  category={featured.category}
-                  date={featured.date}
-                  title={featured.title}
-                  excerpt={featured.excerpt}
-                  to={`/blog/${featured.slug}`}
-                />
+            <Link to={`/blog/${featured.slug}`} className="reading-lead">
+              <div className="reading-lead__media">
+                <img src={featured.image} alt="" />
               </div>
-            </>
+              <div className="reading-lead__copy">
+                <p className="reading-lead__kicker">Start here</p>
+                <span className="reading-topic">{featured.category}</span>
+                <h3>{featured.title}</h3>
+                <p>{featured.excerpt}</p>
+                <div className="reading-byline">
+                  <span>{featured.author}</span>
+                  <span>{featured.readingTime}</span>
+                  <span>{featured.date}</span>
+                </div>
+              </div>
+            </Link>
           )}
 
-          <SectionHeading tag="Latest Posts" title="All Articles" />
-          {list.length === 0 ? (
-            <p style={{ textAlign: "center", color: "var(--gray-500)" }}>No articles match your search.</p>
+          {list.length === 0 && !featured ? (
+            <p className="reading-empty">No articles match your search.</p>
           ) : (
-            <div className="post-grid">
-              {list.map((post, i) => (
-                <PostCard
-                  key={post.slug}
-                  image={post.image}
-                  category={post.category}
-                  date={`${post.date} · ${post.readingTime}`}
-                  title={post.title}
-                  excerpt={post.excerpt}
-                  to={`/blog/${post.slug}`}
-                  delay={(i % 3) * 80}
-                />
+            <div className="reading-stack">
+              {list.map((post) => (
+                <Link key={post.slug} to={`/blog/${post.slug}`} className="reading-row">
+                  <div className="reading-row__media">
+                    <img src={post.image} alt="" loading="lazy" />
+                  </div>
+                  <div className="reading-row__body">
+                    <span className="reading-topic">{post.category}</span>
+                    <h3>{post.title}</h3>
+                    <p>{post.excerpt}</p>
+                    <div className="reading-byline">
+                      <span>{post.author}</span>
+                      <span>{post.readingTime}</span>
+                    </div>
+                  </div>
+                </Link>
               ))}
             </div>
           )}
 
-          {visible < filtered.length && (
-            <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
+          {visible < rest.length && (
+            <div className="reading-more">
               <button type="button" className="btn btn--outline btn--lg" onClick={() => setVisible((v) => v + PAGE_SIZE)}>
-                Load More
+                More essays
               </button>
             </div>
           )}

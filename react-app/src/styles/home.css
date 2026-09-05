@@ -123,6 +123,24 @@
 }
 
 @media (max-width: 640px) {
+  .hero {
+    min-height: 0;
+  }
+
+  .hero__content {
+    padding-block: 5.4rem 1.8rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .hero__stats {
     flex-wrap: wrap;
     gap: 1rem;
@@ -133,6 +151,10 @@
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.16);
     padding-bottom: 0.8rem;
+  }
+
+  .campus-films__phone {
+    width: min(100%, 280px);
   }
 }
 
@@ -419,6 +441,7 @@
 @media (max-width: 980px) {
   .campus-films__layout {
     grid-template-columns: 1fr;
+    min-width: 0;
   }
 
   .campus-films__phone {
@@ -426,21 +449,21 @@
   }
 
   .campus-films__rail {
-    grid-template-columns: repeat(6, minmax(92px, 1fr));
+    display: flex;
+    grid-template-columns: none;
+    width: 100%;
+    min-width: 0;
     overflow-x: auto;
     padding-bottom: 0.4rem;
     scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .campus-films__rail li {
-    min-width: 92px;
+  .campus-films__rail li,
+  .campus-films__clip {
+    flex: 0 0 108px;
+    min-width: 108px;
     scroll-snap-align: start;
-  }
-}
-
-@media (max-width: 640px) {
-  .campus-films__rail {
-    grid-template-columns: repeat(6, 108px);
   }
 }
 

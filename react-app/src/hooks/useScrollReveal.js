@@ -21,7 +21,7 @@ export default function useScrollReveal() {
             const el = entry.target;
             const delay = el.getAttribute("data-delay");
             if (delay) el.style.transitionDelay = `${delay}ms`;
-            el.classList.add("is-visible");
+            el.setAttribute("data-revealed", "");
             observer.unobserve(el);
           }
         });

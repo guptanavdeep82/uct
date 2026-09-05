@@ -9,7 +9,7 @@ export default function FAQAccordion({ items, defaultOpen = 0 }) {
         {items.map((item, i) => {
           const isOpen = openIndex === i;
           return (
-            <div className={`faq-item${isOpen ? " is-open" : ""}`} key={item.q} data-animate="fade-up" data-delay={i * 40}>
+            <div className={`faq-item${isOpen ? " is-open" : ""}`} key={item.q}>
               <button
                 className="faq-item__q"
                 aria-expanded={isOpen}

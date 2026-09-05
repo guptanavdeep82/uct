@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { navigation } from "../../data/navigation";
 import { images } from "../../data/images";
@@ -16,6 +16,8 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMobileGroup, setOpenMobileGroup] = useState(null);
+  const [openDesktopGroup, setOpenDesktopGroup] = useState(null);
+  const closeTimer = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -28,7 +30,25 @@ export default function Navbar() {
   useEffect(() => {
     setMobileOpen(false);
     setOpenMobileGroup(null);
+    setOpenDesktopGroup(null);
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    const active = document.activeElement;
+    if (active instanceof HTMLElement) active.blur();
   }, [location.pathname]);
+
+  useEffect(() => {
+    document.body.classList.toggle("nav-locked", mobileOpen);
+    return () => document.body.classList.remove("nav-locked");
+  }, [mobileOpen]);
+
+  const openGroup = (label) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpenDesktopGroup(label);
+  };
+
+  const scheduleClose = () => {
+    closeTimer.current = setTimeout(() => setOpenDesktopGroup(null), 140);
+  };
 
   return (
     <>
@@ -75,19 +95,30 @@ export default function Navbar() {
 
           <ul className="navbar__menu">
             {navigation.map((item) => (
-              <li key={item.label} className="nav-item">
+              <li
+                key={item.label}
+                className={`nav-item${item.children ? " has-children" : ""}${openDesktopGroup === item.label ? " is-open" : ""}`}
+                onMouseEnter={() => item.children && openGroup(item.label)}
+                onMouseLeave={() => item.children && scheduleClose()}
+              >
                 {item.children ? (
                   <>
                     <NavLink
                       to={item.path}
                       className={({ isActive }) => `nav-link${isActive ? " is-active" : ""}`}
+                      onClick={() => setOpenDesktopGroup(null)}
                     >
                       {item.label}
                       <ChevronDown />
                     </NavLink>
                     <div className="nav-dropdown">
                       {item.children.map((child) => (
-                        <NavLink key={child.path} to={child.path} className="nav-dropdown__link">
+                        <NavLink
+                          key={child.path}
+                          to={child.path}
+                          className="nav-dropdown__link"
+                          onClick={() => setOpenDesktopGroup(null)}
+                        >
                           {child.label}
                         </NavLink>
                       ))}
@@ -138,6 +169,7 @@ export default function Navbar() {
                     </button>
                     <div className="mobile-nav-item__panel">
                       <div>
+                        <Link to={item.path}>{item.label}</Link>
                         {item.children.map((child) => (
                           <Link key={child.path} to={child.path}>
                             {child.label}

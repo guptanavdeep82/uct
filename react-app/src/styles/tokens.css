@@ -59,6 +59,11 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
+  overflow-x: hidden;
+}
+
+main {
+  overflow-x: hidden;
 }
 
 body {
@@ -141,6 +146,24 @@ svg {
 
 .section--tight {
   padding-block: clamp(3rem, 6vw, 4.5rem);
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-block: 3rem;
+  }
+
+  .section--tight {
+    padding-block: 2.4rem;
+  }
+
+  .section-head {
+    margin-bottom: 1.8rem;
+  }
+
+  .container {
+    padding-inline: 1.1rem;
+  }
 }
 
 .text-gold {
@@ -327,7 +350,7 @@ svg {
   transform: translateX(52px);
 }
 
-[data-animate].is-visible {
+[data-animate][data-revealed] {
   opacity: 1;
   transform: translate(0, 0);
   will-change: auto;
@@ -348,8 +371,8 @@ svg {
   transition: transform 1s var(--ease) 0.25s;
 }
 
-.is-visible .img-reveal::after,
-.img-reveal.is-visible::after {
+[data-revealed] .img-reveal::after,
+.img-reveal[data-revealed]::after {
   transform: translateX(101%);
 }
 
