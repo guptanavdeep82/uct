@@ -6,14 +6,13 @@ import FeatureCard from "../components/ui/FeatureCard";
 import Stats from "../components/ui/Stats";
 import ImageCard from "../components/ui/ImageCard";
 import AdmissionSteps from "../components/ui/AdmissionSteps";
-import FAQAccordion from "../components/ui/FAQAccordion";
 import CTASection from "../components/ui/CTASection";
 import GalleryGrid from "../components/ui/GalleryGrid";
 import EnquiryForm from "../components/ui/EnquiryForm";
 import CampusFilmPlayer from "../components/ui/CampusFilmPlayer";
+import WhatsAppAssist from "../components/ui/WhatsAppAssist";
 import { images } from "../data/images";
 import { siteInfo, quickStats } from "../data/siteInfo";
-import { generalFaq } from "../data/faq";
 import { rectorMessage } from "../data/about";
 import {
   whyChooseUct,
@@ -107,11 +106,14 @@ export default function Home() {
             <p style={{ marginTop: "0.9rem", color: "var(--gray-500)" }}>
               With modern facilities and hands-on clinical exposure, UCT prepares students to become skilled,
               compassionate and globally ready healthcare professionals — making studying MBBS abroad simple
-              and secure for Indian students.
+              and secure for Indian students. The pathway is recognized with NMC, ECFMG and WDOMS.
             </p>
             <ul className="intro__checks">
               <li>
                 <span className="check" aria-hidden="true">✓</span> Modelled on AIIMS Delhi academic structure
+              </li>
+              <li>
+                <span className="check" aria-hidden="true">✓</span> NMC, ECFMG and WDOMS recognized pathway
               </li>
               <li>
                 <span className="check" aria-hidden="true">✓</span> Safe, peaceful and welcoming island nation
@@ -286,16 +288,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section" style={{ background: "var(--gray-50)" }} aria-labelledby="faq-title">
-        <div className="container">
-          <SectionHeading tag="Good to Know" title={<>Frequently Asked <span className="text-gold-dark">Questions</span></>} />
-          <FAQAccordion items={generalFaq} />
-        </div>
-      </section>
-
       {/* CTA */}
       <CTASection />
+      <WhatsAppAssist />
 
       {/* CONTACT + MAP */}
       <section className="section" id="contact" aria-labelledby="contact-title">

@@ -1,5 +1,6 @@
 import { useEffect, useId, useState } from "react";
 import { downloadItems, OTP_CODE } from "../../data/downloads";
+import { postJson } from "../../lib/api";
 
 const initialLead = { name: "", whatsapp: "", email: "" };
 
@@ -89,11 +90,21 @@ export default function DownloadDock() {
     setOtpError("");
   };
 
-  const handleOtpSubmit = (e) => {
+  const handleOtpSubmit = async (e) => {
     e.preventDefault();
     if (otp.trim() !== OTP_CODE) {
       setOtpError("Invalid OTP. Please enter the code sent to your WhatsApp.");
       return;
+    }
+    setStatus("submitting");
+    try {
+      await postJson("/api/download-leads", {
+        ...lead,
+        document_id: activeItem.id,
+        document_label: activeItem.label,
+      });
+    } catch {
+      // Still allow the file download if the lead save fails.
     }
     setStatus("success");
     triggerDownload(activeItem);
@@ -181,8 +192,8 @@ export default function DownloadDock() {
                   {otpError && <span className="form-field__error">{otpError}</span>}
                 </div>
                 <p className="form-note">OTP sent to {lead.whatsapp}. For now, use <strong>1234</strong>.</p>
-                <button type="submit" className="btn btn--gold btn--lg btn--block">
-                  Verify & Download
+                <button type="submit" className="btn btn--gold btn--lg btn--block" disabled={status === "submitting"}>
+                  {status === "submitting" ? "Saving…" : "Verify & Download"}
                 </button>
               </form>
             ) : (

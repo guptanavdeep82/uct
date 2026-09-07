@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { postJson } from "../../lib/api";
 
 const initialState = { name: "", email: "", phone: "", subject: "", message: "" };
 
@@ -28,11 +29,12 @@ export default function ContactForm() {
     if (Object.keys(validationErrors).length > 0) return;
 
     setStatus("submitting");
-    // API-ready: replace with `fetch('/api/contact', { method: 'POST', body: JSON.stringify(values) })`
-    setTimeout(() => {
-      setStatus("success");
-      setValues(initialState);
-    }, 700);
+    postJson("/api/enquiries", { ...values, source: "contact" })
+      .then(() => {
+        setStatus("success");
+        setValues(initialState);
+      })
+      .catch(() => setStatus("error"));
   };
 
   if (status === "success") {
@@ -81,6 +83,11 @@ export default function ContactForm() {
       <button type="submit" className="btn btn--primary btn--lg btn--block" style={{ marginTop: "1.4rem" }} disabled={status === "submitting"}>
         {status === "submitting" ? "Sending…" : "Send Message"}
       </button>
+      {status === "error" && (
+        <p className="form-field__error" role="alert">
+          Could not send your message. Please try again.
+        </p>
+      )}
     </form>
   );
 }

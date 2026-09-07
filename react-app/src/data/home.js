@@ -4,8 +4,12 @@ import { images } from "./images";
 
 export const whyChooseUct = [
   {
-    title: "Indian Curriculum",
-    desc: "UCT follows the Indian Medical Curriculum, aligned with NMC standards. This ensures global compatibility and helps students easily prepare for exams like FMGE, USMLE, and PLAB.",
+    title: "Indian Curriculum & English Medium",
+    desc: "UCT follows the Indian Medical Curriculum, aligned with NMC standards, and teaches the full MBBS program in English — so students can prepare for FMGE, USMLE and PLAB without a language barrier.",
+  },
+  {
+    title: "Affordable Fees / Transparent Cost",
+    desc: "Published tuition for the official intake — first-year tuition is listed as USD 6,200 in the Official Guidelines, with no hidden donation. Confirm the current year on the fees page.",
   },
   {
     title: "Global Opportunities",
@@ -28,10 +32,6 @@ export const whyChooseUct = [
     desc: "The university encourages hands-on student research and academic inquiry. From early years, students are guided to explore, analyze, and innovate.",
   },
   {
-    title: "English Medium",
-    desc: "All instruction is delivered in fluent English for global accessibility. This helps students from different countries learn and communicate easily.",
-  },
-  {
     title: "Cultural Mix",
     desc: "UCT offers a friendly, diverse student atmosphere that feels like home. It promotes unity, cultural exchange, and international friendships.",
   },
@@ -39,8 +39,8 @@ export const whyChooseUct = [
 
 export const mbbsHighlights = [
   { num: "01", title: "5.5-Year Program", desc: "4.5 years of MBBS coursework followed by 1 year of compulsory clinical internship." },
-  { num: "02", title: "NMC-Compliant Curriculum", desc: "Fully aligned with Indian NMC guidelines and structured like AIIMS Delhi." },
-  { num: "03", title: "English Medium Instruction", desc: "The entire program is taught in English — perfect for Indian and international students." },
+  { num: "02", title: "NMC-Compliant, English-Medium Curriculum", desc: "Fully aligned with Indian NMC guidelines, structured like AIIMS Delhi, and taught entirely in English." },
+  { num: "03", title: "Indian Standard Textbooks", desc: "Teaching follows Indian standard textbooks listed in UCT’s official first-year guidelines — the same references used on the Curriculum page." },
   { num: "04", title: "Medical Practice Eligibility", desc: "Get licensed to practice in Timor-Leste after internship, with no additional exams." },
   { num: "05", title: "Medical Infrastructure", desc: "Equipped laboratories, smart classrooms, digital libraries and simulation centers." },
   { num: "06", title: "Global Faculty Support", desc: "Expert professors and mentors from India, USA, Cuba and Timor-Leste." },
@@ -49,7 +49,7 @@ export const mbbsHighlights = [
 export const homeAdmissionSteps = [
   { title: "Enquire", desc: "Submit the enquiry form or call our admission counsellors." },
   { title: "Eligibility Check", desc: "10+2 with PCB and NEET qualification for Indian students." },
-  { title: "Apply & Documents", desc: "Complete the application with academic records and passport." },
+  { title: "Application and Documents", desc: "Complete the application with academic records and passport." },
   { title: "Offer & Visa", desc: "Receive your admission letter and full visa guidance." },
   { title: "Fly & Enroll", desc: "Arrival support, hostel allocation and orientation at UCT." },
 ];

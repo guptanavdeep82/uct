@@ -9,6 +9,7 @@ export const siteInfo = {
   address: "R. 12 de Novembro, Estr. de Balide, Díli, Timor-Leste",
   phone: "+670 7373 7499",
   phoneHref: "tel:+67073737499",
+  whatsappHref: "https://wa.me/67073737499",
   indiaTollFree: "1800 208 9848",
   email: "info@uct.university",
   emailHref: "mailto:info@uct.university",

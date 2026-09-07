@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { postJson } from "../../lib/api";
 
 const COUNTRIES = ["India", "Timor-Leste", "Nepal", "Bangladesh", "Sri Lanka", "Other"];
 
@@ -49,11 +50,12 @@ export default function EnquiryForm() {
     if (Object.keys(validationErrors).length > 0) return;
 
     setStatus("submitting");
-    // API-ready: replace with `fetch('/api/admission-enquiry', { method: 'POST', body: JSON.stringify(values) })`
-    setTimeout(() => {
-      setStatus("success");
-      setValues(initialState);
-    }, 700);
+    postJson("/api/enquiries", { ...values, source: "admission" })
+      .then(() => {
+        setStatus("success");
+        setValues(initialState);
+      })
+      .catch(() => setStatus("error"));
   };
 
   if (status === "success") {
@@ -137,6 +139,11 @@ export default function EnquiryForm() {
         </svg>
       </button>
       <p className="form-note">We respect your privacy — your details are only used to guide you through admissions.</p>
+      {status === "error" && (
+        <p className="form-field__error" role="alert">
+          Could not send your enquiry. Please try again or WhatsApp the admissions office.
+        </p>
+      )}
     </form>
   );
 }
