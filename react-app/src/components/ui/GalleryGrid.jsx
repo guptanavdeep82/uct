@@ -76,7 +76,7 @@ function Lightbox({ items, index, onClose, onPrev, onNext }) {
   );
 }
 
-export default function GalleryGrid({ items }) {
+export default function GalleryGrid({ items, reveal = false }) {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const close = () => setActiveIndex(null);
@@ -85,10 +85,10 @@ export default function GalleryGrid({ items }) {
 
   return (
     <>
-      <div className="gallery__grid" data-animate="fade-up">
+      <div className="gallery__grid" {...(reveal ? { "data-animate": "fade-up" } : {})}>
         {items.map((item, i) => (
           <button key={item.src} onClick={() => setActiveIndex(i)} aria-label={`View photo: ${item.alt}`}>
-            <img src={item.src} alt={item.alt} loading="lazy" />
+            <img src={item.src} alt={item.alt} loading={i < 12 ? "eager" : "lazy"} />
             <span>{item.alt}</span>
           </button>
         ))}

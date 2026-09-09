@@ -262,7 +262,7 @@ export default function Home() {
       <section className="section" style={{ background: "var(--gray-50)" }} id="gallery" aria-labelledby="gallery-title">
         <div className="container">
           <SectionHeading tag="Student Life at UCT" title={<>Campus <span className="text-gold-dark">Gallery</span></>} desc="A peaceful place to learn — moments from everyday life in Timor-Leste." />
-          <GalleryGrid items={images.homeGallery} />
+          <GalleryGrid items={images.homeGallery} reveal />
           <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
             <Link to="/gallery" className="btn btn--primary">
               View Full Gallery

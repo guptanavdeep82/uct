@@ -128,6 +128,11 @@ svg {
   html {
     scroll-behavior: auto;
   }
+
+  [data-animate] {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* ---------------------------------------------------------------------------
