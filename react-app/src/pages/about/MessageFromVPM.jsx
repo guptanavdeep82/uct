@@ -20,7 +20,7 @@ export default function MessageFromVPM() {
       <InnerPageHero
         title="Message from the Vice Prime Minister"
         description="A formal institutional perspective on UCT's role in Timor-Leste."
-        image={images.campus[5]}
+        image={images.events[3]}
         trail={[{ label: "About Us", path: "/about-us" }]}
       />
 

@@ -11,12 +11,12 @@ import { academicsIntro, academicsPillars, faculty } from "../../data/curriculum
 import { collateralImages } from "../../data/officialCollateral";
 
 const academicLinks = [
-  { title: "MBBS Program", desc: "54 months of academic training plus a 12-month CRMI internship, taught in English.", image: images.campus[2], to: "/academics/mbbs-program" },
+  { title: "MBBS Program", desc: "54 months of academic training plus a 12-month CRMI internship, taught in English.", image: images.classrooms[0], to: "/academics/mbbs-program" },
   { title: "Curriculum", desc: "CBME syllabus, FMGL 2021 alignment and first-year textbooks.", image: collateralImages.cbme, to: "/academics/curriculum" },
   { title: "Family & Community Medicine", desc: "Family Adoption Programme across 5 villages under the NMC CBME curriculum.", image: collateralImages.familyAdoption, to: "/academics/family-community-medicine" },
-  { title: "National Lab Report", desc: "INSPTL posting in Bidau, Díli — microbiology, TB, molecular biology and more.", image: images.gallery[7].src, to: "/academics/national-lab-report" },
-  { title: "Faculty List", desc: "Named academic heads and an international teaching community.", image: images.hero.students, to: "/academics/faculty" },
-  { title: "Hospitals", desc: "Clinical tie-ups, early exposure and a one-year CRMI internship.", image: images.campus[4], to: "/academics/hospitals" },
+  { title: "National Lab Report", desc: "INSPTL posting in Bidau, Díli — microbiology, TB, molecular biology and more.", image: images.labs[2], to: "/academics/national-lab-report" },
+  { title: "Faculty List", desc: "Named academic heads and an international teaching community.", image: images.students[0], to: "/academics/faculty" },
+  { title: "Hospitals", desc: "Clinical tie-ups, early exposure and a one-year CRMI internship.", image: images.labVisits[0], to: "/academics/hospitals" },
 ];
 
 export default function Academics() {
@@ -30,7 +30,7 @@ export default function Academics() {
       <InnerPageHero
         title="Academics at UCT"
         description="Shaping the future of global healthcare through a rigorous, Indian-curriculum-aligned MBBS program."
-        image={images.campus[1]}
+        image={images.classrooms[0]}
       />
 
       <section className="section">
@@ -47,7 +47,7 @@ export default function Academics() {
             </Link>
           </div>
           <div className="split__media img-reveal" data-animate="fade-right">
-            <img src={images.campus[2]} alt="Academic session at UCT" loading="lazy" />
+            <img src={images.students[0]} alt="Academic session at UCT" loading="lazy" />
           </div>
         </div>
       </section>

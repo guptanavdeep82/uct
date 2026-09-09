@@ -54,7 +54,7 @@ export default function Faculty() {
             </Link>
           </div>
           <div className="split__media img-reveal" data-animate="fade-right">
-            <img src={images.campus[1]} alt="Academic teaching at UCT" loading="lazy" />
+            <img src={images.classrooms[0]} alt="Academic teaching at UCT" loading="lazy" />
           </div>
         </div>
       </section>

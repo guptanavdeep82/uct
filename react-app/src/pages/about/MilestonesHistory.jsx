@@ -34,7 +34,7 @@ export default function MilestonesHistory() {
       <InnerPageHero
         title="Milestones & History"
         description="From our founding in 2021 to today — a timeline of UCT's journey so far."
-        image={images.campus[3]}
+        image={images.groundbreaking[0]}
         trail={[{ label: "About Us", path: "/about-us" }]}
       />
 
@@ -66,7 +66,7 @@ export default function MilestonesHistory() {
             </p>
           </div>
           <TiltCard className="about-media-frame" data-animate="fade-right" maxTilt={9}>
-            <img src={images.news.whiteCoat} alt="White Coat Ceremony moment for UCT students" loading="lazy" />
+            <img src={images.events[1]} alt="White Coat Ceremony moment for UCT students" loading="lazy" />
           </TiltCard>
         </div>
       </section>

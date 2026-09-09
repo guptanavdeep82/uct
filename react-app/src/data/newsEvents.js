@@ -39,7 +39,7 @@ export const newsEvents = [
     title: "Drug Awareness Program at UCT",
     category: "Student Life",
     date: "July 11, 2025",
-    image: images.gallery[6].src,
+    image: images.imdEvents[6],
     excerpt:
       "In alignment with its mission to educate responsible, ethical medical professionals, UCT hosted an impactful Drug Awareness Program on the dangers of substance abuse.",
     content: [
@@ -52,7 +52,7 @@ export const newsEvents = [
     title: "President of Timor-Leste Meets Indian Prime Minister",
     category: "News",
     date: "July 11, 2025",
-    image: images.gallery[3].src,
+    image: images.events[5],
     excerpt:
       "The President of Timor-Leste, His Excellency Dr. José Ramos-Horta, paid an official visit to India from January 8–10, 2024, to attend the 10th Vibrant Gujarat Global Summit.",
     content: [
@@ -65,7 +65,7 @@ export const newsEvents = [
     title: "International Yoga Day at UCT",
     category: "Student Life",
     date: "July 11, 2025",
-    image: images.gallery[7].src,
+    image: images.imdEvents[10],
     excerpt:
       "UCT marked International Yoga Day with a vibrant celebration on campus, emphasizing physical health, mental well-being, and inner peace for future healthcare professionals.",
     content: [

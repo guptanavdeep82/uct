@@ -11,7 +11,7 @@ export const campusSections = [
     key: "infrastructure",
     title: "Infrastructure",
     path: "/campus-life/infrastructure",
-    image: images.hero.campusBuilding,
+    image: images.exterior[3],
     summary:
       "Smart classrooms, digital teaching tools and simulation spaces that meet the standards of modern medical education.",
     body:
@@ -51,12 +51,12 @@ export const campusSections = [
       tag: "Built for Learning",
       title: "Interactive, Digitally-Enabled Classrooms",
       desc: "Every lecture hall is fitted with projectors, digital boards and audio-visual systems so complex medical concepts are easier to teach and easier to learn — supported by high-speed Wi-Fi across the entire campus.",
-      image: images.campus[2],
+      image: images.classrooms[0],
     },
     gallery: [
-      { src: images.gallery[3].src, alt: "Smart classroom session at UCT" },
-      { src: images.gallery[4].src, alt: "Students in an academic block at UCT" },
-      { src: images.gallery[8].src, alt: "Campus transport at UCT" },
+      { src: images.classrooms[0], alt: "Smart classroom session at UCT" },
+      { src: images.classrooms[2], alt: "Lecture hall at UCT" },
+      { src: images.exterior[4], alt: "Academic block at UCT" },
       { src: images.hero.campusAerial, alt: "Aerial view of the UCT campus" },
     ],
   },
@@ -64,7 +64,7 @@ export const campusSections = [
     key: "library",
     title: "Library",
     path: "/campus-life/library",
-    image: images.campus[1],
+    image: images.classrooms[1],
     summary:
       "Thousands of medical textbooks, journals and digital resources in a quiet, Wi-Fi-enabled study environment.",
     body:
@@ -102,15 +102,15 @@ export const campusSections = [
       tag: "A Space to Focus",
       title: "Quiet Reading Zones & Digital Research",
       desc: "Beyond the shelves, the library offers dedicated computer stations for e-learning and access to online research databases — helping students prepare confidently for exams and clinical rotations.",
-      image: images.campus[0],
+      image: images.students[0],
     },
-    gallery: [images.gallery[9].src, images.gallery[1].src, images.gallery[12].src],
+    gallery: [images.classrooms[3], images.students[1], images.classrooms[5]],
   },
   {
     key: "laboratories",
     title: "Laboratories",
     path: "/campus-life/laboratories",
-    image: images.campus[4],
+    image: images.labs[0],
     summary:
       "Well-equipped laboratories for every major medical subject, guided by experienced faculty and technicians.",
     body:
@@ -119,22 +119,22 @@ export const campusSections = [
       {
         title: "Anatomy Lab",
         desc: "Full cadaver dissection support for a hands-on understanding of human anatomy.",
-        image: images.campus[0],
+        image: images.labs[1],
       },
       {
         title: "Physiology & Biochemistry",
         desc: "Modern instruments for studying the body's systems and biochemical processes.",
-        image: images.gallery[2].src,
+        image: images.labs[4],
       },
       {
         title: "Pathology & Microbiology",
         desc: "Specimen and slide analysis labs guided by experienced faculty.",
-        image: images.gallery[4].src,
+        image: images.labVisits[0],
       },
       {
         title: "Clinical Skill Labs",
         desc: "Simulated patient-care procedures that build confidence before clinical rotations.",
-        image: images.campus[4],
+        image: images.labs[8],
       },
     ],
     stats: [
@@ -146,15 +146,15 @@ export const campusSections = [
       tag: "Practical Medicine",
       title: "Real Skills, Guided by Experts",
       desc: "From anatomy dissection to clinical skill simulation, every lab session is supervised by experienced faculty and technicians so students build confidence and precision before entering clinical rotations.",
-      image: images.campus[2],
+      image: images.labs[2],
     },
-    gallery: [images.gallery[1].src, images.gallery[9].src, images.gallery[12].src],
+    gallery: [images.labs[3], images.labVisits[2], images.labs[6]],
   },
   {
     key: "facilities",
     title: "Facilities & Amenities",
     path: "/campus-life/facilities",
-    image: images.campus[3],
+    image: images.exterior[5],
     summary: "A wide range of facilities that support students both academically and personally.",
     body:
       "UCT provides a wide range of facilities that support students both academically and personally. All amenities are regularly maintained and student feedback is taken seriously to enhance convenience and quality of life on campus.",
@@ -175,7 +175,7 @@ export const campusSections = [
       tag: "Comfort & Convenience",
       title: "Everything Handled, So You Can Focus on Medicine",
       desc: "From the central cafeteria serving Indian food to daily shuttle transportation and a dedicated student support office, UCT is designed so day-to-day life never gets in the way of learning.",
-      image: images.hero.ceremony,
+      image: images.students[5],
     },
     faqs: [
       {
@@ -195,20 +195,20 @@ export const campusSections = [
         a: "Yes, UCT provides a prayer room on campus as part of its facilities for student wellbeing.",
       },
     ],
-    gallery: [images.gallery[12].src, images.gallery[8].src, images.campus[5]],
+    gallery: [images.exterior[6], images.classrooms[4], images.students[7]],
   },
   {
     key: "hostel",
     title: "Hostel",
     path: "/campus-life/hostel",
-    image: images.gallery[3].src,
+    image: images.students[10],
     summary: "Secure, air-conditioned, on-campus hostels with round-the-clock support.",
     body:
       "UCT's on-campus hostels are designed to provide students with a secure, comfortable, and supportive environment. All rooms are fully air-conditioned to ensure a pleasant stay throughout the year. The hostels offer the perfect blend of independence and care — helping students stay focused, healthy, and socially connected.",
     wings: [
       {
         title: "Girls' Wing",
-        image: images.gallery[2].src,
+        image: images.students[12],
         points: [
           "24/7 security with CCTV and dedicated wardens",
           "Clean, air-conditioned rooms with study desks and storage",
@@ -217,7 +217,7 @@ export const campusSections = [
       },
       {
         title: "Boys' Wing",
-        image: images.gallery[1].src,
+        image: images.students[14],
         points: [
           "Separate secured wing with round-the-clock supervision",
           "Air-conditioned rooms with fans, storage and study space",
@@ -234,15 +234,15 @@ export const campusSections = [
       tag: "Home Away From Home",
       title: "Secure, Comfortable, Community-Focused",
       desc: "Separate wings for boys and girls, round-the-clock CCTV security and dedicated wardens mean families can feel confident their children are safe — while Indian-style food in the mess hall keeps things familiar.",
-      image: images.gallery[9].src,
+      image: images.students[16],
     },
-    gallery: [images.gallery[4].src, images.hero.students, images.gallery[12].src],
+    gallery: [images.students[18], images.hero.students, images.students[20]],
   },
   {
     key: "sports",
     title: "Sports & Fitness",
     path: "/campus-life/sports-extracurriculars",
-    image: images.campus[5],
+    image: images.events[2],
     summary: "Outdoor fields, indoor games and an annual sports fest for a well-rounded campus life.",
     body:
       "UCT believes in shaping well-rounded professionals. That's why we encourage students to participate in sports, clubs, and cultural events that boost confidence, creativity, and teamwork. Campus life at UCT is vibrant and enriching, offering much more than academic learning.",
@@ -277,13 +277,31 @@ export const campusSections = [
       tag: "Beyond the Classroom",
       title: "Confidence, Creativity & Teamwork",
       desc: "Outdoor fields for football, basketball and volleyball sit alongside indoor games like chess and table tennis — with an annual Sports Fest, talent shows and medical camps rounding out a vibrant campus calendar.",
-      image: images.gallery[10].src,
+      image: images.imdEvents[0],
     },
-    gallery: [images.gallery[7].src, images.news.drugAwareness, images.hero.ceremony],
+    gallery: [images.events[4], images.imdEvents[3], images.events[6]],
   },
 ];
 
 export const getCampusSection = (key) => campusSections.find((s) => s.key === key);
+
+export const campusLifeMoments = [
+  {
+    image: { src: images.students[2], alt: "Students together on the UCT campus" },
+    title: "Campus Life",
+    caption: "Everyday student life at Universidade Católica Timorense.",
+  },
+  {
+    image: { src: images.events[1], alt: "UCT campus event" },
+    title: "UCT Events",
+    caption: "Ceremonies and gatherings that mark life on campus.",
+  },
+  {
+    image: { src: images.imdEvents[1], alt: "IMD event at UCT" },
+    title: "IMD Community",
+    caption: "International MBBS Department events and celebrations.",
+  },
+];
 
 // "Life of Indian Students" draws on the cultural/food/support details that
 // are spread across the homepage, infrastructure page and testimonials —
@@ -321,7 +339,7 @@ export const indianStudentLife = {
     { value: "Daily", label: "Indian Food" },
     { value: "0", label: "Donation Admissions" },
   ],
-  gallery: [images.gallery[1].src, images.gallery[10].src, images.gallery[9].src],
+  gallery: [images.students[4], images.imdEvents[5], images.students[9]],
   moments: [
     {
       title: "Holi at UCT",

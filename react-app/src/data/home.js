@@ -55,12 +55,12 @@ export const homeAdmissionSteps = [
 ];
 
 export const facilityCards = [
-  { image: images.campus[0], title: "Simulation Labs", desc: "High-fidelity mannequins and clinical scenarios for safe, hands-on practice.", to: "/campus-life/laboratories" },
-  { image: images.campus[4], title: "Laboratories", desc: "Advanced anatomy, physiology and biochemistry labs.", to: "/campus-life/laboratories" },
-  { image: images.campus[2], title: "Digital Classrooms", desc: "Smart, connected lecture halls and seminar spaces.", to: "/campus-life/infrastructure" },
-  { image: images.campus[1], title: "Library & E-Resources", desc: "A fully equipped library with digital journals and references.", to: "/campus-life/library" },
-  { image: images.gallery[8].src, title: "Hostels & Transport", desc: "Safe student housing with campus shuttle services.", to: "/campus-life/hostel" },
-  { image: images.campus[3], title: "Sports & Student Events", desc: "Cultural festivals, sports and a vibrant campus community.", to: "/campus-life/sports-extracurriculars" },
+  { image: images.labs[0], title: "Simulation Labs", desc: "High-fidelity mannequins and clinical scenarios for safe, hands-on practice.", to: "/campus-life/laboratories" },
+  { image: images.labs[4], title: "Laboratories", desc: "Advanced anatomy, physiology and biochemistry labs.", to: "/campus-life/laboratories" },
+  { image: images.classrooms[0], title: "Digital Classrooms", desc: "Smart, connected lecture halls and seminar spaces.", to: "/campus-life/infrastructure" },
+  { image: images.classrooms[2], title: "Library & E-Resources", desc: "A fully equipped library with digital journals and references.", to: "/campus-life/library" },
+  { image: images.students[8], title: "Hostels & Transport", desc: "Safe student housing with campus shuttle services.", to: "/campus-life/hostel" },
+  { image: images.events[0], title: "Sports & Student Events", desc: "Cultural festivals, sports and a vibrant campus community.", to: "/campus-life/sports-extracurriculars" },
 ];
 
 export const homeTestimonials = [

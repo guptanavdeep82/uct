@@ -19,7 +19,7 @@ export default function AntiRaggingPolicy() {
       <InnerPageHero
         title="Anti-Ragging Policy"
         description="A safe, respectful campus is non-negotiable. Ragging in any form is strictly prohibited at UCT."
-        image={images.campus[2]}
+        image={images.students[9]}
       />
 
       <section className="section">

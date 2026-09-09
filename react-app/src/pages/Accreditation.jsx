@@ -42,7 +42,7 @@ export default function Accreditation() {
       <InnerPageHero
         title="Accreditation & Recognition"
         description="Institutional and program recognitions that support global pathways for UCT graduates — verified from official university sources."
-        image={images.campus[5]}
+        image={images.students[7]}
       />
 
       <Stats items={accredStats} />

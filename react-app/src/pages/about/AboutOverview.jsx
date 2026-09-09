@@ -12,7 +12,7 @@ const sections = [
     tag: "Introduction",
     title: "About the University",
     body: [aboutOverview.intro, aboutOverview.body],
-    image: images.campus[2],
+    image: images.classrooms[0],
     alt: "Students learning at UCT",
     reverse: false,
   },
@@ -20,7 +20,7 @@ const sections = [
     tag: "Academic Philosophy",
     title: "Science with Service",
     body: [aboutOverview.academicPhilosophy],
-    image: images.campus[3],
+    image: images.students[0],
     alt: "Faculty mentoring students at UCT",
     reverse: true,
   },
@@ -28,7 +28,7 @@ const sections = [
     tag: "Student Experience",
     title: "Integrated, Hands-On Learning",
     body: [aboutOverview.studentExperience],
-    image: images.campus[4],
+    image: images.labs[1],
     alt: "Student life at UCT campus",
     reverse: false,
   },
@@ -36,7 +36,7 @@ const sections = [
     tag: "International Environment",
     title: "A Global Campus Community",
     body: [aboutOverview.internationalEnvironment],
-    image: images.campus[5],
+    image: images.imdEvents[0],
     alt: "International students and faculty at UCT",
     reverse: true,
   },
@@ -44,7 +44,7 @@ const sections = [
     tag: "Campus",
     title: "Learning in the Heart of Díli",
     body: [aboutOverview.campusNote],
-    image: images.campus[1],
+    image: images.exterior[0],
     alt: "UCT campus environment in Díli",
     reverse: false,
   },
@@ -61,7 +61,7 @@ export default function AboutOverview() {
       <InnerPageHero
         title="Overview"
         description="A closer look at UCT's academic philosophy, student experience and international campus environment."
-        image={images.campus[1]}
+        image={images.exterior[0]}
         trail={[{ label: "About Us", path: "/about-us" }]}
       />
 

@@ -17,32 +17,32 @@ export const clinicalDepartments = [
   {
     title: "General Medicine",
     desc: "Bedside teaching and clinical postings that run from the second professional year through internship.",
-    image: images.campus[4],
+    image: images.labs[0],
   },
   {
     title: "Surgery & Allied",
     desc: "Hospital-based training in general surgery, orthopedics, ENT and ophthalmology.",
-    image: images.campus[0],
+    image: images.labVisits[1],
   },
   {
     title: "Pediatrics",
     desc: "Child-health rotations in the third professional years, building towards internship.",
-    image: images.gallery[5].src,
+    image: images.labs[5],
   },
   {
     title: "Obstetrics & Gynecology",
     desc: "Women's-health postings as part of the later professional phases and internship year.",
-    image: images.campus[2],
+    image: images.labVisits[5],
   },
   {
     title: "Community Medicine",
     desc: "Family Adoption Program, community visits and public-health postings from Phase 1.",
-    image: images.news.drugAwareness,
+    image: images.imdEvents[8],
   },
   {
     title: "Psychiatry & Allied",
     desc: "Medicine-allied postings including psychiatry, dermatology and respiratory medicine.",
-    image: images.campus[3],
+    image: images.labs[9],
   },
 ];
 

@@ -10,11 +10,13 @@ import { images } from "../data/images";
 
 const CATEGORIES = [
   { id: "all", label: "All" },
-  { id: "campus", label: "Campus" },
-  { id: "students", label: "Students" },
+  { id: "campus", label: "Campus Exterior" },
+  { id: "classrooms", label: "Classrooms" },
+  { id: "students", label: "Student Life" },
   { id: "laboratories", label: "Laboratories" },
-  { id: "events", label: "Events" },
-  { id: "cultural", label: "Cultural Activities" },
+  { id: "events", label: "UCT Events" },
+  { id: "cultural", label: "IMD Events" },
+  { id: "history", label: "Ground Breaking" },
 ];
 
 export default function Gallery() {
@@ -35,7 +37,7 @@ export default function Gallery() {
       <InnerPageHero
         title="Campus Gallery"
         description="A visual journey through academic life, celebrations and everyday moments at UCT."
-        image={images.gallery[2].src}
+        image={images.exterior[0]}
       />
 
       <section className="section">

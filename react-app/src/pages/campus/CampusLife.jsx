@@ -6,10 +6,10 @@ import CTASection from "../../components/ui/CTASection";
 import Stats from "../../components/ui/Stats";
 import TiltCard from "../../components/ui/TiltCard";
 import { images } from "../../data/images";
-import { campusSections } from "../../data/campusLife";
+import { campusSections, campusLifeMoments } from "../../data/campusLife";
 
 const campusStats = [
-  { value: "6+", label: "Campus Facilities" },
+  { value: "7+", label: "Campus Facilities" },
   { value: "24/7", label: "Hostel Security" },
   { value: "100%", label: "Wi-Fi Coverage" },
   { value: "Daily", label: "Indian Food" },
@@ -26,7 +26,7 @@ export default function CampusLife() {
       <InnerPageHero
         title="Campus Life at UCT"
         description="A modern, safe and vibrant medical campus in the heart of Díli — designed to support every part of student life."
-        image={images.campus[0]}
+        image={images.exterior[0]}
       />
 
       <Stats items={campusStats} />
@@ -46,9 +46,9 @@ export default function CampusLife() {
               />
             ))}
             <ImageCard
-              image={images.gallery[2].src}
+              image={images.students[4]}
               title="Life of Indian Students"
-              desc="A welcoming international community, familiar food and a strong support system for Indian students."
+              desc="A welcoming international community, Indian food and a strong support system for Indian students."
               to="/campus-life/life-of-indian-students"
               delay={90}
             />
@@ -84,10 +84,14 @@ export default function CampusLife() {
         <div className="container">
           <SectionHeading tag="Campus Gallery" title="Moments From Campus Life" />
           <div className="card-grid card-grid--3">
-            {[images.gallery[1], images.gallery[6], images.gallery[9]].map((item, i) => (
-              <div key={item.src} className="img-reveal" data-animate="fade-up" data-delay={i * 90}>
-                <img src={item.src} alt={item.alt} loading="lazy" />
-              </div>
+            {campusLifeMoments.map((item, i) => (
+              <figure key={item.image.src} className="campus-moment img-reveal" data-animate="fade-up" data-delay={i * 90}>
+                <img src={item.image.src} alt={item.image.alt} loading="lazy" />
+                <figcaption>
+                  <strong>{item.title}</strong>
+                  <span>{item.caption}</span>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>

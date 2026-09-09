@@ -28,7 +28,7 @@ export default function MbbsProgram() {
       <InnerPageHero
         title="MBBS Program at UCT"
         description="A globally recognized curriculum, rooted in Indian medical standards, taught fully in English."
-        image={images.campus[2]}
+        image={images.classrooms[1]}
         trail={[{ label: "Academics", path: "/academics" }]}
         actions={<HeroApplyButton />}
       />
@@ -52,7 +52,7 @@ export default function MbbsProgram() {
             </ul>
           </div>
           <div className="split__media img-reveal" data-animate="fade-right">
-            <img src={images.campus[0]} alt="MBBS students at UCT" loading="lazy" />
+            <img src={images.students[2]} alt="MBBS students at UCT" loading="lazy" />
           </div>
         </div>
       </section>
@@ -125,7 +125,7 @@ export default function MbbsProgram() {
             </p>
           </div>
           <div className="split__media img-reveal" data-animate="fade-left">
-            <img src={images.campus[4]} alt="Clinical training at UCT" loading="lazy" />
+            <img src={images.labVisits[2]} alt="Clinical training at UCT" loading="lazy" />
           </div>
         </div>
       </section>
@@ -146,7 +146,7 @@ export default function MbbsProgram() {
             </Link>
           </div>
           <div className="split__media img-reveal" data-animate="fade-right">
-            <img src={images.campus[5]} alt="Laboratory training at UCT" loading="lazy" />
+            <img src={images.labs[3]} alt="Laboratory training at UCT" loading="lazy" />
           </div>
         </div>
       </section>
@@ -185,7 +185,7 @@ export default function MbbsProgram() {
             </Link>
           </div>
           <div className="split__media img-reveal" data-animate="fade-left">
-            <img src={images.gallery[7].src} alt="Students exploring Timor-Leste" loading="lazy" />
+            <img src={images.students[15]} alt="Students exploring Timor-Leste" loading="lazy" />
           </div>
         </div>
       </section>

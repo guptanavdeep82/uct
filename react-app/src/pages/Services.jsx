@@ -17,7 +17,7 @@ export default function Services() {
       <InnerPageHero
         title="Services"
         description="Comprehensive support for every stage of your journey — from admission enquiry to graduation."
-        image={images.campus[3]}
+        image={images.exterior[4]}
       />
 
       <section className="section">

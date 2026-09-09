@@ -27,7 +27,7 @@ export default function Admissions() {
       <InnerPageHero
         title="Admissions"
         description="Your roadmap to studying MBBS at UCT — simple, transparent, and fully supported from enquiry to enrollment."
-        image={images.campus[4]}
+        image={images.students[3]}
         actions={<HeroApplyButton />}
       />
 

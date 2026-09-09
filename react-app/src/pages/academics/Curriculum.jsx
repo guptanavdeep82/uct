@@ -28,7 +28,7 @@ export default function Curriculum() {
       <InnerPageHero
         title="MBBS Curriculum"
         description="Competency-Based Medical Education at UCT — one of the first CBME programmes in Timor-Leste, aligned with NMC FMGL 2021."
-        image={images.campus[2]}
+        image={images.classrooms[4]}
         trail={[{ label: "Academics", path: "/academics" }]}
         actions={<HeroApplyButton />}
       />

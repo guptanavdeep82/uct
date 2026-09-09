@@ -387,6 +387,40 @@ svg {
   transform: scale(1.05);
 }
 
+.campus-moment {
+  margin: 0;
+  aspect-ratio: 4 / 3;
+}
+
+.campus-moment img {
+  width: 100%;
+  height: 100%;
+}
+
+.campus-moment figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  padding: 1.1rem 1.15rem 1.15rem;
+  background: linear-gradient(180deg, transparent, rgba(56, 16, 31, 0.9));
+  color: var(--white);
+  display: grid;
+  gap: 0.2rem;
+}
+
+.campus-moment figcaption strong {
+  font-family: var(--font-head);
+  font-size: 1.02rem;
+}
+
+.campus-moment figcaption span {
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.4;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);

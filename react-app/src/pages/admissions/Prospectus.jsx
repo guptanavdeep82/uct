@@ -17,7 +17,7 @@ export default function Prospectus() {
       <InnerPageHero
         title="Official Prospectus 2026"
         description="The Timor-Leste Prospectus 2026 brochure — UCT’s official introduction to the MBBS programme."
-        image={images.campus[2]}
+        image={images.classrooms[3]}
         trail={[{ label: "Admissions", path: "/admissions" }]}
         actions={<HeroApplyButton label="Apply Now" />}
       />

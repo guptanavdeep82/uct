@@ -6,7 +6,7 @@ import FeatureCard from "../../components/ui/FeatureCard";
 import CTASection from "../../components/ui/CTASection";
 import TiltCard from "../../components/ui/TiltCard";
 import { images } from "../../data/images";
-import { aboutOverview } from "../../data/about";
+import { aboutOverview, journeySnippet, verifiedMilestones } from "../../data/about";
 
 export default function AboutUs() {
   return (
@@ -19,19 +19,29 @@ export default function AboutUs() {
       <InnerPageHero
         title="About Universidade Católica Timorense"
         description="The first Catholic university in Timor-Leste, founded to deliver world-class medical education rooted in academic excellence, ethics and Catholic values."
-        image={images.campus[0]}
+        image={images.exterior[3]}
       />
 
       <section className="section">
         <div className="container split">
           <div data-animate="fade-left">
-            <span className="section-head__tag">Our Story</span>
-            <h2 className="section-head__title">Welcome to UCT</h2>
-            <p style={{ marginTop: "1.1rem", color: "var(--gray-500)" }}>{aboutOverview.intro}</p>
-            <p style={{ marginTop: "0.9rem", color: "var(--gray-500)" }}>{aboutOverview.body}</p>
+            <span className="section-head__tag">{journeySnippet.tag}</span>
+            <h2 className="section-head__title">{journeySnippet.title}</h2>
+            <p style={{ marginTop: "1.1rem", color: "var(--gray-500)" }}>{journeySnippet.intro}</p>
+            <ol className="about-milestone-rail">
+              {verifiedMilestones.map((item) => (
+                <li key={item.year + item.title}>
+                  <span>{item.year}</span>
+                  <div>
+                    <strong>{item.title}</strong>
+                    <p>{item.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
             <div style={{ display: "flex", gap: "1rem", marginTop: "1.6rem", flexWrap: "wrap" }}>
-              <Link to="/about-us/overview" className="btn btn--primary">
-                Read Full Overview
+              <Link to="/about-us/milestones-history" className="btn btn--primary">
+                View Full Timeline
               </Link>
               <Link to="/about-us/vision-mission" className="btn btn--outline">
                 Our Vision & Mission

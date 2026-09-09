@@ -25,7 +25,7 @@ export default function NationalLabReport() {
       <InnerPageHero
         title="National Lab Report"
         description={`${nationalLab.posting} — a one-week, faculty-signed laboratory posting for the International MBBS Programme.`}
-        image={images.gallery[7].src}
+        image={images.labs[0]}
         trail={[{ label: "Academics", path: "/academics" }]}
         actions={<HeroApplyButton />}
       />

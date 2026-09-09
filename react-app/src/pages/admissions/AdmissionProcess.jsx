@@ -19,7 +19,7 @@ export default function AdmissionProcess() {
       <InnerPageHero
         title="Admission Process"
         description="A clear, step-by-step pathway from enquiry to enrollment — based on the official UCT admission process."
-        image={images.campus[4]}
+        image={images.students[6]}
         trail={[{ label: "Admissions", path: "/admissions" }]}
         actions={<HeroApplyButton label="Start Your Application" />}
       />

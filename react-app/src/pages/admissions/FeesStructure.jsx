@@ -19,7 +19,7 @@ export default function FeesStructure() {
       <InnerPageHero
         title="Fees Structure"
         description="First-year fees from UCT’s Official Guidelines for Admission Process 2025–2026. Confirm the current intake with admissions."
-        image={images.campus[1]}
+        image={images.classrooms[2]}
         trail={[{ label: "Admissions", path: "/admissions" }]}
         actions={<HeroApplyButton label="Request Fee Details" />}
       />

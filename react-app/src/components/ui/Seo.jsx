@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 const SITE_NAME = "Universidade Católica Timorense";
-const DEFAULT_IMAGE = "/images/hero-1.png";
+const DEFAULT_IMAGE = "/images/hero-1.jpg";
 
 function setMeta(attr, key, value) {
   if (!value) return;

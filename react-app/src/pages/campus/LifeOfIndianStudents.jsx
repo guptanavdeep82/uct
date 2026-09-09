@@ -21,7 +21,7 @@ export default function LifeOfIndianStudents() {
       <InnerPageHero
         title="Life of Indian Students at UCT"
         description="A welcoming international community, familiar food, and a strong support system that helps Indian students settle in quickly."
-        image={images.gallery[1].src}
+        image={images.students[1]}
         trail={[{ label: "Campus Life", path: "/campus-life" }]}
         actions={<HeroApplyButton label="Start Your Admission Journey" />}
       />
@@ -131,7 +131,7 @@ export default function LifeOfIndianStudents() {
           <div className="about-explore">
             <Link to="/campus-life/hostel" className="about-explore__card" data-animate="fade-up">
               <div className="about-explore__media">
-                <img src={images.campus[4]} alt="Hostel life at UCT" loading="lazy" />
+                <img src={images.students[10]} alt="Hostel life at UCT" loading="lazy" />
               </div>
               <div className="about-explore__body">
                 <h3>Hostel Life</h3>
@@ -141,7 +141,7 @@ export default function LifeOfIndianStudents() {
             </Link>
             <Link to="/campus-life/facilities" className="about-explore__card" data-animate="fade-up" data-delay={90}>
               <div className="about-explore__media">
-                <img src={images.campus[3]} alt="Facilities at UCT" loading="lazy" />
+                <img src={images.exterior[5]} alt="Facilities at UCT" loading="lazy" />
               </div>
               <div className="about-explore__body">
                 <h3>Facilities & Amenities</h3>
@@ -151,7 +151,7 @@ export default function LifeOfIndianStudents() {
             </Link>
             <Link to="/campus-life/sports-extracurriculars" className="about-explore__card" data-animate="fade-up" data-delay={180}>
               <div className="about-explore__media">
-                <img src={images.campus[5]} alt="Sports at UCT" loading="lazy" />
+                <img src={images.events[2]} alt="Sports at UCT" loading="lazy" />
               </div>
               <div className="about-explore__body">
                 <h3>Sports & Fitness</h3>

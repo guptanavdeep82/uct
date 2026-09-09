@@ -18,7 +18,7 @@ export default function VisionMission() {
       <InnerPageHero
         title="Vision & Mission"
         description="To become a leading Catholic medical university in Southeast Asia, recognized for academic excellence, ethical leadership, and a deep commitment to serving humanity."
-        image={images.campus[2]}
+        image={images.exterior[2]}
         trail={[{ label: "About Us", path: "/about-us" }]}
       />
 
@@ -82,17 +82,15 @@ export default function VisionMission() {
             <p style={{ marginTop: "1rem", color: "var(--gray-500)" }}>{visionMission.leadershipPurpose}</p>
           </div>
           <TiltCard className="about-media-frame" data-animate="fade-right" maxTilt={9}>
-            <img src={images.campus[0]} alt="Faculty and students at Universidade Católica Timorense" loading="lazy" />
+            <img src={images.students[5]} alt="Faculty and students at Universidade Católica Timorense" loading="lazy" />
           </TiltCard>
         </div>
       </section>
 
       <section className="quote-band" aria-label="Purpose statement">
         <div className="container quote-band__inner" data-animate="fade-up">
-          <blockquote>
-            “Education shapes not only the minds but also the hearts of future healthcare professionals.”
-          </blockquote>
-          <cite>UCT Vision</cite>
+          <blockquote>“{visionMission.quote}”</blockquote>
+          <cite>{visionMission.quoteCite}</cite>
         </div>
       </section>
 

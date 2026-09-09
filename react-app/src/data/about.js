@@ -1,3 +1,5 @@
+import { images } from "./images";
+
 // About Us content. Overview / Vision & Mission / Rector message are
 // sourced from https://www.uct.tl/ and https://www.uct.tl/vision-mission.
 // Milestones & the Vice Prime Minister message are not published as a
@@ -20,11 +22,11 @@ export const aboutOverview = {
   whyUct: [
     {
       title: "AIIMS-Aligned Structure",
-      desc: "Academic pathways modelled on the Indian medical education system, including structures familiar to AIIMS-style training.",
+      desc: "Teaching follows an AIIMS-style MBBS structure: professional years with integrated subjects, early clinical exposure, and AETCOM (attitude, ethics and communication) alongside anatomy, physiology and biochemistry in the first phase.",
     },
     {
       title: "Safe Island Setting",
-      desc: "A peaceful, welcoming study destination in Timor-Leste — ideal for focused medical education.",
+      desc: "Timor-Leste is a peaceful island study destination. Students live in on-campus hostels with 24/7 CCTV security, dedicated wardens and separate wings — plus a student support office for international students.",
     },
     {
       title: "Indian Student Community",
@@ -41,7 +43,7 @@ export const aboutOverview = {
       desc: "A rigorous MBBS pathway that blends classroom learning with practical clinical exposure.",
     },
     {
-      title: "Ethical Leadership",
+      title: "Compassionate Care",
       desc: "A faith-centered environment that shapes compassionate, ethical healthcare professionals.",
     },
     {
@@ -58,31 +60,31 @@ export const aboutOverview = {
       title: "Overview",
       desc: "University introduction, philosophy and student experience.",
       path: "/about-us/overview",
-      image: "/images/campus-1.png",
+      image: images.exterior[0],
     },
     {
       title: "Vision & Mission",
       desc: "Where UCT is headed and how we get there.",
       path: "/about-us/vision-mission",
-      image: "/images/campus-2.png",
+      image: images.classrooms[0],
     },
     {
       title: "Milestones & History",
       desc: "Key moments since our founding in 2021.",
       path: "/about-us/milestones-history",
-      image: "/images/campus-3.png",
+      image: images.groundbreaking[0],
     },
     {
       title: "Message from the Rector",
       desc: "A welcome from UCT leadership.",
       path: "/about-us/message-from-rector",
-      image: "/images/rector.png",
+      image: images.rector,
     },
     {
       title: "Vice Prime Minister Message",
       desc: "An institutional perspective on UCT's national role.",
       path: "/about-us/message-from-vice-prime-minister",
-      image: "/images/campus-5.png",
+      image: images.events[0],
     },
   ],
   facts: [
@@ -95,7 +97,7 @@ export const aboutOverview = {
 
 export const visionMission = {
   vision: [
-    "To become a leading Catholic medical university in Southeast Asia, recognized for academic excellence, ethical leadership, and a deep commitment to serving humanity.",
+    "As UCT grows, we aim to expand our academic programs, research capacity, and clinical training partnerships — building a lasting institution that serves generations of future doctors.",
     "We envision UCT as a place where education shapes not only the minds but also the hearts of future healthcare professionals—grounded in values, driven by purpose, and equipped to make a global impact.",
   ],
   mission: [
@@ -116,48 +118,53 @@ export const visionMission = {
     "We believe that true education goes beyond textbooks. At UCT, learning is a journey of intellectual growth, moral formation, and personal transformation. Our philosophy centers on integrating science with service, knowledge with kindness, and academic discipline with faith. We encourage our students to think critically, act ethically, and always lead with humanity at the core of their profession.",
   leadershipPurpose:
     "UCT exists to form doctors who are clinically capable and ethically grounded — prepared for global exams where eligible, and ready to serve with humility in local and international healthcare settings.",
+  quote:
+    "To educate in truth, and to serve — this is the heart of everything we do at UCT.",
+  quoteCite: "UCT Motto",
 };
 
 export const rectorMessage = {
   name: "Dr. Joel Casmiro Pinto",
   role: "Rector, Universidade Católica Timorense",
-  photo: "/images/rector.png",
-  quote: "Your dreams are our mission, and we are here to guide, empower, and celebrate you every step of the way.",
+  photo: images.rector,
+  quote:
+    "Your journey to becoming a doctor starts with a single step. At UCT, you'll never take it alone.",
   message: [
-    "Welcome to Universidade Católica Timorense! We are thrilled to have you join our dynamic and diverse community of aspiring doctors and future healthcare leaders. At UCT, you're not just a student — you're part of a mission to transform lives through knowledge, service, and compassion.",
-    "Here, you'll benefit from hands-on learning, dedicated faculty, state-of-the-art facilities, and a vibrant campus environment that encourages growth, innovation, and excellence. Our curriculum is designed to prepare you not only with medical expertise but with the values and ethics essential to serve communities with care and integrity.",
-    "As you begin this important journey, remember that you are surrounded by a supportive network of mentors, peers, and professionals who are committed to your success. Your dreams are our mission, and we are here to guide, empower, and celebrate you every step of the way.",
-    "Wishing you a fulfilling, enriching, and inspiring experience with us — welcome to the UCT family!",
+    "Welcome to Universidade Católica Timorense — Timor-Leste's first Catholic medical university, built to shape ambitious students into skilled, compassionate doctors.",
+    "Choosing where to study medicine is one of the most important decisions a student and their family will make. At UCT, we believe academic excellence and ethical formation must go hand in hand — our MBBS program combines rigorous training with hands-on clinical experience, guided by service, integrity, and compassion.",
+    "We know studying abroad is a big step, especially for international students. That's why UCT feels like a true community from day one — with dedicated faculty mentorship, a supportive campus, and a diverse student body from India and beyond, learning together in a safe, focused setting.",
+    "As Rector, I invite you to explore the MBBS curriculum offered through our International MBBS Department (IMD), our faculty, and our campus — and the values that guide everything we do.",
+    "We look forward to welcoming you to the UCT family.",
   ],
   highlights: [
     "Hands-on learning with dedicated faculty mentorship",
-    "A curriculum that blends medical expertise with ethics",
+    "A curriculum blending medical excellence with ethics and compassion",
     "A supportive campus community for international students",
   ],
   leadershipFocus: [
     {
-      title: "Academic Excellence",
-      desc: "Building a medical university where classroom learning, simulation labs and hospital exposure work together from day one.",
+      title: "Faculty Excellence",
+      desc: "Recruiting, developing, and supporting experienced educators who are committed to student success.",
     },
     {
-      title: "Ethical Formation",
-      desc: "Shaping doctors who serve with compassion, integrity and a strong sense of responsibility to their communities.",
+      title: "Student Wellbeing",
+      desc: "Ensuring that every student, especially those studying far from home, feels supported, valued, and heard.",
     },
     {
-      title: "Global Readiness",
-      desc: "Preparing graduates for licensing pathways in Timor-Leste and for international medical careers where eligible.",
+      title: "Strategic Partnerships",
+      desc: "Building strong clinical and institutional collaborations that expand learning opportunities and enrich student experiences.",
     },
   ],
   relatedSections: [
     {
       title: "A Campus Built for Medicine",
       desc: "Smart classrooms, advanced laboratories and simulation spaces support every stage of the MBBS journey at UCT.",
-      image: "/images/hero-3.png",
+      image: images.hero.campusBuilding,
     },
     {
       title: "Learn. Serve. Lead.",
       desc: "From MOU signings to White Coat Ceremonies, UCT celebrates milestones that mark the start of a doctor's journey.",
-      image: "/images/welcome-mou.jpg",
+      image: images.welcomeMou,
     },
   ],
 };
@@ -166,7 +173,7 @@ export const rectorMessage = {
 export const vicePrimeMinisterMessage = {
   name: "Office of the Vice Prime Minister",
   role: "Government of Timor-Leste",
-  photo: "/images/campus-1.png",
+  photo: images.exterior[3],
   isPlaceholder: true,
   quote: "Education is the foundation on which Timor-Leste's future healthcare system will be built.",
   message: [
@@ -225,3 +232,12 @@ export const milestones = [
 
 export const milestonesIntro =
   "UCT's story begins on December 8, 2021 — the founding of the first Catholic university in Timor-Leste. The timeline below combines verified milestones from official university communications with clearly marked placeholders for dates that still need confirmation.";
+
+export const journeySnippet = {
+  tag: "Our Journey",
+  title: "Our Journey & Milestones",
+  intro:
+    "Discover the key milestones that have shaped UCT’s growth in medical education and international healthcare collaboration.",
+};
+
+export const verifiedMilestones = milestones.filter((item) => !item.isPlaceholder);

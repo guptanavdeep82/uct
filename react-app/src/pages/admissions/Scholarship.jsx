@@ -39,7 +39,7 @@ export default function Scholarship() {
       <InnerPageHero
         title="Scholarships at UCT"
         description="Merit-based support for deserving students — including 100% tuition fee scholarships for selected candidates."
-        image={images.hero.ceremony}
+        image={images.events[0]}
         trail={[{ label: "Admissions", path: "/admissions" }]}
         actions={<HeroApplyButton label="Apply for Scholarship" />}
       />
@@ -52,7 +52,7 @@ export default function Scholarship() {
             <p style={{ marginTop: "1.1rem", color: "var(--gray-500)" }}>{scholarshipIntro}</p>
           </div>
           <div className="split__media img-reveal" data-animate="fade-right">
-            <img src={images.news.whiteCoat} alt="UCT students at White Coat Ceremony" loading="lazy" />
+            <img src={images.events[1]} alt="UCT students at White Coat Ceremony" loading="lazy" />
           </div>
         </div>
       </section>

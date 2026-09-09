@@ -31,14 +31,14 @@ const placeholderBody = (title) => [
 ];
 
 const blogImages = [
-  images.campus[0],
-  images.campus[1],
-  images.campus[2],
-  images.campus[3],
-  images.campus[4],
-  images.campus[5],
-  images.news.holi,
-  images.news.whiteCoat,
+  images.exterior[0],
+  images.students[0],
+  images.classrooms[0],
+  images.labs[0],
+  images.events[0],
+  images.imdEvents[0],
+  images.labVisits[0],
+  images.groundbreaking[0],
 ];
 
 export const blogPosts = [

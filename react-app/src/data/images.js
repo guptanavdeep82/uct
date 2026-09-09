@@ -1,7 +1,17 @@
-// Centralized, semantic image map — reuses the same asset library approved
-// on the homepage so every inner page stays visually consistent. All files
-// live in /public/images and are referenced by absolute path.
+// Centralized, semantic image map. Photos come from the campus shoot folders
+// (classroom interiors, college exterior, labs, student life, IMD / UCT events,
+// ground breaking) and live in /public/images.
 const img = (name) => `/images/${name}`;
+
+const series = (prefix, count) =>
+  Array.from({ length: count }, (_, i) => img(`${prefix}-${String(i + 1).padStart(2, "0")}.jpg`));
+
+const galleryItems = (srcs, alt, category) =>
+  srcs.map((src, i) => ({
+    src,
+    alt: i === 0 ? alt : `${alt} — ${i + 1}`,
+    category,
+  }));
 
 export const images = {
   logo: img("logo.png"),
@@ -9,42 +19,57 @@ export const images = {
   rector: img("rector.png"),
   welcomeMou: img("welcome-mou.jpg"),
 
+  classrooms: series("classroom", 8),
+  exterior: series("exterior", 14),
+  groundbreaking: series("groundbreaking", 4),
+  imdEvents: series("imd", 62),
+  labs: series("lab", 20),
+  labVisits: series("lab-visit", 30),
+  students: series("students", 42),
+  events: series("events", 14),
+
   hero: {
-    students: img("hero-1.png"),
+    students: img("hero-1.jpg"),
     campusAerial: img("hero-2.jpg"),
-    campusBuilding: img("hero-3.png"),
+    campusBuilding: img("hero-3.jpg"),
     ceremony: img("hero-4.jpg"),
   },
 
   campus: [
-    img("campus-1.png"),
-    img("campus-2.png"),
-    img("campus-3.png"),
-    img("campus-4.png"),
-    img("campus-5.png"),
-    img("campus-6.png"),
+    img("campus-1.jpg"),
+    img("campus-2.jpg"),
+    img("campus-3.jpg"),
+    img("campus-4.jpg"),
+    img("campus-5.jpg"),
+    img("campus-6.jpg"),
   ],
 
   gallery: [
-    { src: img("hero-4.jpg"), alt: "Certificate award ceremony at UCT", category: "events" },
-    { src: img("gallery-1.jpg"), alt: "UCT students together at a campus event", category: "students" },
-    { src: img("gallery-2.jpg"), alt: "UCT students on campus", category: "students" },
-    { src: img("gallery-3.jpg"), alt: "UCT campus grounds", category: "campus" },
-    { src: img("gallery-4.jpg"), alt: "Campus life at UCT", category: "campus" },
-    { src: img("news-1.png"), alt: "Holi celebration of color and culture at UCT", category: "cultural" },
-    { src: img("news-2.png"), alt: "White Coat Ceremony at UCT", category: "events" },
-    { src: img("gallery-5.jpg"), alt: "UCT students in the laboratory", category: "laboratories" },
-    { src: img("gallery-6.jpg"), alt: "UCT students beside the campus shuttle buses", category: "campus" },
-    { src: img("gallery-7.jpg"), alt: "Student gathering at UCT", category: "students" },
-    { src: img("gallery-8.jpg"), alt: "Students exploring Timor-Leste", category: "cultural" },
-    { src: img("news-3.png"), alt: "Community health awareness program by UCT students", category: "events" },
-    { src: img("gallery-9.jpg"), alt: "UCT campus community moment", category: "campus" },
+    ...galleryItems(series("exterior", 14), "UCT campus exterior", "campus"),
+    ...galleryItems(series("classroom", 8), "Classroom interior at UCT", "classrooms"),
+    ...galleryItems(series("students", 42), "Student life at UCT", "students"),
+    ...galleryItems(series("lab", 20), "Laboratory at UCT", "laboratories"),
+    ...galleryItems(series("lab-visit", 30), "Lab visit at UCT", "laboratories"),
+    ...galleryItems(series("events", 14), "UCT campus event", "events"),
+    ...galleryItems(series("imd", 62), "IMD event at UCT", "cultural"),
+    ...galleryItems(series("groundbreaking", 4), "Ground breaking ceremony at UCT", "history"),
+  ],
+
+  homeGallery: [
+    { src: img("exterior-01.jpg"), alt: "Aerial view of the UCT campus in Díli", category: "campus" },
+    { src: img("students-01.jpg"), alt: "Students in a lecture at UCT", category: "students" },
+    { src: img("classroom-01.jpg"), alt: "Smart classroom interior at UCT", category: "classrooms" },
+    { src: img("lab-01.jpg"), alt: "Teaching laboratory at UCT", category: "laboratories" },
+    { src: img("events-01.jpg"), alt: "Campus event at UCT", category: "events" },
+    { src: img("imd-01.jpg"), alt: "IMD event at UCT", category: "cultural" },
+    { src: img("lab-visit-01.jpg"), alt: "Students during a laboratory visit", category: "laboratories" },
+    { src: img("groundbreaking-01.jpg"), alt: "Ground breaking ceremony at UCT", category: "history" },
   ],
 
   news: {
-    holi: img("news-1.png"),
-    whiteCoat: img("news-2.png"),
-    drugAwareness: img("news-3.png"),
+    holi: img("news-1.jpg"),
+    whiteCoat: img("news-2.jpg"),
+    drugAwareness: img("news-3.jpg"),
   },
 
   accreditationLogos: [img("accred-1.png"), img("accred-2.png"), img("accred-3.png")],

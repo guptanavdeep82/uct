@@ -17,8 +17,8 @@ export default function MessageFromRector() {
       />
       <InnerPageHero
         title="Message from the Rector"
-        description="Inspiring our journey — a welcome from UCT's leadership."
-        image={images.campus[4]}
+        description="A welcome for students and families considering Universidade Católica Timorense."
+        image={images.events[0]}
         trail={[{ label: "About Us", path: "/about-us" }]}
       />
 
@@ -92,7 +92,7 @@ export default function MessageFromRector() {
       <section className="section">
         <div className="container split">
           <div className="split__media img-reveal" data-animate="fade-left">
-            <img src={images.hero.ceremony} alt="White Coat Ceremony at UCT" loading="lazy" />
+            <img src={images.events[1]} alt="White Coat Ceremony at UCT" loading="lazy" />
           </div>
           <div data-animate="fade-right">
             <span className="section-head__tag">Student Journey</span>

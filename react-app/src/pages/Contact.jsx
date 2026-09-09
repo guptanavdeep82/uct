@@ -17,7 +17,7 @@ export default function Contact() {
       <InnerPageHero
         title="Contact Us"
         description="Reach the UCT admissions and campus teams in Díli — or send a message online."
-        image={images.campus[3]}
+        image={images.exterior[6]}
       />
 
       <section className="section">

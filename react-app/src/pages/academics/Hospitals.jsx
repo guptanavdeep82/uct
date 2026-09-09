@@ -19,7 +19,7 @@ export default function Hospitals() {
       <InnerPageHero
         title="Hospitals & Clinical Training"
         description="Real hospital exposure from the first professional year — supported by 10+ clinical tie-ups and daily campus-to-hospital transport."
-        image={images.campus[4]}
+        image={images.labVisits[0]}
         trail={[{ label: "Academics", path: "/academics" }]}
         actions={<HeroApplyButton />}
       />
@@ -35,7 +35,7 @@ export default function Hospitals() {
             </Link>
           </div>
           <div className="split__media img-reveal" data-animate="fade-right">
-            <img src={images.gallery[5].src} alt="Students in clinical and laboratory training at UCT" loading="lazy" />
+            <img src={images.labs[4]} alt="Students in clinical and laboratory training at UCT" loading="lazy" />
           </div>
         </div>
       </section>
