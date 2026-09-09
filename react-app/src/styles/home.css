@@ -540,21 +540,8 @@
   left: 1.2rem;
   bottom: 1.6rem;
   z-index: 890;
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
+  display: grid;
   text-decoration: none;
-}
-
-.wa-assist__label {
-  font-family: var(--font-head);
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--white);
-  background: #128c7e;
-  padding: 0.45rem 0.85rem;
-  border-radius: var(--radius-pill);
-  box-shadow: 0 10px 24px rgba(18, 140, 126, 0.35);
 }
 
 .wa-assist__icon {
@@ -581,10 +568,6 @@
   .wa-assist {
     left: 0.85rem;
     bottom: 1.1rem;
-  }
-
-  .wa-assist__label {
-    display: none;
   }
 }
 
