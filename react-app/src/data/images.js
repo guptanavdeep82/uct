@@ -27,6 +27,8 @@ export const images = {
   labVisits: series("lab-visit", 30),
   students: series("students", 42),
   events: series("events", 14),
+  // Screenshot slots 1–27 → marked[0] is 1.jpg, marked[26] is 27.jpg
+  marked: series("marked", 27),
 
   hero: {
     students: img("hero-1.jpg"),

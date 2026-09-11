@@ -62,7 +62,7 @@ export default function LifeOfIndianStudents() {
           </div>
           <div className="split__media img-reveal" data-animate="fade-right">
             <TiltCard maxTilt={8}>
-              <img src={images.news.holi} alt="Holi celebration of color and culture at UCT" loading="lazy" />
+              <img src={images.marked[26]} alt="Holi celebration of color and culture at UCT" loading="lazy" />
             </TiltCard>
           </div>
         </div>

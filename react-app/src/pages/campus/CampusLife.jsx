@@ -26,7 +26,7 @@ export default function CampusLife() {
       <InnerPageHero
         title="Campus Life at UCT"
         description="A modern, safe and vibrant medical campus in the heart of Díli — designed to support every part of student life."
-        image={images.exterior[0]}
+        image={images.marked[5]}
       />
 
       <Stats items={campusStats} />
@@ -74,7 +74,7 @@ export default function CampusLife() {
           </div>
           <div className="split__media img-reveal" data-animate="fade-right">
             <TiltCard maxTilt={8}>
-              <img src={images.hero.campusAerial} alt="Aerial view of the UCT campus in Díli" loading="lazy" />
+              <img src={images.marked[21]} alt="Aerial view of the UCT campus in Díli" loading="lazy" />
             </TiltCard>
           </div>
         </div>

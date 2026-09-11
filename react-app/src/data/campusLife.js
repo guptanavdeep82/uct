@@ -6,6 +6,8 @@
 // different while staying on-brand.
 import { images } from "./images";
 
+const marked = (n) => images.marked[n - 1];
+
 export const campusSections = [
   {
     key: "infrastructure",
@@ -64,7 +66,7 @@ export const campusSections = [
     key: "library",
     title: "Library",
     path: "/campus-life/library",
-    image: images.classrooms[1],
+    image: marked(1),
     summary:
       "Thousands of medical textbooks, journals and digital resources in a quiet, Wi-Fi-enabled study environment.",
     body:
@@ -102,9 +104,9 @@ export const campusSections = [
       tag: "A Space to Focus",
       title: "Quiet Reading Zones & Digital Research",
       desc: "Beyond the shelves, the library offers dedicated computer stations for e-learning and access to online research databases — helping students prepare confidently for exams and clinical rotations.",
-      image: images.students[0],
+      image: marked(2),
     },
-    gallery: [images.classrooms[3], images.students[1], images.classrooms[5]],
+    gallery: [marked(3), marked(4), marked(5)],
   },
   {
     key: "laboratories",
@@ -119,22 +121,22 @@ export const campusSections = [
       {
         title: "Anatomy Lab",
         desc: "Full cadaver dissection support for a hands-on understanding of human anatomy.",
-        image: images.labs[1],
+        image: marked(10),
       },
       {
         title: "Physiology & Biochemistry",
         desc: "Modern instruments for studying the body's systems and biochemical processes.",
-        image: images.labs[4],
+        image: marked(11),
       },
       {
         title: "Pathology & Microbiology",
         desc: "Specimen and slide analysis labs guided by experienced faculty.",
-        image: images.labVisits[0],
+        image: marked(9),
       },
       {
         title: "Clinical Skill Labs",
         desc: "Simulated patient-care procedures that build confidence before clinical rotations.",
-        image: images.labs[8],
+        image: marked(8),
       },
     ],
     stats: [
@@ -146,9 +148,9 @@ export const campusSections = [
       tag: "Practical Medicine",
       title: "Real Skills, Guided by Experts",
       desc: "From anatomy dissection to clinical skill simulation, every lab session is supervised by experienced faculty and technicians so students build confidence and precision before entering clinical rotations.",
-      image: images.labs[2],
+      image: marked(12),
     },
-    gallery: [images.labs[3], images.labVisits[2], images.labs[6]],
+    gallery: [marked(13), marked(14), images.labs[6]],
   },
   {
     key: "facilities",
@@ -201,14 +203,14 @@ export const campusSections = [
     key: "hostel",
     title: "Hostel",
     path: "/campus-life/hostel",
-    image: images.students[10],
+    image: marked(15),
     summary: "Secure, air-conditioned, on-campus hostels with round-the-clock support.",
     body:
       "UCT's on-campus hostels are designed to provide students with a secure, comfortable, and supportive environment. All rooms are fully air-conditioned to ensure a pleasant stay throughout the year. The hostels offer the perfect blend of independence and care — helping students stay focused, healthy, and socially connected.",
     wings: [
       {
         title: "Girls' Wing",
-        image: images.students[12],
+        image: marked(16),
         points: [
           "24/7 security with CCTV and dedicated wardens",
           "Clean, air-conditioned rooms with study desks and storage",
@@ -217,7 +219,7 @@ export const campusSections = [
       },
       {
         title: "Boys' Wing",
-        image: images.students[14],
+        image: marked(17),
         points: [
           "Separate secured wing with round-the-clock supervision",
           "Air-conditioned rooms with fans, storage and study space",
@@ -234,9 +236,9 @@ export const campusSections = [
       tag: "Home Away From Home",
       title: "Secure, Comfortable, Community-Focused",
       desc: "Separate wings for boys and girls, round-the-clock CCTV security and dedicated wardens mean families can feel confident their children are safe — while Indian-style food in the mess hall keeps things familiar.",
-      image: images.students[16],
+      image: marked(21),
     },
-    gallery: [images.students[18], images.hero.students, images.students[20]],
+    gallery: [marked(18), marked(19), marked(20)],
   },
   {
     key: "sports",
@@ -277,9 +279,9 @@ export const campusSections = [
       tag: "Beyond the Classroom",
       title: "Confidence, Creativity & Teamwork",
       desc: "Outdoor fields for football, basketball and volleyball sit alongside indoor games like chess and table tennis — with an annual Sports Fest, talent shows and medical camps rounding out a vibrant campus calendar.",
-      image: images.imdEvents[0],
+      image: marked(23),
     },
-    gallery: [images.events[4], images.imdEvents[3], images.events[6]],
+    gallery: [images.events[4], marked(24), images.events[6]],
   },
 ];
 
@@ -297,7 +299,7 @@ export const campusLifeMoments = [
     caption: "Ceremonies and gatherings that mark life on campus.",
   },
   {
-    image: { src: images.imdEvents[1], alt: "IMD event at UCT" },
+    image: { src: marked(7), alt: "IMD event at UCT" },
     title: "IMD Community",
     caption: "International MBBS Department events and celebrations.",
   },
@@ -349,12 +351,12 @@ export const indianStudentLife = {
     {
       title: "White Coat Ceremony",
       desc: "A proud milestone marking every student's first step into clinical training.",
-      image: images.news.whiteCoat,
+      image: marked(25),
     },
     {
       title: "Community Health Camps",
       desc: "Students apply classroom learning by supporting local health awareness programs in Díli.",
-      image: images.news.drugAwareness,
+      image: marked(26),
     },
   ],
 };
