@@ -1,7 +1,15 @@
-const API_URL = import.meta.env.VITE_API_URL || "";
+const API_ORIGIN =
+  typeof window === "undefined"
+    ? process.env.API_URL || process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"
+    : process.env.NEXT_PUBLIC_API_URL || "";
+
+export function apiUrl(path) {
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  return `${API_ORIGIN}${normalized}`;
+}
 
 export async function postJson(path, body) {
-  const response = await fetch(`${API_URL}${path}`, {
+  const response = await fetch(apiUrl(path), {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -16,4 +24,17 @@ export async function postJson(path, body) {
     throw new Error(firstError || data.message || "Could not save your details. Please try again.");
   }
   return data;
+}
+
+export async function getJson(path) {
+  const response = await fetch(apiUrl(path), {
+    headers: { Accept: "application/json" },
+    next: { revalidate: 60 },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Request failed: ${response.status}`);
+  }
+
+  return response.json();
 }

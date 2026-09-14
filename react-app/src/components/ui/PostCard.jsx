@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import { Link } from "@/lib/navigation";
 
 /** Shared card for News & Events and Blog listings. */
 export default function PostCard({ image, category, date, title, excerpt, to, delay = 0 }) {

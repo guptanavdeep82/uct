@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "@/lib/navigation";
 import { navigation } from "../../data/navigation";
 import { images } from "../../data/images";
 import { siteInfo } from "../../data/siteInfo";
@@ -132,7 +134,7 @@ export default function Navbar() {
               </li>
             ))}
             <li className="navbar__cta-wrap">
-              <Link to="/admissions/admission-enquiry" className="btn btn--gold btn--sm">
+              <Link to="/admission-enquiry" className="btn btn--gold btn--sm">
                 Apply Now
               </Link>
             </li>
@@ -187,7 +189,7 @@ export default function Navbar() {
             ))}
           </ul>
           <div className="container navbar__mobile-cta">
-            <Link to="/admissions/admission-enquiry" className="btn btn--gold btn--block">
+            <Link to="/admission-enquiry" className="btn btn--gold btn--block">
               Apply Now
             </Link>
           </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useId, useState } from "react";
 import { downloadItems, OTP_CODE } from "../../data/downloads";
 import { postJson } from "../../lib/api";

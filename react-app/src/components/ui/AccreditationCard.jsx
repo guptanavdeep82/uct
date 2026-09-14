@@ -1,3 +1,5 @@
+"use client";
+
 export default function AccreditationCard({ code, name, desc, link, delay = 0 }) {
   return (
     <article className="accred-card" data-animate="fade-up" data-delay={delay}>

@@ -1,3 +1,5 @@
+"use client";
+
 import { siteInfo } from "../../data/siteInfo";
 
 const PREFILL = "Hello UCT, I have a question about the MBBS program.";

@@ -12,7 +12,7 @@ export const campusSections = [
   {
     key: "infrastructure",
     title: "Infrastructure",
-    path: "/campus-life/infrastructure",
+    path: "/infrastructure",
     image: images.exterior[3],
     summary:
       "Smart classrooms, digital teaching tools and simulation spaces that meet the standards of modern medical education.",
@@ -65,7 +65,7 @@ export const campusSections = [
   {
     key: "library",
     title: "Library",
-    path: "/campus-life/library",
+    path: "/library",
     image: marked(1),
     summary:
       "Thousands of medical textbooks, journals and digital resources in a quiet, Wi-Fi-enabled study environment.",
@@ -111,7 +111,7 @@ export const campusSections = [
   {
     key: "laboratories",
     title: "Laboratories",
-    path: "/campus-life/laboratories",
+    path: "/laboratories",
     image: images.labs[0],
     summary:
       "Well-equipped laboratories for every major medical subject, guided by experienced faculty and technicians.",
@@ -155,7 +155,7 @@ export const campusSections = [
   {
     key: "facilities",
     title: "Facilities & Amenities",
-    path: "/campus-life/facilities",
+    path: "/facilities-amp-amenities",
     image: images.exterior[5],
     summary: "A wide range of facilities that support students both academically and personally.",
     body:
@@ -202,7 +202,7 @@ export const campusSections = [
   {
     key: "hostel",
     title: "Hostel",
-    path: "/campus-life/hostel",
+    path: "/hostel-amp-student-housing",
     image: marked(15),
     summary: "Secure, air-conditioned, on-campus hostels with round-the-clock support.",
     body:
@@ -243,7 +243,7 @@ export const campusSections = [
   {
     key: "sports",
     title: "Sports & Fitness",
-    path: "/campus-life/sports-extracurriculars",
+    path: "/sports-amp-extracurriculars",
     image: images.events[2],
     summary: "Outdoor fields, indoor games and an annual sports fest for a well-rounded campus life.",
     body:

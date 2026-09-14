@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import { Link } from "@/lib/navigation";
 
 export default function CTASection({
   title = "Your White Coat Journey Starts Here",
   desc = "Seats for the 2026–27 intake are limited. Talk to an admission counsellor today.",
-  primary = { label: "Apply Now", to: "/admissions/admission-enquiry" },
-  secondary = { label: "Admission Enquiry", to: "/admissions/admission-enquiry" },
+  primary = { label: "Apply Now", to: "/admission-enquiry" },
+  secondary = { label: "Admission Enquiry", to: "/admission-enquiry" },
 }) {
   return (
     <section className="cta" aria-label="Call to action">

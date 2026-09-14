@@ -1,3 +1,5 @@
+"use client";
+
 import { instagramHighlights } from "../../data/media";
 import { siteInfo } from "../../data/siteInfo";
 

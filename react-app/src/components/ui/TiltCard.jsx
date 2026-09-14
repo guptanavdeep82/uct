@@ -1,3 +1,5 @@
+"use client";
+
 import useTilt from "../../hooks/useTilt";
 
 /** Wraps children in a 3D tilt shell with a soft cursor glare. */

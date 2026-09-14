@@ -1,3 +1,5 @@
+"use client";
+
 export default function FeeTable({ title, rows }) {
   return (
     <div data-animate="fade-up">

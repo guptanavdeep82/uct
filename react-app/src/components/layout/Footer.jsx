@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import { Link } from "@/lib/navigation";
 import { footerAboutLinks, footerQuickLinks } from "../../data/navigation";
 import { images } from "../../data/images";
 import { siteInfo } from "../../data/siteInfo";

@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import { Link } from "@/lib/navigation";
 
 /** trail: [{ label, path }] — the last item renders as plain (non-link) text. */
 export default function Breadcrumbs({ trail = [], variant = "" }) {

@@ -1,3 +1,5 @@
+"use client";
+
 export default function FeatureCard({ icon, title, desc, highlight = false, delay = 0 }) {
   return (
     <article

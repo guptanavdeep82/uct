@@ -1,3 +1,5 @@
+"use client";
+
 export default function Timeline({ items }) {
   return (
     <div className="timeline">

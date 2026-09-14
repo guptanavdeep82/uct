@@ -1,3 +1,5 @@
+"use client";
+
 export default function SectionHeading({ tag, title, desc, align = "center", as: Tag = "h2" }) {
   return (
     <header className={`section-head${align === "left" ? " section-head--left" : ""}`} data-animate="fade-up">

@@ -1,3 +1,5 @@
+"use client";
+
 export default function AdmissionSteps({ steps }) {
   return (
     <div className={`stepper${steps.length === 4 ? " stepper--4" : ""}`}>

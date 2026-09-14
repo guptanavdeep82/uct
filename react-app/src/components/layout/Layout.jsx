@@ -1,4 +1,6 @@
-import { Outlet } from "react-router-dom";
+"use client";
+
+import { Outlet } from "@/lib/navigation";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import BackToTop from "./BackToTop";

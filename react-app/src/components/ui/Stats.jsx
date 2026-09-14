@@ -1,3 +1,5 @@
+"use client";
+
 export default function Stats({ items }) {
   return (
     <section className="stats" aria-label="University statistics">

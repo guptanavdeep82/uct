@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import { Link } from "@/lib/navigation";
 import Breadcrumbs from "./Breadcrumbs";
 
 /**
@@ -36,7 +38,7 @@ export default function InnerPageHero({ title, description, image, trail = [], a
 
 export function HeroApplyButton({ label = "Apply Now" }) {
   return (
-    <Link to="/admissions/admission-enquiry" className="btn btn--gold btn--lg">
+    <Link to="/admission-enquiry" className="btn btn--gold btn--lg">
       {label}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
         <path d="M5 12h14M12 5l7 7-7 7" />
