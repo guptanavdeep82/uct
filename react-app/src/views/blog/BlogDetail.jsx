@@ -6,6 +6,7 @@ import Breadcrumbs from "../../components/ui/Breadcrumbs";
 import CTASection from "../../components/ui/CTASection";
 import { blogPosts, getBlogBySlug } from "../../data/blog";
 import { siteInfo } from "../../data/siteInfo";
+import { publicUrl } from "../../lib/site";
 
 function ShareLinks({ url, title }) {
   return (
@@ -52,7 +53,7 @@ export default function BlogDetail({ post: initialPost, posts }) {
   const sameCategory = archive.filter((p) => p.slug !== post.slug && p.category === post.category);
   const others = archive.filter((p) => p.slug !== post.slug && p.category !== post.category);
   const fallbackRelated = [...sameCategory, ...others].slice(0, 4);
-  const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+  const shareUrl = publicUrl(`/blog/${post.slug}/`);
 
   return (
     <>

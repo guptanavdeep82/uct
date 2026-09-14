@@ -6,6 +6,7 @@ import Breadcrumbs from "../../components/ui/Breadcrumbs";
 import PostCard from "../../components/ui/PostCard";
 import CTASection from "../../components/ui/CTASection";
 import { getNewsBySlug, newsEvents } from "../../data/newsEvents";
+import { publicUrl } from "../../lib/site";
 
 export default function NewsDetail({ article: initialArticle, archive }) {
   const { slug } = useParams();
@@ -32,7 +33,7 @@ export default function NewsDetail({ article: initialArticle, archive }) {
   const next = index < list.length - 1 ? list[index + 1] : null;
   const related = list.filter((n) => n.slug !== article.slug).slice(0, 3);
 
-  const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+  const shareUrl = publicUrl(`/events/${article.slug}/`);
 
   return (
     <>

@@ -1,6 +1,6 @@
-import { pageMetadata } from "@/data/seo";
+import { fetchBlogs, fetchNews } from "@/lib/content";
 
-const paths = [
+const STATIC_PATHS = [
   "/",
   "/overview/",
   "/vision-mission/",
@@ -36,11 +36,64 @@ const paths = [
   "/anti-ragging-policy/",
 ];
 
-export default function sitemap() {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://www.uct.tl";
-  return paths.map((path) => ({
+export const revalidate = 3600;
+
+function siteOrigin() {
+  return (process.env.NEXT_PUBLIC_SITE_URL || "https://www.uct.tl").replace(/\/$/, "");
+}
+
+function lastModified(value) {
+  if (!value) return new Date();
+  const parsed = new Date(value);
+  return Number.isNaN(parsed.getTime()) ? new Date() : parsed;
+}
+
+function page(base, path, extras = {}) {
+  return {
     url: `${base}${path === "/" ? "/" : path}`,
-    changeFrequency: "weekly",
-    priority: path === "/" ? 1 : 0.7,
-  }));
+    changeFrequency: extras.changeFrequency || "weekly",
+    priority: extras.priority ?? 0.7,
+    lastModified: extras.lastModified || new Date(),
+  };
+}
+
+export default async function sitemap() {
+  const base = siteOrigin();
+  const [blogs, news] = await Promise.all([fetchBlogs(), fetchNews()]);
+
+  const staticPages = STATIC_PATHS.map((path) =>
+    page(base, path, {
+      priority: path === "/" ? 1 : path === "/admission/" || path === "/mbbs-program/" ? 0.9 : 0.7,
+      changeFrequency: path === "/" || path === "/blog/" || path === "/news-updates/" ? "daily" : "weekly",
+    }),
+  );
+
+  const blogPages = uniqueBySlug(blogs)
+    .map((post) =>
+      page(base, `/blog/${post.slug}/`, {
+        priority: 0.6,
+        changeFrequency: "weekly",
+        lastModified: lastModified(post.date || post.published_at),
+      }),
+    );
+
+  const newsPages = uniqueBySlug(news)
+    .map((item) =>
+      page(base, `/events/${item.slug}/`, {
+        priority: 0.6,
+        changeFrequency: "weekly",
+        lastModified: lastModified(item.date || item.published_at),
+      }),
+    );
+
+  return [...staticPages, ...blogPages, ...newsPages];
+}
+
+function uniqueBySlug(rows) {
+  const seen = new Set();
+  return (rows || []).filter((row) => {
+    if (!row?.slug || seen.has(row.slug)) return false;
+    seen.add(row.slug);
+    return true;
+  });
 }
