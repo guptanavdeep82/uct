@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { postJson } from "../../lib/api";
+import CrmLeadEmbed from "./CrmLeadEmbed";
 
 const initialState = { name: "", email: "", phone: "", subject: "", message: "" };
 
@@ -41,17 +42,22 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="form-success" role="status">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
-          <path d="M20 6 9 17l-5-5" />
-        </svg>
-        Thank you for reaching out! Our team will get back to you shortly.
-      </div>
+      <>
+        <CrmLeadEmbed />
+        <div className="form-success" role="status">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5" />
+          </svg>
+          Thank you for reaching out! Our team will get back to you shortly.
+        </div>
+      </>
     );
   }
 
   return (
-    <form className="form-card" onSubmit={handleSubmit} noValidate>
+    <>
+      <CrmLeadEmbed />
+      <form className="form-card" onSubmit={handleSubmit} noValidate>
       <div className="form-grid">
         <div className={`form-field${errors.name ? " has-error" : ""}`}>
           <label htmlFor="contact-name">Name *</label>
@@ -91,5 +97,6 @@ export default function ContactForm() {
         </p>
       )}
     </form>
+    </>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { postJson } from "../../lib/api";
+import CrmLeadEmbed from "./CrmLeadEmbed";
 
 const COUNTRIES = ["India", "Timor-Leste", "Nepal", "Bangladesh", "Sri Lanka", "Other"];
 
@@ -62,17 +63,22 @@ export default function EnquiryForm() {
 
   if (status === "success") {
     return (
-      <div className="form-success" role="status">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
-          <path d="M20 6 9 17l-5-5" />
-        </svg>
-        Thank you! Your enquiry has been received — our counsellors will contact you within 24 hours.
-      </div>
+      <>
+        <CrmLeadEmbed />
+        <div className="form-success" role="status">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
+            <path d="M20 6 9 17l-5-5" />
+          </svg>
+          Thank you! Your enquiry has been received — our counsellors will contact you within 24 hours.
+        </div>
+      </>
     );
   }
 
   return (
-    <form className="form-card" onSubmit={handleSubmit} noValidate>
+    <>
+      <CrmLeadEmbed />
+      <form className="form-card" onSubmit={handleSubmit} noValidate>
       <div className="form-grid">
         <div className={`form-field form-field--full${errors.name ? " has-error" : ""}`}>
           <label htmlFor="enq-name">Full Name *</label>
@@ -147,5 +153,6 @@ export default function EnquiryForm() {
         </p>
       )}
     </form>
+    </>
   );
 }
