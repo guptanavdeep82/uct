@@ -3,7 +3,7 @@
 import Seo from "../components/ui/Seo";
 import InnerPageHero from "../components/ui/InnerPageHero";
 import SectionHeading from "../components/ui/SectionHeading";
-import ContactForm from "../components/ui/ContactForm";
+import CrmLeadEmbed from "../components/ui/CrmLeadEmbed";
 import CTASection from "../components/ui/CTASection";
 import { images } from "../data/images";
 import { siteInfo } from "../data/siteInfo";
@@ -82,7 +82,7 @@ export default function Contact() {
 
           <div data-animate="fade-right">
             <h3 style={{ marginBottom: "1rem" }}>Send a Message</h3>
-            <ContactForm />
+            <CrmLeadEmbed />
           </div>
         </div>
       </section>

@@ -10,7 +10,9 @@ export default function CrmLeadEmbed() {
 
   useEffect(() => {
     const host = hostRef.current;
-    if (!host || host.querySelector("script[data-winqire-lead]")) return;
+    if (!host) return;
+
+    host.replaceChildren();
 
     const script = document.createElement("script");
     script.src = CRM_LEAD_SRC;
@@ -19,7 +21,7 @@ export default function CrmLeadEmbed() {
     host.appendChild(script);
 
     return () => {
-      script.remove();
+      host.replaceChildren();
     };
   }, []);
 

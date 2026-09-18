@@ -10,7 +10,7 @@ import ImageCard from "../components/ui/ImageCard";
 import AdmissionSteps from "../components/ui/AdmissionSteps";
 import CTASection from "../components/ui/CTASection";
 import GalleryGrid from "../components/ui/GalleryGrid";
-import EnquiryForm from "../components/ui/EnquiryForm";
+import CrmLeadEmbed from "../components/ui/CrmLeadEmbed";
 import CampusFilmPlayer from "../components/ui/CampusFilmPlayer";
 import WhatsAppAssist from "../components/ui/WhatsAppAssist";
 import { images } from "../data/images";
@@ -357,7 +357,7 @@ export default function Home() {
 
           <div data-animate="fade-right">
             <h3 style={{ marginBottom: "1.4rem" }}>Request a Free Counselling Call</h3>
-            <EnquiryForm />
+            <CrmLeadEmbed />
           </div>
         </div>
       </section>
