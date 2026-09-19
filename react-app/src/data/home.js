@@ -85,12 +85,3 @@ export const homeTestimonials = [
     role: "MBBS Student, from India",
   },
 ];
-
-export const homeAccredBadges = [
-  { code: "NMC", name: "NMC India", logo: images.accreditationLogos[0] },
-  { code: "ANAAA", name: "ANAAA", logo: images.accreditationLogos[1] },
-  { code: "WDOMS", name: "WDOMS", logo: images.accreditationLogos[2] },
-  { code: "ECFMG", name: "ECFMG", logo: null },
-  { code: "FAIMER", name: "FAIMER", logo: null },
-  { code: "MOHTL", name: "Ministry of Health, TL", logo: null },
-];

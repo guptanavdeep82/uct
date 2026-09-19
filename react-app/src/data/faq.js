@@ -1,7 +1,6 @@
 // General FAQ — reused verbatim from the approved homepage FAQ section.
 import { admissionEnquiryFaq } from "./admissions";
 import { feesFaq } from "./fees";
-import { accreditationFaq } from "./accreditation";
 
 export const generalFaq = [
   {
@@ -74,5 +73,4 @@ export const faqGroups = [
   { id: "fees", label: "Fees & Scholarships", items: feesFaq },
   { id: "academics", label: "Academics", items: academicsFaq },
   { id: "campus", label: "Campus Life", items: campusFaq },
-  { id: "accreditation", label: "Accreditation", items: accreditationFaq },
 ];

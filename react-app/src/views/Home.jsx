@@ -22,7 +22,6 @@ import {
   homeAdmissionSteps,
   facilityCards,
   homeTestimonials,
-  homeAccredBadges,
 } from "../data/home";
 
 export default function Home() {
@@ -65,7 +64,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="hero__stats glass-card" data-animate="fade-up" data-delay="320">
+            <div className="hero__stats" data-animate="fade-up" data-delay="320">
               {quickStats.map((stat) => (
                 <div className="hero-stat" key={stat.label}>
                   <strong>{stat.value}</strong>
@@ -184,32 +183,6 @@ export default function Home() {
           { value: "100%", label: "English Medium" },
         ]}
       />
-
-      {/* RECOGNITION & ACCREDITATION */}
-      <section className="section" aria-labelledby="recognition-title">
-        <div className="container">
-          <SectionHeading tag="Globally Trusted" title={<>Recognition &amp; <span className="text-gold-dark">Accreditation</span></>} />
-          <div className="accred-badges">
-            {homeAccredBadges.map((badge, i) => (
-              <div className="accred-badge" key={badge.code} data-animate="fade-up" data-delay={i * 60}>
-                {badge.logo ? (
-                  <img src={badge.logo} alt={badge.name} loading="lazy" />
-                ) : (
-                  <span className="accred-card__monogram" aria-hidden="true">
-                    {badge.code.slice(0, 1)}
-                  </span>
-                )}
-                <span>{badge.name}</span>
-              </div>
-            ))}
-          </div>
-          <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
-            <Link to="/accreditation" className="btn btn--outline">
-              View Full Accreditation Details
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* TESTIMONIALS */}
       <section className="section testimonials-section" aria-labelledby="testimonials-title">

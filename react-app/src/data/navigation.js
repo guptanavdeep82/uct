@@ -48,7 +48,6 @@ export const navigation = [
       { label: "Scholarship", path: "/scholarships" },
     ],
   },
-  { label: "Accreditation", path: "/accreditation" },
   { label: "Gallery", path: "/media" },
   { label: "News & Events", path: "/news-updates" },
   { label: "Blog", path: "/blog" },
@@ -61,7 +60,6 @@ export const footerAboutLinks = [
   { label: "Vision & Mission", path: "/vision-mission" },
   { label: "Milestones & History", path: "/milestones-history" },
   { label: "Message from the Rector", path: "/message-from-the-rector" },
-  { label: "Accreditation", path: "/accreditation" },
 ];
 
 export const footerQuickLinks = [

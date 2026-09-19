@@ -54,7 +54,11 @@ const nextConfig = {
       },
       {
         source: "/storage/:path*",
-        destination: `${apiOrigin.replace(/\/$/, "")}/storage/:path*`,
+        destination: `${apiOrigin.replace(/\/$/, "")}/media/:path*`,
+      },
+      {
+        source: "/media/:path*",
+        destination: `${apiOrigin.replace(/\/$/, "")}/media/:path*`,
       },
     ];
   },
