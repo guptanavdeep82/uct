@@ -18,7 +18,7 @@ export default function Library() {
     <>
       <Seo title={section.title} description={section.summary} path={section.path} />
       <InnerPageHero
-        title={section.title}
+        title={section.pageTitle || section.title}
         description={section.summary}
         image={section.image}
         trail={[{ label: "Campus Life", path: "/infrastructure" }]}
@@ -36,7 +36,11 @@ export default function Library() {
           <div className="vision-grid">
             <div className="vision-panel" data-animate="fade-left">
               <h3>What's Inside</h3>
-              <p style={{ color: "var(--gray-500)", marginBottom: "1rem" }}>{section.body}</p>
+              {(section.paragraphs || [section.body]).map((p) => (
+                <p key={p.slice(0, 40)} style={{ color: "var(--gray-500)", marginBottom: "1rem" }}>
+                  {p}
+                </p>
+              ))}
               <ul className="tick-list">
                 {section.points.map((point) => (
                   <li key={point}>
@@ -92,7 +96,7 @@ export default function Library() {
                 </div>
                 <div className="about-explore__body">
                   <h3>{item.title}</h3>
-                  <p>{item.summary}</p>
+                  <p>{item.cardSummary || item.summary}</p>
                   <span>Read more &rarr;</span>
                 </div>
               </Link>

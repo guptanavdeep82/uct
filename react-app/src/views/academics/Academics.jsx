@@ -8,7 +8,7 @@ import FeatureCard from "../../components/ui/FeatureCard";
 import CTASection from "../../components/ui/CTASection";
 import ImageCard from "../../components/ui/ImageCard";
 import { images } from "../../data/images";
-import { academicsIntro, academicsPillars, faculty } from "../../data/curriculum";
+import { academicsIntro, academicsPillars } from "../../data/curriculum";
 
 import { collateralImages } from "../../data/officialCollateral";
 
@@ -17,7 +17,6 @@ const academicLinks = [
   { title: "Curriculum", desc: "CBME syllabus, FMGL 2021 alignment and first-year textbooks.", image: collateralImages.cbme, to: "/detailed-syllabus" },
   { title: "Family & Community Medicine", desc: "Family Adoption Programme across 5 villages under the NMC CBME curriculum.", image: collateralImages.familyAdoption, to: "/family-community-medicine" },
   { title: "National Lab Report", desc: "INSPTL posting in Bidau, Díli — microbiology, TB, molecular biology and more.", image: images.labs[2], to: "/national-lab-report" },
-  { title: "Faculty List", desc: "Named academic heads and an international teaching community.", image: images.students[0], to: "/faculty" },
   { title: "Hospitals", desc: "Clinical tie-ups, early exposure and a one-year CRMI internship.", image: images.labVisits[0], to: "/hospitals" },
 ];
 
@@ -26,7 +25,7 @@ export default function Academics() {
     <>
       <Seo
         title="Academics"
-        description="Academic excellence at Universidade Católica Timorense — MBBS program structure, clinical training, faculty and research focus."
+        description="Academic excellence at Universidade Católica Timorense — MBBS program structure, clinical training and research focus."
         path="/mbbs-program"
       />
       <InnerPageHero
@@ -56,7 +55,7 @@ export default function Academics() {
 
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <SectionHeading tag="Explore Academics" title="Curriculum, Faculty, Hospitals & More" />
+          <SectionHeading tag="Explore Academics" title="Curriculum, Hospitals & More" />
           <div className="card-grid card-grid--3">
             {academicLinks.map((item, i) => (
               <ImageCard key={item.to} {...item} delay={i * 80} />
@@ -72,32 +71,6 @@ export default function Academics() {
             {academicsPillars.map((p, i) => (
               <FeatureCard key={p.title} title={p.title} desc={p.desc} delay={(i % 4) * 80} />
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <SectionHeading tag="Our Faculty" title="Experienced, International Medical Educators" />
-          <div className="card-grid card-grid--4">
-            {faculty.map((f, i) => (
-              <div key={f.name} className="feature-card" style={{ textAlign: "center" }} data-animate="fade-up" data-delay={i * 90}>
-                <span
-                  className="accred-card__monogram"
-                  style={{ margin: "0 auto 1rem" }}
-                  aria-hidden="true"
-                >
-                  {f.name.split(" ").filter((w) => w !== "Dr.").slice(0, 2).map((w) => w[0]).join("")}
-                </span>
-                <h3>{f.name}</h3>
-                <p>{f.role}</p>
-              </div>
-            ))}
-          </div>
-          <div style={{ textAlign: "center", marginTop: "2rem" }}>
-            <Link to="/faculty" className="btn btn--outline">
-              View Full Faculty List
-            </Link>
           </div>
         </div>
       </section>

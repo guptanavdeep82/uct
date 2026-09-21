@@ -23,7 +23,7 @@ export default function FAQ() {
       />
       <InnerPageHero
         title="Frequently Asked Questions"
-        description="Clear answers on curriculum, faculty, hospitals, fees, admissions and campus life — in one place."
+        description="Clear answers on curriculum, hospitals, fees, admissions and campus life — in one place."
         image={images.hero.campusBuilding}
         actions={<HeroApplyButton label="Ask a Counsellor" />}
       />
@@ -55,8 +55,8 @@ export default function FAQ() {
           <div className="card-grid card-grid--4">
             {[
               { title: "Curriculum", desc: "Phase-by-phase MBBS syllabus.", to: "/detailed-syllabus" },
-              { title: "Faculty", desc: "Named academic heads and departments.", to: "/faculty" },
               { title: "Hospitals", desc: "Clinical postings and hospital tie-ups.", to: "/hospitals" },
+              { title: "Fees Structure", desc: "Published tuition and scholarship options.", to: "/tuition-fees" },
               { title: "Contact Us", desc: "Talk to admissions about the MBBS intake.", to: "/contact-us" },
             ].map((card) => (
               <Link key={card.to} to={card.to} className="feature-card" data-animate="fade-up">

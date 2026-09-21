@@ -8,7 +8,6 @@ export const navigation = [
       { label: "Vision & Mission", path: "/vision-mission" },
       { label: "Milestones & History", path: "/milestones-history" },
       { label: "Message from the Rector", path: "/message-from-the-rector" },
-      { label: "Message from the Vice Prime Minister", path: "/the-vice-prime-minister" },
     ],
   },
   {
@@ -32,7 +31,6 @@ export const navigation = [
       { label: "Detailed Syllabus", path: "/detailed-syllabus" },
       { label: "Family & Community Medicine", path: "/family-community-medicine" },
       { label: "National Lab Report", path: "/national-lab-report" },
-      { label: "Faculty List", path: "/faculty" },
       { label: "Hospitals", path: "/hospitals" },
     ],
   },
@@ -68,7 +66,6 @@ export const footerQuickLinks = [
   { label: "Family & Community Medicine", path: "/family-community-medicine" },
   { label: "National Lab Report", path: "/national-lab-report" },
   { label: "Prospectus 2026", path: "/prospectus" },
-  { label: "Faculty List", path: "/faculty" },
   { label: "Hospitals", path: "/hospitals" },
   { label: "Admission Process", path: "/admission-process" },
   { label: "FAQ", path: "/faq" },

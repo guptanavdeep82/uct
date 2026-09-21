@@ -61,8 +61,7 @@ export default function Navbar() {
               <path d="M3 11l18-7-7 18-2.5-7.5L3 11z" />
             </svg>
             <span>
-              <strong>Admissions Open {siteInfo.admissionsIntake}</strong> — NMC-compliant MBBS program. Limited seats
-              available.
+              <strong>Admissions Open {siteInfo.admissionsIntake}</strong> — CBME & CRMI Compliant MBBS Program Aligned with WFME Standards.
             </span>
           </p>
           <div className="topbar__contact">
@@ -171,7 +170,9 @@ export default function Navbar() {
                     </button>
                     <div className="mobile-nav-item__panel">
                       <div>
-                        <Link to={item.path}>{item.label}</Link>
+                        {!item.children.some((child) => child.path === item.path) && (
+                          <Link to={item.path}>{item.label}</Link>
+                        )}
                         {item.children.map((child) => (
                           <Link key={child.path} to={child.path}>
                             {child.label}

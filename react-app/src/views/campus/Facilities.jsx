@@ -81,7 +81,7 @@ export default function Facilities() {
                 </div>
                 <div className="about-explore__body">
                   <h3>{item.title}</h3>
-                  <p>{item.summary}</p>
+                  <p>{item.cardSummary || item.summary}</p>
                   <span>Read more &rarr;</span>
                 </div>
               </Link>

@@ -18,6 +18,7 @@ import { siteInfo, quickStats } from "../data/siteInfo";
 import { rectorMessage } from "../data/about";
 import {
   whyChooseUct,
+  whyChooseMbbsPoints,
   mbbsHighlights,
   homeAdmissionSteps,
   facilityCards,
@@ -49,7 +50,8 @@ export default function Home() {
               Study MBBS in Timor-Leste at an <span className="text-gold">International Standard</span>
             </h1>
             <p className="hero__desc" data-animate="fade-up" data-delay="160">
-              Join UCT's globally aligned, NMC-compliant MBBS program designed for Indian and international
+              Enroll in UCT's internationally recognized MBBS program, which maintains alignment with WFME
+              standards and NMC compliance, thoughtfully designed to welcome both International and Timorese
               students.
             </p>
             <div className="hero__actions" data-animate="fade-up" data-delay="240">
@@ -89,39 +91,42 @@ export default function Home() {
       </section>
 
       {/* WELCOME / INTRO */}
-      <section className="section" style={{ background: "var(--gray-50)" }} aria-labelledby="intro-title">
-        <div className="container intro__grid">
-          <div className="img-reveal" data-animate="fade-left">
-            <img src={images.welcomeMou} alt="UCT leadership signing a memorandum of understanding" loading="lazy" />
+      <section className="section intro-section" style={{ background: "var(--gray-50)" }} aria-labelledby="intro-title">
+        <div className="container">
+          <div className="intro__lead">
+            <div className="intro__media img-reveal" data-animate="fade-left">
+              <img src={images.welcomeMou} alt="UCT leadership signing a memorandum of understanding" loading="lazy" />
+            </div>
+            <div className="intro__copy" data-animate="fade-right">
+              <span className="section-head__tag">Learn. Serve. Lead.</span>
+              <h2 className="section-head__title" id="intro-title">
+                Study MBBS at UCT in <span className="text-gold-dark">Timor-Leste</span>
+              </h2>
+              <p>
+                Begin your medical education journey at Universidade Católica Timorense (UCT) in Díli, Timor-Leste.
+                Established in 2021, UCT is a Catholic university committed to academic excellence, integrity,
+                ethical leadership, and compassionate healthcare. Our MBBS programme combines structured medical
+                education, modern learning resources, practical clinical exposure, and community engagement to
+                prepare capable, caring, and internationally minded future doctors.
+              </p>
+              <p>
+                UCT welcomes both Timorese and international students to study medicine in a safe, peaceful, and
+                culturally diverse environment. The programme is delivered in English and is informed by the
+                Indian Competency-Based Medical Education (CBME) approach, with a focus on clinical competence,
+                communication, professionalism, ethical practice, and patient-centred care.
+              </p>
+            </div>
           </div>
-          <div data-animate="fade-right">
-            <span className="section-head__tag">Learn. Serve. Lead.</span>
-            <h2 className="section-head__title" id="intro-title">
-              Welcome to <span className="text-gold-dark">{siteInfo.name}</span>
-            </h2>
-            <p style={{ marginTop: "1.1rem", color: "var(--gray-500)" }}>
-              UCT is a Catholic medical university in Díli, Timor-Leste, offering an MBBS program based on the
-              Indian curriculum. Established in 2021, UCT provides quality education in English, blending
-              academic excellence with ethical values.
-            </p>
-            <p style={{ marginTop: "0.9rem", color: "var(--gray-500)" }}>
-              With modern facilities and hands-on clinical exposure, UCT prepares students to become skilled,
-              compassionate and globally ready healthcare professionals — making studying MBBS abroad simple
-              and secure for Indian students. The pathway is recognized with NMC, ECFMG and WDOMS.
-            </p>
+
+          <div className="intro__why" data-animate="fade-up">
+            <h3 className="intro__subhead">Why Choose UCT for MBBS?</h3>
             <ul className="intro__checks">
-              <li>
-                <span className="check" aria-hidden="true">✓</span> Modelled on AIIMS Delhi academic structure
-              </li>
-              <li>
-                <span className="check" aria-hidden="true">✓</span> NMC, ECFMG and WDOMS recognized pathway
-              </li>
-              <li>
-                <span className="check" aria-hidden="true">✓</span> Safe, peaceful and welcoming island nation
-              </li>
-              <li>
-                <span className="check" aria-hidden="true">✓</span> Strong Indian student community on campus
-              </li>
+              {whyChooseMbbsPoints.map((point) => (
+                <li key={point}>
+                  <span className="check" aria-hidden="true">✓</span>
+                  {point}
+                </li>
+              ))}
             </ul>
             <Link to="/mbbs-program" className="btn btn--primary">
               Discover Our Program
@@ -179,7 +184,7 @@ export default function Home() {
         items={[
           { value: "2021", label: "Year Established" },
           { value: "5.5 Yrs", label: "MBBS Program" },
-          { value: "4+", label: "Countries of Faculty" },
+          { value: "6+", label: "Countries of Faculty" },
           { value: "100%", label: "English Medium" },
         ]}
       />

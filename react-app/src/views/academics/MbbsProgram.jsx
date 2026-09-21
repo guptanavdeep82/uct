@@ -8,14 +8,12 @@ import FeatureCard from "../../components/ui/FeatureCard";
 import FAQAccordion from "../../components/ui/FAQAccordion";
 import CTASection from "../../components/ui/CTASection";
 import { images } from "../../data/images";
-import { programOverview, whyMbbs, curriculumPhases, faculty } from "../../data/curriculum";
+import { programOverview, whyMbbs, curriculumPhases } from "../../data/curriculum";
 import { fmglProgram } from "../../data/officialCollateral";
 import { generalFaq } from "../../data/faq";
 
 const careerPaths = [
   { title: "FMGE (India)", desc: "Eligible to appear for the Foreign Medical Graduate Examination for licensing in India." },
-  { title: "USMLE (USA)", desc: "Recognized to apply for the United States Medical Licensing Examination pathway." },
-  { title: "PLAB (UK)", desc: "Eligible to pursue the Professional and Linguistic Assessments Board route in the UK." },
   { title: "Timor-Leste Practice", desc: "Direct licensing eligibility to practice in Timor-Leste after completing internship." },
 ];
 
@@ -153,25 +151,7 @@ export default function MbbsProgram() {
         </div>
       </section>
 
-      {/* 6. FACULTY */}
-      <section className="section" style={{ background: "var(--gray-50)" }}>
-        <div className="container">
-          <SectionHeading tag="Our Esteemed Faculty" title="Learn From International Medical Experts" />
-          <div className="card-grid card-grid--4">
-            {faculty.map((f, i) => (
-              <div key={f.name} className="feature-card" style={{ textAlign: "center" }} data-animate="fade-up" data-delay={i * 90}>
-                <span className="accred-card__monogram" style={{ margin: "0 auto 1rem" }} aria-hidden="true">
-                  {f.name.split(" ").filter((w) => w !== "Dr.").slice(0, 2).map((w) => w[0]).join("")}
-                </span>
-                <h3>{f.name}</h3>
-                <p>{f.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. STUDENT EXPERIENCE */}
+      {/* 6. STUDENT EXPERIENCE */}
       <section className="section">
         <div className="container split split--reverse">
           <div data-animate="fade-right">
@@ -196,7 +176,7 @@ export default function MbbsProgram() {
       <section className="section" style={{ background: "var(--gray-50)" }}>
         <div className="container">
           <SectionHeading tag="Career Opportunities" title="Where an MBBS From UCT Can Take You" />
-          <div className="card-grid card-grid--4">
+          <div className="card-grid card-grid--2">
             {careerPaths.map((c, i) => (
               <FeatureCard key={c.title} title={c.title} desc={c.desc} delay={i * 80} />
             ))}

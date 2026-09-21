@@ -8,20 +8,20 @@ import FeatureCard from "../../components/ui/FeatureCard";
 import CTASection from "../../components/ui/CTASection";
 import TiltCard from "../../components/ui/TiltCard";
 import { images } from "../../data/images";
-import { milestones, milestonesIntro } from "../../data/about";
+import { milestones, milestonesIntro, milestonesLookingAhead } from "../../data/about";
 
 const highlights = [
   {
     title: "Founded 2021",
-    desc: "First Catholic university in Timor-Leste, established on December 8, 2021 in Díli.",
+    desc: "Timor-Leste's first Catholic university, inaugurated on 8 December 2021 in Díli.",
   },
   {
     title: "White Coat 2024",
-    desc: "Students marked their clinical transition at the White Coat Ceremony in Chennai.",
+    desc: "First international MBBS White Coat Ceremony at The Music Academy in Chennai.",
   },
   {
-    title: "Growing Campus Life",
-    desc: "Cultural celebrations and community programs continue to enrich student experience.",
+    title: "2026 Integration",
+    desc: "Formal process to integrate General Medicine into the MBBS programme, submitted to MHESC.",
   },
 ];
 
@@ -34,18 +34,20 @@ export default function MilestonesHistory() {
         path="/milestones-history"
       />
       <InnerPageHero
-        title="Milestones & History"
-        description="From our founding in 2021 to today — a timeline of UCT's journey so far."
+        title="Our Journey: Building Medical Education in Timor-Leste"
+        description={milestonesIntro[0]}
         image={images.groundbreaking[0]}
         trail={[{ label: "About Us", path: "/overview" }]}
       />
 
       <section className="section">
         <div className="container">
-          <SectionHeading tag="Our Journey" title="A Young University with a Clear Mission" />
-          <p className="milestones-intro" data-animate="fade-up">
-            {milestonesIntro}
-          </p>
+          <SectionHeading tag="Our Journey" title="Building Medical Education in Timor-Leste" />
+          {milestonesIntro.map((p) => (
+            <p key={p.slice(0, 40)} className="milestones-intro" data-animate="fade-up">
+              {p}
+            </p>
+          ))}
           <div className="card-grid card-grid--3" style={{ marginBottom: "3rem" }}>
             {highlights.map((item, i) => (
               <TiltCard key={item.title} maxTilt={7}>
@@ -61,11 +63,12 @@ export default function MilestonesHistory() {
         <div className="container split">
           <div data-animate="fade-left">
             <span className="section-head__tag">Looking Ahead</span>
-            <h2 className="section-head__title">Building Timor-Leste's Medical Future</h2>
-            <p style={{ marginTop: "1.1rem", color: "var(--gray-500)" }}>
-              Each milestone reflects UCT's commitment to academic excellence, ethical formation and accessible
-              medical education for students from India and around the world.
-            </p>
+            <h2 className="section-head__title">A Lasting Institution for Medical Education</h2>
+            {milestonesLookingAhead.map((p) => (
+              <p key={p.slice(0, 40)} style={{ marginTop: "1.1rem", color: "var(--gray-500)" }}>
+                {p}
+              </p>
+            ))}
           </div>
           <TiltCard className="about-media-frame" data-animate="fade-right" maxTilt={9}>
             <img src={images.events[1]} alt="White Coat Ceremony moment for UCT students" loading="lazy" />

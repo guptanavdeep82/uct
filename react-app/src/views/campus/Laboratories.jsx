@@ -17,7 +17,7 @@ export default function Laboratories() {
     <>
       <Seo title={section.title} description={section.summary} path={section.path} />
       <InnerPageHero
-        title={section.title}
+        title={section.pageTitle || section.title}
         description={section.summary}
         image={section.image}
         trail={[{ label: "Campus Life", path: "/infrastructure" }]}
@@ -25,7 +25,12 @@ export default function Laboratories() {
 
       <section className="section">
         <div className="container" style={{ maxWidth: 760, textAlign: "center", marginInline: "auto" }}>
-          <SectionHeading tag="Practical Medicine" title="Real Skills, Guided by Experts" desc={section.body} />
+          <SectionHeading tag="Practical Medicine" title="Real Skills, Guided by Experts" />
+          {(section.paragraphs || [section.body]).map((p) => (
+            <p key={p.slice(0, 40)} style={{ marginTop: "1.1rem", color: "var(--gray-500)" }}>
+              {p}
+            </p>
+          ))}
         </div>
       </section>
 
@@ -89,7 +94,7 @@ export default function Laboratories() {
                 </div>
                 <div className="about-explore__body">
                   <h3>{item.title}</h3>
-                  <p>{item.summary}</p>
+                  <p>{item.cardSummary || item.summary}</p>
                   <span>Read more &rarr;</span>
                 </div>
               </Link>

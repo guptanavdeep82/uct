@@ -28,18 +28,18 @@ export const seo = {
     "/",
   ),
   "/overview": meta(
-    "UCT University, timor medical college",
-    "timor medical college, uct timor university",
+    "Study MBBS in Timor-Leste at Universidade Católica Timorense (UCT) São João Paulo II",
+    "Universidade Católica Timorense (UCT) is a Catholic medical university in Díli, Timor-Leste, offering an English-medium MBBS programme for Timorese, Indian, and international students.",
     "/overview",
   ),
   "/vision-mission": meta(
-    "Vision & Mission",
-    "UCT’s vision and mission for medical education in Timor-Leste — academic excellence, ethics and service.",
+    "UCT Vision, Mission and Values for MBBS in Timor-Leste",
+    "UCT Vision, Mission and Values for MBBS in Timor-Leste — academic excellence, practical clinical learning, ethical formation and community service.",
     "/vision-mission",
   ),
   "/milestones-history": meta(
-    "Milestones & History",
-    "The founding story and milestones of Universidade Católica Timorense, the first Catholic university in Timor-Leste.",
+    "Our Journey: Building Medical Education in Timor-Leste",
+    "The founding story and milestones of Universidade Católica Timorense, from 2021 in Díli to MBBS education for Timorese and international students.",
     "/milestones-history",
   ),
   "/message-from-the-rector": meta(
@@ -53,18 +53,18 @@ export const seo = {
     "/the-vice-prime-minister",
   ),
   "/infrastructure": meta(
-    "UCT Campus Infrastructure: Modern Learning Spaces",
-    "Explore UCT campus infrastructure, featuring smart classrooms and modern facilities that enhance the educational experience.",
+    "Campus Life at UCT Timor: Modern Facilities for MBBS in Timor-Leste",
+    "Universidade Católica Timorense (UCT Timor) offers a modern, student-focused campus in Díli designed to support MBBS education through technology-enabled teaching and practical learning.",
     "/infrastructure",
   ),
   "/library": meta(
-    "UCT Central Library: A Hub of Knowledge",
-    "Explore the UCT Central Library, a hub of knowledge and resources for all your academic needs.",
+    "UCT Library: Medical Learning Resources for MBBS Students",
+    "The central library at UCT Timor supports MBBS students with medical textbooks, journals, digital learning materials, quiet reading areas and online databases.",
     "/library",
   ),
   "/laboratories": meta(
-    "laboratories",
-    "Well-equipped anatomy, physiology, biochemistry, pathology, microbiology and clinical skill labs at UCT.",
+    "Practical Medicine at UCT Timor: Clinical Skills for MBBS Students",
+    "At UCT Timor, practical medicine is an essential part of the MBBS learning experience through subject-specific laboratories, guided demonstrations and supervised practical sessions.",
     "/laboratories",
   ),
   "/facilities-amp-amenities": meta(

@@ -3,7 +3,6 @@
 import Seo from "../../components/ui/Seo";
 import InnerPageHero from "../../components/ui/InnerPageHero";
 import SectionHeading from "../../components/ui/SectionHeading";
-import FeatureCard from "../../components/ui/FeatureCard";
 import CTASection from "../../components/ui/CTASection";
 import TiltCard from "../../components/ui/TiltCard";
 import { images } from "../../data/images";
@@ -13,39 +12,57 @@ const sections = [
   {
     tag: "Introduction",
     title: "About the University",
-    body: [aboutOverview.intro, aboutOverview.body],
+    body: aboutOverview.intro,
     image: images.classrooms[0],
     alt: "Students learning at UCT",
     reverse: false,
   },
   {
-    tag: "Academic Philosophy",
-    title: "Science with Service",
-    body: [aboutOverview.academicPhilosophy],
+    tag: "Why UCT",
+    title: aboutOverview.whyStudy.title,
+    body: [aboutOverview.whyStudy.desc],
     image: images.students[0],
     alt: "Faculty mentoring students at UCT",
     reverse: true,
   },
   {
-    tag: "Student Experience",
-    title: "Integrated, Hands-On Learning",
-    body: [aboutOverview.studentExperience],
+    tag: "Academic Philosophy",
+    title: "Science, Service and Medical Excellence",
+    body: aboutOverview.academicPhilosophy,
     image: images.labs[1],
-    alt: "Student life at UCT campus",
+    alt: "Practical learning at UCT",
+    reverse: false,
+  },
+  {
+    tag: "Curriculum",
+    title: "English-Medium MBBS Programme",
+    body: aboutOverview.englishProgramme,
+    image: images.classrooms[2],
+    alt: "English-medium classroom at UCT",
+    reverse: true,
+  },
+  {
+    tag: "Student Experience",
+    title: "Integrated, Hands-On Clinical Learning",
+    body: [aboutOverview.studentExperience],
+    methods: aboutOverview.learningMethods,
+    close: aboutOverview.learningClose,
+    image: images.labVisits[0],
+    alt: "Clinical skills training at UCT",
     reverse: false,
   },
   {
     tag: "International Environment",
-    title: "A Global Campus Community",
-    body: [aboutOverview.internationalEnvironment],
+    title: "International Campus Community",
+    body: aboutOverview.internationalEnvironment,
     image: images.imdEvents[0],
     alt: "International students and faculty at UCT",
     reverse: true,
   },
   {
     tag: "Campus",
-    title: "Learning in the Heart of Díli",
-    body: [aboutOverview.campusNote],
+    title: "Study Medicine in Díli, Timor-Leste",
+    body: aboutOverview.campusNote,
     image: images.exterior[0],
     alt: "UCT campus environment in Díli",
     reverse: false,
@@ -56,13 +73,13 @@ export default function AboutOverview() {
   return (
     <>
       <Seo
-        title="About UCT — Overview"
-        description="An overview of Universidade Católica Timorense: academic philosophy, student experience, international environment and campus life."
+        title={aboutOverview.pageTitle}
+        description={aboutOverview.intro[0]}
         path="/overview"
       />
       <InnerPageHero
-        title="Overview"
-        description="A closer look at UCT's academic philosophy, student experience and international campus environment."
+        title={aboutOverview.pageTitle}
+        description={aboutOverview.intro[0]}
         image={images.exterior[0]}
         trail={[{ label: "About Us", path: "/overview" }]}
       />
@@ -78,10 +95,25 @@ export default function AboutOverview() {
               <span className="section-head__tag">{block.tag}</span>
               <h2 className="section-head__title">{block.title}</h2>
               {block.body.map((p) => (
-                <p key={p.slice(0, 36)} style={{ marginTop: "1.1rem", color: "var(--gray-500)" }}>
+                <p key={p.slice(0, 48)} style={{ marginTop: "1.1rem", color: "var(--gray-500)" }}>
                   {p}
                 </p>
               ))}
+              {block.methods && (
+                <ul className="tick-list" style={{ marginTop: "1.2rem" }}>
+                  {block.methods.map((item) => (
+                    <li key={item}>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true">
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {block.close && (
+                <p style={{ marginTop: "1.1rem", color: "var(--gray-500)" }}>{block.close}</p>
+              )}
             </div>
             <TiltCard
               className="about-media-frame"
@@ -94,20 +126,10 @@ export default function AboutOverview() {
         </section>
       ))}
 
-      <section className="section" style={{ background: "var(--gray-50)" }}>
-        <div className="container">
-          <SectionHeading tag="Why UCT" title="Reasons Students Choose UCT" />
-          <div className="card-grid card-grid--4">
-            {aboutOverview.whyUct.map((item, i) => (
-              <TiltCard key={item.title} maxTilt={7}>
-                <FeatureCard title={item.title} desc={item.desc} delay={i * 80} />
-              </TiltCard>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <CTASection />
+      <CTASection
+        title="Begin Your MBBS Journey at UCT"
+        desc={aboutOverview.closing}
+      />
     </>
   );
 }

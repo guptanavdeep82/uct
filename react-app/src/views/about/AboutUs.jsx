@@ -118,10 +118,10 @@ export default function AboutUs() {
           <SectionHeading
             tag="Why UCT"
             title="A Truly International Medical Campus"
-            desc="UCT brings together students and faculty from India, the USA, Cuba and Timor-Leste inside a safe, peaceful island nation."
+            desc="UCT welcomes Timorese, Indian and international students in a multicultural learning environment."
           />
           <div className="card-grid card-grid--4">
-            {aboutOverview.whyUct.map((item, i) => (
+            {aboutOverview.pillars.map((item, i) => (
               <TiltCard key={item.title} maxTilt={7}>
                 <FeatureCard title={item.title} desc={item.desc} delay={i * 80} />
               </TiltCard>

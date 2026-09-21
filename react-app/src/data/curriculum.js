@@ -3,7 +3,7 @@
 export const programOverview = {
   title: "A Globally Recognized Curriculum, Rooted in Indian Medical Standards",
   description:
-    "UCT offers a comprehensive MBBS (Bachelor of Medicine & Bachelor of Surgery) program designed in alignment with the Indian Medical Curriculum. The program is globally accepted, taught in English, and prepares students to appear for licensing exams like FMGE (India), USMLE (USA), PLAB (UK) and more.",
+    "UCT offers a comprehensive MBBS (Bachelor of Medicine & Bachelor of Surgery) program designed in alignment with the Indian Medical Curriculum. The program is taught in English and aligned with WFME and NMC requirements, giving students the freedom to pursue licensing exams such as FMGE without a language barrier.",
   highlights: [
     "Based on AIIMS-style MBBS structure",
     "Follows NMC India guidelines",
@@ -76,10 +76,10 @@ export const academicsPillars = [
   { title: "Pre-Clinical Phase", desc: "Covers anatomy, physiology, biochemistry with early lab and theory integration." },
   { title: "Lab Training", desc: "Fully equipped labs for skill-building in pathology, microbiology, and more." },
   { title: "Clinical Rotations", desc: "Hospital-based training in major fields like surgery, medicine, and pediatrics." },
-  { title: "Global Eligibility", desc: "Eligible for FMGE, USMLE, PLAB, and other global medical exams." },
+  { title: "Global Eligibility", desc: "Supports graduates pursuing medical licensing pathways, subject to local regulatory requirements." },
   { title: "Teaching Method", desc: "Interactive sessions, clinical exposure, group discussions, and case studies." },
   { title: "English Curriculum", desc: "All subjects are taught in English to support international standards." },
-  { title: "Expert Faculty", desc: "Qualified doctors and professors guide students in every phase." },
+  { title: "World-Class Teaching Team", desc: "Qualified doctors and professors guide students in every phase." },
 ];
 
 export const faculty = [
@@ -142,4 +142,4 @@ export const internshipPhase = {
 };
 
 export const academicsIntro =
-  "At Universidade Católica Timorense (UCT), academic excellence is the foundation of our mission. Our flagship MBBS program is designed to meet global standards while being especially suitable for Indian and international students. The curriculum is modeled on the Indian medical education system, ensuring familiarity, structure, and strong eligibility for international licensing exams such as FMGE (India), USMLE (USA), and PLAB (UK). The MBBS program at UCT spans 5.5 years, comprising 4.5 years of classroom-based academic training followed by a 1-year compulsory clinical internship. The language of instruction is English, making the program accessible to a global student community.";
+  "At Universidade Católica Timorense (UCT), academic excellence is the foundation of our mission. Our flagship MBBS program is designed to meet global standards while being especially suitable for Indian, Timorese and international students. The curriculum is modeled on the Indian medical education system and aligned with WFME and NMC requirements. The MBBS program at UCT spans 5.5 years, comprising 4.5 years of classroom-based academic training followed by a 1-year compulsory clinical internship. The language of instruction is English, making the program accessible to a global student community.";

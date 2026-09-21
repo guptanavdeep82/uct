@@ -24,7 +24,7 @@ export const siteInfo = {
 
 export const quickStats = [
   { value: "5.5+", label: "Years Full MBBS Program" },
-  { value: "29+", label: "Free Scholarship Students" },
-  { value: "25+", label: "Nationalities on Campus" },
-  { value: "10+", label: "Clinical Hospital Tie-ups" },
+  { value: "30+", label: "Free Scholarship Students" },
+  { value: "14+", label: "Nationalities on Campus" },
+  { value: "2", label: "Own Base Teaching Hospitals" },
 ];

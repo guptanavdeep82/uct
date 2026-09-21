@@ -63,7 +63,7 @@ export const academicsFaq = [
   },
   {
     q: "Who teaches at UCT?",
-    a: "Classes are led by medical educators from India, the USA, Cuba and Timor-Leste, including named heads of anatomy, physiology, biochemistry and community medicine.",
+    a: "Classes are led by experienced medical educators from diverse countries including India, Cuba, Timor-Leste, Australia, Portugal and the USA.",
   },
 ];
 

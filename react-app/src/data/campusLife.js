@@ -12,12 +12,19 @@ export const campusSections = [
   {
     key: "infrastructure",
     title: "Infrastructure",
+    pageTitle: "Campus Life at UCT Timor: Modern Facilities for MBBS in Timor-Leste",
     path: "/infrastructure",
     image: images.exterior[3],
     summary:
-      "Smart classrooms, digital teaching tools and simulation spaces that meet the standards of modern medical education.",
+      "For students planning to study MBBS abroad, a strong learning environment is essential. Universidade Católica Timorense (UCT Timor) offers a modern, student-focused campus in Díli, Timor-Leste, designed to support medical education through technology-enabled teaching, practical learning, and accessible academic support.",
+    cardSummary:
+      "A modern, student-focused campus in Díli supporting MBBS education through technology-enabled teaching and practical learning.",
     body:
-      "UCT's campus infrastructure meets the standards of modern medical education. All academic blocks are equipped with smart classrooms, digital teaching tools, and high-speed internet to support blended learning. The campus also houses AV-enabled lecture halls, demonstration rooms, and simulation spaces that make learning interactive and practical. Each department operates with its own specialized labs, teaching resources, and faculty spaces — ensuring seamless academic delivery.",
+      "For students planning to study MBBS abroad, a strong learning environment is essential. Universidade Católica Timorense (UCT Timor) offers a modern, student-focused campus in Díli, Timor-Leste, designed to support medical education through technology-enabled teaching, practical learning, and accessible academic support.",
+    paragraphs: [
+      "For students planning to study MBBS abroad, a strong learning environment is essential. Universidade Católica Timorense (UCT Timor) offers a modern, student-focused campus in Díli, Timor-Leste, designed to support medical education through technology-enabled teaching, practical learning, and accessible academic support.",
+      "UCT is developing a medical learning environment that combines smart classrooms, specialised teaching spaces, simulation-based practice, and digital resources. Students pursuing MBBS in Timor-Leste benefit from an academic setting that supports foundational science education, clinical-skills development, collaborative learning, and preparation for future clinical training.",
+    ],
     features: [
       {
         title: "Smart Classrooms",
@@ -65,12 +72,19 @@ export const campusSections = [
   {
     key: "library",
     title: "Library",
+    pageTitle: "UCT Library: Medical Learning Resources for MBBS Students",
     path: "/library",
     image: marked(1),
     summary:
-      "Thousands of medical textbooks, journals and digital resources in a quiet, Wi-Fi-enabled study environment.",
+      "The central library at UCT Timor supports students pursuing MBBS in Timor-Leste with access to medical textbooks, reference journals, digital learning materials, and research resources. Designed for focused study and academic preparation, the library provides quiet reading areas, Wi-Fi-enabled study tables, computer stations, and access to online databases.",
+    cardSummary:
+      "Medical textbooks, journals, digital resources and quiet study spaces for MBBS students.",
     body:
-      "UCT's central library supports the academic success of its students and faculty through access to thousands of medical textbooks, journals, and digital resources. With quiet reading zones, Wi-Fi-enabled study tables, and online research databases, the library is the perfect space for in-depth learning and preparation. Students can borrow reference materials, use computer stations for e-learning, and benefit from a well-maintained academic atmosphere throughout the year.",
+      "The central library at UCT Timor supports students pursuing MBBS in Timor-Leste with access to medical textbooks, reference journals, digital learning materials, and research resources. Designed for focused study and academic preparation, the library provides quiet reading areas, Wi-Fi-enabled study tables, computer stations, and access to online databases.",
+    paragraphs: [
+      "The central library at UCT Timor supports students pursuing MBBS in Timor-Leste with access to medical textbooks, reference journals, digital learning materials, and research resources. Designed for focused study and academic preparation, the library provides quiet reading areas, Wi-Fi-enabled study tables, computer stations, and access to online databases.",
+      "Students can borrow essential medical reference materials, complete e-learning activities, conduct research, and prepare for assessments in a well-maintained academic environment. Whether studying anatomy, physiology, pathology, pharmacology, or clinical medicine, UCT's library helps MBBS students strengthen their knowledge and succeed throughout their medical education journey.",
+    ],
     points: [
       "Thousands of medical textbooks and reference journals",
       "Wi-Fi-enabled study tables and quiet reading zones",
@@ -111,12 +125,19 @@ export const campusSections = [
   {
     key: "laboratories",
     title: "Laboratories",
+    pageTitle: "Practical Medicine at UCT Timor: Clinical Skills for MBBS Students",
     path: "/laboratories",
     image: images.labs[0],
     summary:
-      "Well-equipped laboratories for every major medical subject, guided by experienced faculty and technicians.",
+      "At UCT Timor, practical medicine is an essential part of the MBBS in Timor-Leste learning experience. Students develop real-world medical skills through subject-specific laboratories, guided demonstrations, and supervised practical sessions. Well-equipped laboratories support hands-on learning in major medical disciplines, helping students connect classroom knowledge with clinical application.",
+    cardSummary:
+      "Subject-specific laboratories, guided demonstrations and supervised practical sessions for MBBS students.",
     body:
-      "To complement theoretical knowledge with real-time skills, UCT houses well-equipped laboratories for each major medical subject. Each lab is guided by experienced faculty and lab technicians to ensure safety, precision, and confidence in every student's practical learning.",
+      "At UCT Timor, practical medicine is an essential part of the MBBS in Timor-Leste learning experience. Students develop real-world medical skills through subject-specific laboratories, guided demonstrations, and supervised practical sessions. Well-equipped laboratories support hands-on learning in major medical disciplines, helping students connect classroom knowledge with clinical application.",
+    paragraphs: [
+      "At UCT Timor, practical medicine is an essential part of the MBBS in Timor-Leste learning experience. Students develop real-world medical skills through subject-specific laboratories, guided demonstrations, and supervised practical sessions. Well-equipped laboratories support hands-on learning in major medical disciplines, helping students connect classroom knowledge with clinical application.",
+      "Experienced faculty members and laboratory technicians guide students in safe, accurate, and structured practical training. From basic science experiments to clinical-skills practice, UCT supports confidence, precision, professional discipline, and patient-centred learning. This practical approach helps students preparing for MBBS abroad build a strong foundation for clinical rotations, future medical practice, and relevant licensing pathways.",
+    ],
     labTypes: [
       {
         title: "Anatomy Lab",

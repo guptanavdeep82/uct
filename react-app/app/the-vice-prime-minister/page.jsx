@@ -1,8 +1,5 @@
-import MessageFromVPM from "@/views/about/MessageFromVPM";
-import { pageMetadata } from "@/data/seo";
-
-export const metadata = pageMetadata("/the-vice-prime-minister");
+import { redirect } from "next/navigation";
 
 export default function Page() {
-  return <MessageFromVPM />;
+  redirect("/overview/");
 }
