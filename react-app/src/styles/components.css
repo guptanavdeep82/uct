@@ -587,6 +587,12 @@
   gap: 1rem;
 }
 
+.gallery-empty {
+  text-align: center;
+  color: var(--gray-500);
+  padding: 2.4rem 1rem;
+}
+
 .gallery__grid button {
   position: relative;
   width: 100%;

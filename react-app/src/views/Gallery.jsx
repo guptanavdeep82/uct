@@ -10,20 +10,38 @@ import InstagramShowcase from "../components/ui/InstagramShowcase";
 import CTASection from "../components/ui/CTASection";
 import { images } from "../data/images";
 
-const CATEGORIES = [
-  { id: "all", label: "All" },
-  { id: "campus", label: "Campus Exterior" },
-  { id: "classrooms", label: "Classrooms" },
-  { id: "students", label: "Student Life" },
-  { id: "laboratories", label: "Laboratories" },
-  { id: "events", label: "UCT Events" },
-  { id: "cultural", label: "IMD Events" },
-  { id: "history", label: "Ground Breaking" },
-];
+const CATEGORY_LABELS = {
+  all: "All",
+  campus: "Campus Exterior",
+  classrooms: "Classrooms",
+  students: "Student Life",
+  laboratories: "Laboratories",
+  events: "UCT Events",
+  cultural: "IMD Events",
+  history: "Ground Breaking",
+};
 
 export default function Gallery({ photos }) {
-  const library = photos?.length ? photos : images.gallery;
+  const library = Array.isArray(photos) ? photos : images.gallery;
   const [category, setCategory] = useState("all");
+
+  const categories = useMemo(() => {
+    const counts = new Map();
+    library.forEach((item) => {
+      if (!item?.category) return;
+      counts.set(item.category, (counts.get(item.category) || 0) + 1);
+    });
+    const ordered = Object.keys(CATEGORY_LABELS)
+      .filter((id) => id !== "all" && counts.has(id))
+      .map((id) => ({ id, label: CATEGORY_LABELS[id] }));
+    const extras = [...counts.keys()]
+      .filter((id) => !CATEGORY_LABELS[id])
+      .map((id) => ({
+        id,
+        label: library.find((item) => item.category === id)?.category_label || id,
+      }));
+    return [{ id: "all", label: "All" }, ...ordered, ...extras];
+  }, [library]);
 
   const items = useMemo(() => {
     if (category === "all") return library;
@@ -47,7 +65,7 @@ export default function Gallery({ photos }) {
         <div className="container">
           <SectionHeading tag="Moments at UCT" title="Explore by Category" />
           <div className="post-filters" role="tablist" aria-label="Gallery categories">
-            {CATEGORIES.map((cat) => (
+            {categories.map((cat) => (
               <button
                 key={cat.id}
                 type="button"
@@ -60,7 +78,11 @@ export default function Gallery({ photos }) {
               </button>
             ))}
           </div>
-          <GalleryGrid items={items} />
+          {items.length ? (
+            <GalleryGrid items={items} />
+          ) : (
+            <p className="gallery-empty">No photos in this category yet.</p>
+          )}
         </div>
       </section>
 

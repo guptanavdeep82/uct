@@ -89,7 +89,7 @@ export default function GalleryGrid({ items, reveal = false }) {
     <>
       <div className="gallery__grid" {...(reveal ? { "data-animate": "fade-up" } : {})}>
         {items.map((item, i) => (
-          <button key={item.src} onClick={() => setActiveIndex(i)} aria-label={`View photo: ${item.alt}`}>
+          <button key={item.id ?? `${item.src}-${i}`} onClick={() => setActiveIndex(i)} aria-label={`View photo: ${item.alt}`}>
             <img src={item.src} alt={item.alt} loading={i < 12 ? "eager" : "lazy"} />
             <span>{item.alt}</span>
           </button>

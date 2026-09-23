@@ -93,15 +93,24 @@ export async function fetchNewsItem(slug) {
   return normalizeNews(newsEvents.find((item) => item.slug === slug));
 }
 
+export function normalizeGalleryItem(item) {
+  if (!item) return null;
+  const src = mediaUrl(item.src || item.image);
+  if (!src) return null;
+  return {
+    id: item.id ?? src,
+    src,
+    alt: item.alt || "UCT campus photo",
+    category: item.category || "campus",
+    category_label: item.category_label || "",
+  };
+}
+
 export async function fetchGallery() {
   try {
     const payload = await getJson("/api/gallery");
-    const rows = asList(payload)
-      .map((item) => (item?.src ? { ...item, src: mediaUrl(item.src) } : item))
-      .filter((item) => item?.src);
-    if (rows.length) return rows;
+    return asList(payload).map(normalizeGalleryItem).filter(Boolean);
   } catch {
-    // Fall back to the campus photo library.
+    return null;
   }
-  return images.gallery;
 }

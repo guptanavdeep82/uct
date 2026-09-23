@@ -1,20 +1,11 @@
 const LOCAL_HOSTS = new Set(["127.0.0.1", "localhost", "0.0.0.0"]);
 
 function apiOrigin() {
-  const configured = (
+  return (
     process.env.NEXT_PUBLIC_API_URL ||
     process.env.API_URL ||
     "https://api.uct.tl"
   ).replace(/\/$/, "");
-
-  try {
-    const host = new URL(configured).hostname;
-    if (LOCAL_HOSTS.has(host)) return "https://api.uct.tl";
-  } catch {
-    // Keep the configured origin when it is not a valid URL.
-  }
-
-  return configured;
 }
 
 function isManagedHost(hostname) {
