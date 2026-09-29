@@ -1,5 +1,3 @@
-export const OTP_CODE = "1234";
-
 export const downloadItems = [
   {
     id: "prospectus",

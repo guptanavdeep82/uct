@@ -3,7 +3,7 @@
 import Seo from "../../components/ui/Seo";
 import InnerPageHero from "../../components/ui/InnerPageHero";
 import SectionHeading from "../../components/ui/SectionHeading";
-import EnquiryForm from "../../components/ui/EnquiryForm";
+import CrmLeadEmbed from "../../components/ui/CrmLeadEmbed";
 import FAQAccordion from "../../components/ui/FAQAccordion";
 import { images } from "../../data/images";
 import { siteInfo } from "../../data/siteInfo";
@@ -78,7 +78,7 @@ export default function AdmissionEnquiry() {
             </ul>
           </div>
           <div data-animate="fade-right">
-            <EnquiryForm />
+            <CrmLeadEmbed />
           </div>
         </div>
       </section>

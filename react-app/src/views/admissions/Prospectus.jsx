@@ -100,7 +100,7 @@ export default function Prospectus() {
 
       <CTASection
         title="Want a Copy of the Prospectus?"
-        desc="Use the Downloads tab on the right to receive the official 2026 brochure after OTP verification."
+        desc="Use the Downloads tab on the right to receive the official 2026 brochure."
       />
     </>
   );

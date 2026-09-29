@@ -53,7 +53,7 @@ export const antiRaggingPolicy = {
     body: "If you witness or experience ragging, contact:",
     channels: [
       { label: "Email", value: "info@uct.university" },
-      { label: "Phone", value: "+670 7373 7499" },
+      { label: "Phone", value: "+670 7590 9090" },
       { label: "In person", value: "Visit the Dean of Student Affairs or Hostel Wardens" },
     ],
   },

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useId, useState } from "react";
-import { downloadItems, OTP_CODE } from "../../data/downloads";
+import { downloadItems } from "../../data/downloads";
 import { postJson } from "../../lib/api";
 
 const initialLead = { name: "", whatsapp: "", email: "" };
@@ -25,32 +25,23 @@ function validateLead(values) {
 export default function DownloadDock() {
   const [panelOpen, setPanelOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
-  const [step, setStep] = useState("lead");
   const [lead, setLead] = useState(initialLead);
   const [errors, setErrors] = useState({});
-  const [otp, setOtp] = useState("");
-  const [otpError, setOtpError] = useState("");
   const [status, setStatus] = useState("idle");
   const titleId = useId();
 
   const closeModal = () => {
     setActiveItem(null);
-    setStep("lead");
     setLead(initialLead);
     setErrors({});
-    setOtp("");
-    setOtpError("");
     setStatus("idle");
   };
 
   const openItem = (item) => {
     setPanelOpen(false);
     setActiveItem(item);
-    setStep("lead");
     setLead(initialLead);
     setErrors({});
-    setOtp("");
-    setOtpError("");
     setStatus("idle");
   };
 
@@ -82,22 +73,12 @@ export default function DownloadDock() {
     link.remove();
   };
 
-  const handleLeadSubmit = (e) => {
+  const handleLeadSubmit = async (e) => {
     e.preventDefault();
     const nextErrors = validateLead(lead);
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
-    setStep("otp");
-    setOtp("");
-    setOtpError("");
-  };
 
-  const handleOtpSubmit = async (e) => {
-    e.preventDefault();
-    if (otp.trim() !== OTP_CODE) {
-      setOtpError("Invalid OTP. Please enter the code sent to your WhatsApp.");
-      return;
-    }
     setStatus("submitting");
     try {
       await postJson("/api/download-leads", {
@@ -160,11 +141,9 @@ export default function DownloadDock() {
               <span className="pill-tag">{activeItem.shortLabel}</span>
               <h2 id={titleId}>{activeItem.label}</h2>
               <p>
-                {step === "success"
+                {status === "success"
                   ? "Your download has started. If the prospectus opens in a new tab, use Google Drive’s download button."
-                  : step === "otp"
-                    ? "Enter the OTP sent to your WhatsApp number to start the download."
-                    : "Share your details and we will send an OTP to your WhatsApp before the file downloads."}
+                  : "Share your details to start the download."}
               </p>
             </div>
 
@@ -175,29 +154,6 @@ export default function DownloadDock() {
                 </svg>
                 Thank you, {lead.name.split(" ")[0] || "there"}. Your {activeItem.shortLabel.toLowerCase()} is downloading.
               </div>
-            ) : step === "otp" ? (
-              <form className="form-grid form-grid--single" onSubmit={handleOtpSubmit} noValidate>
-                <div className={`form-field${otpError ? " has-error" : ""}`}>
-                  <label htmlFor="dl-otp">Enter OTP *</label>
-                  <input
-                    id="dl-otp"
-                    type="text"
-                    inputMode="numeric"
-                    autoComplete="one-time-code"
-                    placeholder="4-digit OTP"
-                    value={otp}
-                    onChange={(e) => {
-                      setOtp(e.target.value);
-                      setOtpError("");
-                    }}
-                  />
-                  {otpError && <span className="form-field__error">{otpError}</span>}
-                </div>
-                <p className="form-note">OTP sent to {lead.whatsapp}. For now, use <strong>1234</strong>.</p>
-                <button type="submit" className="btn btn--gold btn--lg btn--block" disabled={status === "submitting"}>
-                  {status === "submitting" ? "Saving…" : "Verify & Download"}
-                </button>
-              </form>
             ) : (
               <form className="form-grid form-grid--single" onSubmit={handleLeadSubmit} noValidate>
                 <div className={`form-field${errors.name ? " has-error" : ""}`}>
@@ -221,8 +177,8 @@ export default function DownloadDock() {
                   <input id="dl-email" type="email" placeholder="you@example.com" value={lead.email} onChange={update("email")} />
                   {errors.email && <span className="form-field__error">{errors.email}</span>}
                 </div>
-                <button type="submit" className="btn btn--gold btn--lg btn--block">
-                  Send OTP
+                <button type="submit" className="btn btn--gold btn--lg btn--block" disabled={status === "submitting"}>
+                  {status === "submitting" ? "Saving…" : "Download"}
                 </button>
               </form>
             )}

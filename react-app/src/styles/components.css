@@ -1058,12 +1058,13 @@
 
 .crm-lead-embed {
   width: 100%;
-  min-height: 320px;
+  min-height: 520px;
 }
 
 .crm-lead-embed iframe {
   display: block;
   width: 100%;
+  min-height: 520px;
   border: 0;
 }
 

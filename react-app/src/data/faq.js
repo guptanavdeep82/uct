@@ -25,7 +25,7 @@ export const generalFaq = [
   },
   {
     q: "How do I apply for admission?",
-    a: "Submit the enquiry form below or call +670 7373 7499 (India toll-free: 1800 208 9848). Our counsellors guide you through documents, offer letter and visa.",
+    a: "Submit the enquiry form below or call +670 7590 9090 (India toll-free: 1800 208 9848). Our counsellors guide you through documents, offer letter and visa.",
   },
 ];
 
