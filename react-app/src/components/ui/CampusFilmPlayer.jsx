@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { campusFilms } from "../../data/campusFilms";
+import { campusFilms as defaultCampusFilms } from "../../data/campusFilms";
 
 function PlayGlyph() {
   return (
@@ -11,7 +11,8 @@ function PlayGlyph() {
   );
 }
 
-export default function CampusFilmPlayer() {
+export default function CampusFilmPlayer({ films }) {
+  const campusFilms = Array.isArray(films) && films.length ? films : defaultCampusFilms;
   const [index, setIndex] = useState(0);
   const [started, setStarted] = useState(false);
   const videoRef = useRef(null);

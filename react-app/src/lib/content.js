@@ -3,6 +3,7 @@ import { mediaUrl, rewriteMediaHtml } from "./media";
 import { blogPosts } from "../data/blog";
 import { newsEvents } from "../data/newsEvents";
 import { images } from "../data/images";
+import { campusFilms as defaultCampusFilms } from "../data/campusFilms";
 
 function asList(payload) {
   if (Array.isArray(payload)) return payload;
@@ -113,4 +114,26 @@ export async function fetchGallery() {
   } catch {
     return null;
   }
+}
+
+export function normalizeCampusFilm(item) {
+  if (!item?.src || !item?.title) return null;
+  return {
+    id: item.id ?? item.src,
+    src: item.src,
+    thumb: mediaUrl(item.thumb || item.thumbnail) || images.campusVideos[0],
+    title: item.title,
+    desc: item.desc || item.description || "Campus life at UCT.",
+  };
+}
+
+export async function fetchCampusFilms() {
+  try {
+    const payload = await getJson("/api/campus-films");
+    const rows = asList(payload).map(normalizeCampusFilm).filter(Boolean);
+    if (rows.length) return rows;
+  } catch {
+    // Fall back to the bundled films when the admin API is offline.
+  }
+  return defaultCampusFilms;
 }

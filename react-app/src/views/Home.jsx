@@ -25,7 +25,7 @@ import {
   homeTestimonials,
 } from "../data/home";
 
-export default function Home({ photos }) {
+export default function Home({ photos, films }) {
   return (
     <>
       <Seo
@@ -259,7 +259,7 @@ export default function Home({ photos }) {
             title={<span style={{ color: "var(--white)" }}>Campus films, <span className="text-gold">student voices</span></span>}
             desc="Six portrait films from Díli — tap a reel to play. Only the film you choose is streamed."
           />
-          <CampusFilmPlayer />
+          <CampusFilmPlayer films={films} />
           <div style={{ textAlign: "center", marginTop: "2.4rem" }}>
             <Link to="/media" className="btn btn--glass">
               More campus moments
