@@ -1,10 +1,10 @@
 import Gallery from "@/views/Gallery";
 import { pageMetadata } from "@/data/seo";
-import { fetchGallery } from "@/lib/content";
+import { fetchCampusFilms, fetchGallery } from "@/lib/content";
 
 export const metadata = pageMetadata("/media");
 
 export default async function MediaPage() {
-  const photos = await fetchGallery();
-  return <Gallery photos={photos} />;
+  const [photos, films] = await Promise.all([fetchGallery(), fetchCampusFilms()]);
+  return <Gallery photos={photos} films={films} />;
 }

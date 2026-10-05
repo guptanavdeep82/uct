@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { campusFilms } from "../../data/campusFilms";
+import { campusFilms as defaultCampusFilms } from "../../data/campusFilms";
+import { resolveVideo } from "../../lib/video";
 
 function PlayGlyph() {
   return (
@@ -11,7 +12,8 @@ function PlayGlyph() {
   );
 }
 
-export default function VideoShowcase() {
+export default function VideoShowcase({ films }) {
+  const campusFilms = Array.isArray(films) && films.length ? films : defaultCampusFilms;
   const [active, setActive] = useState(null);
 
   useEffect(() => {
@@ -28,6 +30,7 @@ export default function VideoShowcase() {
   }, [active]);
 
   const current = active !== null ? campusFilms[active] : null;
+  const currentVideo = current ? resolveVideo(current.src) : null;
 
   return (
     <>
@@ -61,10 +64,19 @@ export default function VideoShowcase() {
                 <path d="M18 6 6 18M6 6l12 12" />
               </svg>
             </button>
-            <div className="video-modal__reel">
-              <video src={current.src} poster={current.thumb} controls autoPlay playsInline preload="metadata">
-                Your browser cannot play this campus film.
-              </video>
+            <div className={`video-modal__reel video-modal__reel--${currentVideo.kind}`}>
+              {currentVideo.embedUrl ? (
+                <iframe
+                  src={currentVideo.embedUrl}
+                  title={current.title}
+                  allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                  allowFullScreen
+                />
+              ) : (
+                <video src={current.src} poster={current.thumb} controls autoPlay playsInline preload="metadata">
+                  Your browser cannot play this campus film.
+                </video>
+              )}
             </div>
             <div className="video-modal__info">
               <h3>{current.title}</h3>

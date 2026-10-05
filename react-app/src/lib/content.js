@@ -1,5 +1,6 @@
 import { getJson } from "./api";
 import { mediaUrl, rewriteMediaHtml } from "./media";
+import { resolveVideo } from "./video";
 import { blogPosts } from "../data/blog";
 import { newsEvents } from "../data/newsEvents";
 import { images } from "../data/images";
@@ -121,7 +122,7 @@ export function normalizeCampusFilm(item) {
   return {
     id: item.id ?? item.src,
     src: item.src,
-    thumb: mediaUrl(item.thumb || item.thumbnail) || images.campusVideos[0],
+    thumb: mediaUrl(item.thumb || item.thumbnail) || resolveVideo(item.src).thumb || images.campusVideos[0],
     title: item.title,
     desc: item.desc || item.description || "Campus life at UCT.",
   };

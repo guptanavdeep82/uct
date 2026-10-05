@@ -315,6 +315,18 @@
   background: #12080c;
 }
 
+.campus-films__embed {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #12080c;
+}
+
+.campus-films__embed--instagram {
+  background: #fff;
+}
+
 .campus-films__start {
   position: absolute;
   inset: 0;

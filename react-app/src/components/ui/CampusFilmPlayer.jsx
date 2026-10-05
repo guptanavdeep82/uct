@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { campusFilms as defaultCampusFilms } from "../../data/campusFilms";
+import { resolveVideo } from "../../lib/video";
 
 function PlayGlyph() {
   return (
@@ -18,6 +19,7 @@ export default function CampusFilmPlayer({ films }) {
   const videoRef = useRef(null);
   const stageRef = useRef(null);
   const film = campusFilms[index];
+  const video = resolveVideo(film.src);
 
   const selectFilm = (nextIndex, autoPlay = true) => {
     setIndex(nextIndex);
@@ -52,18 +54,31 @@ export default function CampusFilmPlayer({ films }) {
     <div className="campus-films__layout" ref={stageRef}>
       <div className="campus-films__stage">
         <div className="campus-films__phone">
-          <video
-            ref={videoRef}
-            key={film.src}
-            className="campus-films__video"
-            poster={film.thumb}
-            preload="none"
-            playsInline
-            controls={started}
-            aria-label={film.title}
-          >
-            <source src={film.src} type="video/mp4" />
-          </video>
+          {video.embedUrl ? (
+            started && (
+              <iframe
+                key={video.embedUrl}
+                className={`campus-films__embed campus-films__embed--${video.kind}`}
+                src={video.embedUrl}
+                title={film.title}
+                allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                allowFullScreen
+              />
+            )
+          ) : (
+            <video
+              ref={videoRef}
+              key={film.src}
+              className="campus-films__video"
+              poster={film.thumb}
+              preload="none"
+              playsInline
+              controls={started}
+              aria-label={film.title}
+            >
+              <source src={film.src} type="video/mp4" />
+            </video>
+          )}
 
           {!started && (
             <button

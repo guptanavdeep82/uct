@@ -21,7 +21,7 @@ const CATEGORY_LABELS = {
   history: "Ground Breaking",
 };
 
-export default function Gallery({ photos }) {
+export default function Gallery({ photos, films }) {
   const library = Array.isArray(photos) ? photos : images.gallery;
   const [category, setCategory] = useState("all");
 
@@ -93,7 +93,7 @@ export default function Gallery({ photos }) {
             title="Real Life. Real Stories."
             desc="Watch campus films from Díli — student voices, labs, library and life on campus."
           />
-          <VideoShowcase />
+          <VideoShowcase films={films} />
         </div>
       </section>
 
